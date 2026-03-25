@@ -15,6 +15,9 @@ out/
 # typescript
 tsconfig.tsbuildinfo
 
+# yarn berry (server-specific config)
+.yarnrc.yml
+
 # misc
 .DS_Store
 *.log
