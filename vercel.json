@@ -3,27 +3,5 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "nextjs",
-  "env": [
-    {
-      "key": "DATABASE_URL",
-      "description": "PostgreSQL database URL",
-      "type": "string"
-    },
-    {
-      "key": "ABACUSAI_API_KEY",
-      "description": "Abacus AI API Key",
-      "type": "string"
-    },
-    {
-      "key": "WEB_APP_ID",
-      "description": "Web App ID",
-      "type": "string"
-    },
-    {
-      "key": "NOTIF_ID_LEAD_FORM_SUBMISSION",
-      "description": "Lead Form Submission Notification ID",
-      "type": "string"
-    }
-  ],
   "outputDirectory": ".next"
 }
