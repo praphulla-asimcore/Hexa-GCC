@@ -6,9 +6,9 @@ import { Calendar, FileText, CheckCircle, Clock, Shield, Globe, MessageCircle } 
 const BOOKING_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI';
 
 const credibilityChips = [
-  { icon: CheckCircle, text: 'Dedicated Finance Team Under Your Brand' },
-  { icon: Clock, text: 'Structured Governance & Reporting Framework' },
-  { icon: Globe, text: 'Cost-Efficient GCC Delivery Model' },
+  { icon: CheckCircle, text: 'Month-end closed in 5-7 days' },
+  { icon: FileText, text: 'Audit-ready workpapers' },
+  { icon: Globe, text: 'Country-specific payroll & tax handling' },
 ];
 
 export default function HeroSection() {
@@ -57,8 +57,8 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            We Build Your Remote{' '}
-            <span className="gradient-text">Accounting & Finance Team</span>
+            From Execution to{' '}
+            <span className="gradient-text">Accountability.</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -68,7 +68,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10"
           >
-            Structured, Cost-effective, and Accountable.
+            Nepal-based Finance & Accounting operations for companies that need reliable, country-specific execution with compliance confidence.
           </motion.p>
 
           {/* Credibility Chips */}
@@ -100,13 +100,13 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="https://wa.me/9779851338099"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="gradient-bg px-8 py-4 text-white font-semibold rounded-lg hover:opacity-90 transition-all shadow-xl shadow-[#E6007E]/20 flex items-center gap-2 w-full sm:w-auto justify-center"
             >
-              <MessageCircle className="w-5 h-5" />
-              Start a WhatsApp Consultation
+              <Calendar className="w-5 h-5" />
+              Book a 20-min Consultation
             </a>
             <a
               href="#contact"

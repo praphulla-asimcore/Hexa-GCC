@@ -10,78 +10,98 @@ import {
 const financeTeams = [
   {
     id: 'core-accounting',
-    title: 'Core Accounting Operations Team',
+    title: 'Outsourced Accounting & Bookkeeping',
     icon: Calculator,
     whatHandles: [
       'Full-cycle accounting (AP, AR, GL)',
-      'Reconciliations & ledger management',
+      'Reconciliations and ledger management',
       'Month-end close execution',
-      'Documentation & control maintenance'
+      'Documented controls and review checklists'
     ],
     impact: [
+      'Monthly close pack and reconciliations.',
       'Predictable close cycles.',
-      'Reduced key-person risk.',
-      'Layered execution and review.'
+      'Fewer errors and audit queries.'
     ]
   },
   {
     id: 'compliance-regulatory',
-    title: 'Compliance & Regulatory Team',
+    title: 'Remote Accountants / Auditors',
     icon: Shield,
     whatHandles: [
-      'Corporate tax support',
-      'Indirect tax (GST/VAT) preparation',
-      'Payroll compliance & statutory filings',
-      'Compliance calendar monitoring'
+      'Dedicated accountants and audit support',
+      'Schedules, evidence packs, and PBC tracking',
+      'Review-ready reconciliations',
+      'Named ownership and escalation'
     ],
     impact: [
-      'Reduced filing risk.',
-      'Proactive compliance oversight.',
-      'Audit-ready schedules.'
+      'Audit schedules ready faster.',
+      'Clear ownership without key-person risk.',
+      'Continuity through cross-trained cover.'
     ]
   },
   {
     id: 'reporting-analysis',
-    title: 'Reporting & Analysis Team',
+    title: 'Tax & Compliance',
     icon: BarChart3,
     whatHandles: [
-      'Management reporting',
-      'Financial dashboards',
-      'Cash flow tracking',
-      'Variance analysis'
+      'Country-specific tax support and trackers',
+      'Payroll journals and statutory workings',
+      'GST/VAT, withholding, and indirect tax support',
+      'Preparation and documentation packs'
     ],
     impact: [
-      'Clear leadership visibility.',
-      'Data-backed decision making.'
+      'On-time compliance readiness.',
+      'Audit-ready documentation.',
+      'Fewer last-minute filing surprises.'
     ]
   },
   {
     id: 'strategic-finance',
-    title: 'Strategic Finance Layer',
+    title: 'Remote CFO',
     badge: 'Optional Add-On',
     icon: Briefcase,
     whatHandles: [
-      'CFO-level advisory',
-      'Forecasting & scenario modeling',
-      'Budget planning',
-      'Board reporting packs'
+      'Cash flow dashboards and forecasting',
+      'Budgeting and scenario modelling',
+      'Management and board reporting packs',
+      'Decision support for finance leaders'
     ],
     impact: [
-      'Finance aligned to strategy.'
+      'Leadership visibility without a full-time hire.',
+      'Faster, more confident decisions.'
     ]
   },
   {
     id: 'scalable-support',
-    title: 'Scalable Support Layer',
+    title: 'Staff Augmentation',
     icon: Scale,
     whatEnables: [
       'Additional execution capacity during growth',
       'Project-based finance initiatives',
-      'Flexible headcount scaling'
+      'Flexible headcount scaling',
+      'Coverage for leave and hiring gaps'
     ],
     impact: [
       'No recruitment bottlenecks.',
-      'Capacity expands with operations.'
+      'Capacity expands with operations.',
+      'Faster delivery on priority work.'
+    ]
+  },
+  {
+    id: 'financial-modelling',
+    title: 'Financial Analysis & Modelling',
+    icon: BarChart3,
+    whatHandles: [
+      'Variance analysis and KPI reporting',
+      'Cash flow and runway modelling',
+      'Scenario planning and sensitivity analysis',
+      'Decision-ready dashboards'
+    ],
+    impact: [
+      'Clear visibility into performance.',
+      'Better planning under uncertainty.',
+      'Reports built for action.'
     ]
   }
 ];
