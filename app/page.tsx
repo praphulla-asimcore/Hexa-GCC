@@ -8,13 +8,13 @@ import TrustSection from '@/components/trust-section';
 import LeadForm from '@/components/lead-form';
 import Footer from '@/components/footer';
 import StickyCTA from '@/components/sticky-cta';
-import CapabilitiesSection from '@/components/capabilities-section';
+import FinancePlatformSection from '@/components/finance-platform-section';
 import OutcomesSection from '@/components/outcomes-section';
 import IntelligenceTeaserSection from '@/components/intelligence-teaser-section';
 
 export const metadata: Metadata = {
-  title: 'Hexa | Capability Infrastructure for Growing Companies',
-  description: 'Hexa builds and operates specialized finance and technology capabilities for companies scaling across markets.',
+  title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
+  description: 'Hexa builds and operates country-aware finance infrastructure for companies growing across markets.',
 };
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
     <main>
       <Header />
       <HeroSection />
-      <CapabilitiesSection />
+      <FinancePlatformSection />
       <OutcomesSection />
       <ServicesSection />
       <IntelligenceTeaserSection />

@@ -43,7 +43,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 text-white/70 text-xs font-semibold uppercase tracking-[.16em] mb-8"
           >
             <ShieldCheck className="w-4 h-4 text-[#E6007E]" />
-            Global capability infrastructure from Nepal
+            Country-aware finance infrastructure from Nepal
           </motion.div>
 
           {/* Main Headline */}
@@ -53,8 +53,8 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-[5.4rem] font-semibold text-white mb-7 leading-[.98] tracking-[-.04em] max-w-3xl"
           >
-            The capability layer behind{' '}
-            <span className="text-[#E6007E]">ambitious growth.</span>
+            The finance operating layer behind{' '}
+            <span className="text-[#E6007E]">international growth.</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -64,7 +64,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-white/65 max-w-xl mb-10 leading-relaxed"
           >
-            Hexa builds and operates specialized finance and technology capabilities for companies scaling across markets.
+            Hexa combines specialized finance professionals, local compliance playbooks, internal intelligence, and accountable governance for companies growing across markets.
           </motion.p>
 
           {/* Credibility signals */}
@@ -116,7 +116,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-16"
           >
-            <p className="text-white/40 text-xs uppercase tracking-[.14em] mb-4">Built from Nepal · delivered globally</p>
+            <p className="text-white/40 text-xs uppercase tracking-[.14em] mb-4">Finance operations from Nepal · delivered globally</p>
             <div className="flex flex-wrap gap-2">
               {['Singapore', 'Malaysia', 'Indonesia', 'Philippines', 'United Kingdom', 'United States', 'Australia', 'Canada', 'Nepal'].map((country) => (
                 <div

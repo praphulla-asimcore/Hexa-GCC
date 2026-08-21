@@ -21,9 +21,9 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Capabilities', href: '/#capabilities' },
     { label: 'Finance Operations', href: '/countries' },
-    { label: 'Technology Delivery', href: '/technology-delivery' },
+    { label: 'Finance Intelligence', href: '/finance-intelligence' },
+    { label: 'Countries', href: '/countries#countries' },
     { label: 'Why Hexa', href: '/why-hexa' },
     { label: 'About', href: '/about' },
   ];

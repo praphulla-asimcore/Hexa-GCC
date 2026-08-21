@@ -18,7 +18,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Hexa builds and operates specialized finance and technology capability centers for companies scaling across markets.
+              Hexa builds and operates country-aware finance infrastructure for companies scaling across markets.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
@@ -33,7 +33,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Globe className="w-5 h-5 text-[#E6007E]" />
-                <span>Built from Nepal. Delivered globally.</span>
+                <span>Finance operations from Nepal. Delivered globally.</span>
               </div>
             </div>
           </div>
@@ -45,11 +45,6 @@ export default function Footer() {
               <li>
                 <Link href="#services" className="text-gray-400 hover:text-white transition-colors">
                   Finance Operations
-                </Link>
-              </li>
-              <li>
-                <Link href="/technology-delivery" className="text-gray-400 hover:text-white transition-colors">
-                  Technology Delivery
                 </Link>
               </li>
               <li>

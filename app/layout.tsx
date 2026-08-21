@@ -5,12 +5,12 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000'),
-  title: 'Hexa | Finance Operations and Technology Delivery',
-  description: 'Hexa builds and operates specialized finance and technology capability centers for companies scaling across markets.',
+  title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
+  description: 'Hexa builds and operates country-aware finance infrastructure for companies scaling across markets.',
   keywords: 'outsourced accounting, finance operations, GCC, Nepal, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping, payroll',
   openGraph: {
-    title: 'Hexa GCC | Finance & Accounting Global Capability Center',
-    description: 'Country-specific finance operations with compliance confidence. Serving 8 countries from Nepal.',
+    title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
+    description: 'Country-aware finance operations with human oversight, internal intelligence, and accountable governance.',
     images: ['/og-image.png'],
     type: 'website',
   },
