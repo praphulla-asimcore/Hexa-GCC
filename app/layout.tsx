@@ -5,12 +5,12 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://hnpl.business'),
-  title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
-  description: 'Hexa builds and operates country-aware finance infrastructure for companies scaling across markets.',
-  keywords: 'outsourced accounting, finance operations, GCC, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping, payroll',
+  title: 'Hexa | Finance, Technology & People Operations',
+  description: 'Hexa runs finance, technology, and people operations for companies operating across borders — under one governance model, with one accountable owner.',
+  keywords: 'shared services centre, GBS, outsourced accounting, finance operations, IT delivery, HR operations, payroll, GCC, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping',
   openGraph: {
-    title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
-    description: 'Country-aware finance operations with human oversight, internal intelligence, and accountable governance.',
+    title: 'Hexa | Finance, Technology & People Operations',
+    description: 'One centre, three towers, one governance model — finance, technology, and people operations delivered with human oversight and accountable governance.',
     images: ['/og-image.png'],
     type: 'website',
   },
@@ -26,7 +26,7 @@ const organizationJsonLd = {
   name: 'Hexa GCC',
   url: 'https://hnpl.business',
   logo: 'https://hnpl.business/logo.png',
-  description: 'Hexa builds and operates country-aware finance infrastructure for companies scaling across markets.',
+  description: 'Hexa runs finance, technology, and people operations for companies operating across borders — under one governance model, with one accountable owner.',
   email: 'praphulla@hexamatics.com',
   address: {
     '@type': 'PostalAddress',

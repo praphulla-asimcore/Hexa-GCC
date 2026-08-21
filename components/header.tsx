@@ -21,8 +21,9 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Finance Operations', href: '/#finance-platform' },
-    { label: 'Finance Intelligence', href: '/finance-intelligence' },
+    { label: 'Finance', href: '/finance' },
+    { label: 'Technology', href: '/technology' },
+    { label: 'People', href: '/people' },
     { label: 'Countries', href: '/countries#countries' },
     { label: 'Why Hexa', href: '/why-hexa' },
     { label: 'About', href: '/about' },

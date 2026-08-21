@@ -5,11 +5,11 @@ import Footer from '@/components/footer';
 import StickyCTA from '@/components/sticky-cta';
 
 export const metadata: Metadata = {
-  title: 'Technology Delivery | Hexa',
-  description: 'Structured technology delivery pods for product engineering, quality engineering, cloud, DevOps, data, and automation.',
+  title: 'Hexa Technology | Product, Quality & Cloud Engineering Pods',
+  description: 'Structured technology delivery pods for product engineering, quality engineering, cloud, DevOps, data, and automation — one tower of the Hexa operating model.',
 };
 
-export default function TechnologyDeliveryPage() {
+export default function TechnologyPage() {
   return (
     <main>
       <Header />

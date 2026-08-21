@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="relative w-40 h-12 mb-6">
@@ -18,7 +18,8 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Hexa builds and operates country-aware finance infrastructure for companies scaling across markets.
+              Hexa runs finance, technology, and people operations for companies operating across borders —
+              under one governance model, with one accountable owner.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
@@ -33,28 +34,60 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Globe className="w-5 h-5 text-[#E6007E]" />
-                <span>Finance operational excellence. Delivered globally.</span>
+                <span>Operational excellence. Delivered globally.</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Towers */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Quick Links</h4>
+            <h4 className="font-semibold text-lg mb-6">Towers</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="#services" className="text-gray-400 hover:text-white transition-colors">
-                  Finance Operations
+                <Link href="/finance" className="text-gray-400 hover:text-white transition-colors">
+                  Hexa Finance
                 </Link>
               </li>
               <li>
-                <Link href="#countries" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/technology" className="text-gray-400 hover:text-white transition-colors">
+                  Hexa Technology
+                </Link>
+              </li>
+              <li>
+                <Link href="/people" className="text-gray-400 hover:text-white transition-colors">
+                  Hexa People
+                </Link>
+              </li>
+              <li>
+                <Link href="/engagement-models" className="text-gray-400 hover:text-white transition-colors">
+                  How to Buy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company & Trust */}
+          <div>
+            <h4 className="font-semibold text-lg mb-6">Company</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/operating-model" className="text-gray-400 hover:text-white transition-colors">
+                  Operating Model
+                </Link>
+              </li>
+              <li>
+                <Link href="/trust" className="text-gray-400 hover:text-white transition-colors">
+                  Trust &amp; Security
+                </Link>
+              </li>
+              <li>
+                <Link href="/why-nepal" className="text-gray-400 hover:text-white transition-colors">
+                  Why Nepal
+                </Link>
+              </li>
+              <li>
+                <Link href="/countries#countries" className="text-gray-400 hover:text-white transition-colors">
                   Countries We Serve
-                </Link>
-              </li>
-              <li>
-                <Link href="#process" className="text-gray-400 hover:text-white transition-colors">
-                  How It Works
                 </Link>
               </li>
               <li>

@@ -13,6 +13,7 @@ import { countryData, type CountryData } from '@/lib/country-data';
 
 const countries = ['SG', 'MY', 'ID', 'PH', 'UK', 'US', 'AU', 'CA'];
 const expandingCountries = ['Nepal', 'Myanmar', 'Bangladesh', 'Taiwan', 'Vietnam', 'Sri Lanka'];
+const BOOKING_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI';
 
 export default function VerticalCountrySelector() {
   const [expandedCountry, setExpandedCountry] = useState<string | null>(null);
@@ -36,10 +37,19 @@ export default function VerticalCountrySelector() {
           <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-5">
             The detail changes by country. The standard does not.
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Every country has unique statutory requirements. Click on a country to see 
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-6">
+            Every country has unique statutory requirements. Click on a country to see
             how we handle local compliance with precision.
           </p>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 gradient-bg px-6 py-3 text-white text-sm font-semibold rounded-full hover:bg-[#b80065] transition-colors"
+          >
+            <Calendar className="w-4 h-4" />
+            Book a Consultation to understand wider coverage
+          </a>
         </motion.div>
 
         {/* Vertical Country List */}

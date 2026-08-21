@@ -56,7 +56,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 text-white/70 text-xs font-semibold uppercase tracking-[.16em] mb-8"
           >
             <ShieldCheck className="w-4 h-4 text-[#E6007E]" />
-            Country-aware finance infrastructure
+            Finance · Technology · People — one governance model
           </motion.div>
 
           {/* Main Headline */}
@@ -66,7 +66,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-[5.4rem] font-semibold text-white mb-7 leading-[.98] tracking-[-.04em] max-w-3xl"
           >
-            The finance operating layer behind{' '}
+            The back office behind{' '}
             <span className="text-[#E6007E]">international growth.</span>
           </motion.h1>
 
@@ -77,7 +77,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-white/65 max-w-xl mb-10 leading-relaxed"
           >
-            Hexa combines specialized finance professionals, local compliance playbooks, internal intelligence, and accountable governance for companies growing across markets.
+            Hexa runs finance, technology, and people operations for companies operating across borders — under one governance model, with one accountable owner.
           </motion.p>
 
           {/* Credibility signals */}
@@ -129,7 +129,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-16"
           >
-            <p className="text-white/40 text-xs uppercase tracking-[.14em] mb-4">Finance Operational Excellence - Delivered Globally</p>
+            <p className="text-white/40 text-xs uppercase tracking-[.14em] mb-4">Operational Excellence - Delivered Globally</p>
             <div className="flex flex-wrap gap-2">
               {countries.map((country, index) => {
                 const isPaused = hoveredCountry === country;
