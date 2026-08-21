@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   try {
     const data = await request?.json?.() ?? {};
 
-    const { name, company, email, country, servicesNeeded, accountingSoftware, transactionsRange, message } = data ?? {};
+    const { name, company, email, country, message } = data ?? {};
 
     // Validate required fields
     if (!name || !company || !email || !country) {
@@ -23,9 +23,6 @@ export async function POST(request: Request) {
       company: company ?? '',
       email: email ?? '',
       country: country ?? '',
-      servicesNeeded: servicesNeeded ?? [],
-      accountingSoftware: accountingSoftware ?? '',
-      transactionsRange: transactionsRange ?? '',
       message: message ?? '',
       createdAt: new Date(),
     };
@@ -35,7 +32,6 @@ export async function POST(request: Request) {
       SG: 'Singapore',
       MY: 'Malaysia',
       ID: 'Indonesia',
-      PH: 'Philippines',
       UK: 'United Kingdom',
       US: 'United States',
       AU: 'Australia',
@@ -48,7 +44,7 @@ export async function POST(request: Request) {
     const htmlBody = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="background: linear-gradient(135deg, #E6007E, #8B5CF6); padding: 20px; border-radius: 12px 12px 0 0;">
-          <h2 style="color: white; margin: 0;">New Lead from Hexa GCC Website</h2>
+          <h2 style="color: white; margin: 0;">New Lead from Hexa Website</h2>
         </div>
         <div style="background: #f9fafb; padding: 24px; border-radius: 0 0 12px 12px;">
           <table style="width: 100%; border-collapse: collapse;">
@@ -84,30 +80,6 @@ export async function POST(request: Request) {
                 ${countryLabel}
               </td>
             </tr>
-            <tr>
-              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-                <strong style="color: #374151;">Services Needed:</strong>
-              </td>
-              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #6b7280;">
-                ${(servicesNeeded ?? [])?.length > 0 ? (servicesNeeded ?? [])?.join(', ') : 'Not specified'}
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-                <strong style="color: #374151;">Accounting Software:</strong>
-              </td>
-              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #6b7280;">
-                ${accountingSoftware || 'Not specified'}
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-                <strong style="color: #374151;">Monthly Transactions:</strong>
-              </td>
-              <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #6b7280;">
-                ${transactionsRange || 'Not specified'}
-              </td>
-            </tr>
             ${message ? `
             <tr>
               <td colspan="2" style="padding: 12px 0;">
@@ -121,7 +93,7 @@ export async function POST(request: Request) {
           </table>
           <div style="margin-top: 20px; padding: 16px; background: #E6007E10; border-radius: 8px;">
             <p style="margin: 0; color: #374151; font-size: 14px;">
-              <strong>Next Step:</strong> Respond to this lead within 24 business hours with a country-specific service plan.
+              <strong>Next Step:</strong> Reply within one business day with an indicative scope and team shape.
             </p>
           </div>
         </div>

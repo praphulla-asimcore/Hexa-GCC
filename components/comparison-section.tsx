@@ -31,7 +31,7 @@ const comparisonData = [
   },
   {
     aspect: 'Cost',
-    hexa: { value: '40-60% savings', good: true },
+    hexa: { value: 'Meaningfully lower than a local hire', good: true },
     freelancer: { value: 'Low but risky', neutral: true },
     bigFirm: { value: 'Premium rates', bad: true },
   },

@@ -5,8 +5,8 @@ import StickyCTA from '@/components/sticky-cta';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Hexa Social | Life at Hexa GCC',
-  description: 'Discover the culture, team, and global presence of Hexa GCC. See our offices, team events, and celebrations across Philippines, Malaysia, and Nepal.',
+  title: 'Hexa Social | Life at Hexa',
+  description: 'Discover the culture, team, and global presence of Hexa. See our offices, team events, and celebrations.',
 };
 
 export default function HexaSocialPage() {
@@ -43,9 +43,8 @@ export default function HexaSocialPage() {
                 Our <span className="gradient-text">Headquarters</span>
               </h2>
               <p className="text-gray-600 text-lg mb-6">
-                Located in Kathmandu, Nepal, our state-of-the-art facility serves as the operational 
-                hub for finance teams across 8 countries. Built for collaboration, security, and 
-                round-the-clock delivery.
+                Our state-of-the-art facility serves as the operational hub for our finance,
+                technology, and people teams. Built for collaboration, security, and round-the-clock delivery.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gray-50 rounded-xl p-4 text-center">
@@ -69,7 +68,7 @@ export default function HexaSocialPage() {
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/hexa-office.jpg"
-                alt="Hexa GCC Headquarters in Kathmandu, Nepal"
+                alt="Hexa Headquarters"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -133,20 +132,20 @@ export default function HexaSocialPage() {
               </div>
             </div>
             
-            {/* Nepal Office Team */}
+            {/* Operations Team */}
             <div className="group">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/team-photo.jpg"
-                  alt="Hexa GCC Nepal Team"
+                  alt="Hexa Operations Team"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <div className="mt-4">
-                <h3 className="font-semibold text-gray-900 text-lg">Nepal Operations Team</h3>
-                <p className="text-gray-600 text-sm">The core team driving daily finance operations</p>
+                <h3 className="font-semibold text-gray-900 text-lg">Operations Team</h3>
+                <p className="text-gray-600 text-sm">The core team driving daily delivery</p>
               </div>
             </div>
           </div>
@@ -161,34 +160,18 @@ export default function HexaSocialPage() {
               Celebrating <span className="gradient-text">Together</span>
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Our teams across the Philippines, Malaysia, and Nepal came together to 
-              celebrate another successful year of delivering excellence.
+              Our teams came together to celebrate another successful year of delivering excellence.
             </p>
           </div>
-          
+
           <div className="relative aspect-[3/4] md:aspect-[4/5] max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/year-end-dinner.jpg"
-              alt="Hexa GCC Year End Dinner - Teams across Philippines, Malaysia, and Nepal"
+              alt="Hexa Year End Dinner"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 600px"
             />
-          </div>
-          
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-3 text-center">
-              <span className="text-2xl">🇵🇭</span>
-              <span className="text-white ml-2 font-medium">Philippines</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-3 text-center">
-              <span className="text-2xl">🇲🇾</span>
-              <span className="text-white ml-2 font-medium">Malaysia</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-3 text-center">
-              <span className="text-2xl">🇳🇵</span>
-              <span className="text-white ml-2 font-medium">Nepal</span>
-            </div>
           </div>
         </div>
       </section>
@@ -200,7 +183,7 @@ export default function HexaSocialPage() {
             Ready to Be <span className="gradient-text">Part of the Team</span>?
           </h2>
           <p className="text-gray-600 text-lg mb-8">
-            Whether you&apos;re looking to outsource your finance operations or join 
+            Whether you&apos;re looking to build a function with us or join
             our growing team, we&apos;d love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -213,7 +196,7 @@ export default function HexaSocialPage() {
               Book a Consultation
             </a>
             <a
-              href="mailto:praphulla@hexamatics.com?subject=Careers at Hexa GCC"
+              href="mailto:praphulla@hexamatics.com?subject=Careers at Hexa"
               className="border-2 border-[#E6007E] text-[#E6007E] px-8 py-4 font-semibold rounded-lg hover:bg-[#E6007E]/5 transition-colors"
             >
               Contact Us

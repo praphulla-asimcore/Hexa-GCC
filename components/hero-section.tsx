@@ -1,30 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, FileText, CheckCircle, ShieldCheck } from 'lucide-react';
+import { Calendar, ArrowRight, CheckCircle } from 'lucide-react';
 
 const BOOKING_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI';
 
-const operatingSignals = [
-  { label: 'Intelligence layer', value: 'Built in-house', tone: 'bg-[#e6007e]' },
-  { label: 'Human oversight', value: 'Always in control', tone: 'bg-[#f1c453]' },
-  { label: 'Country playbooks', value: '08 markets', tone: 'bg-[#83b8a3]' },
-];
-
-const countries = ['Singapore', 'Malaysia', 'Indonesia', 'Philippines', 'United Kingdom', 'United States', 'Australia', 'Canada'];
-
-// Every badge loops on the same period so each one keeps its offset in the wave forever,
-// not just on its first pass — see the `delay` (phase) vs `repeatDelay` (period) split below.
-const CYCLE_DURATION = 1.6;
-const STAGGER = 0.22;
-const CYCLE_GAP = 1;
-const CYCLE_PERIOD = CYCLE_DURATION + CYCLE_GAP + (countries.length - 1) * STAGGER;
-const REPEAT_DELAY = CYCLE_PERIOD - CYCLE_DURATION;
+const chips = ['5,000+ professionals placed', 'ISO 27001 · ISO 9001 certified', 'ACCA Approved Employer'];
 
 export default function HeroSection() {
-  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
-
   return (
     <section className="relative min-h-[760px] overflow-hidden bg-[#17171a] text-white">
       {/* Video Background */}
@@ -45,7 +28,7 @@ export default function HeroSection() {
       {/* Abstract Background Pattern */}
       <div className="absolute inset-0 z-[1] grid-paper opacity-70" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
         <div className="pt-16">
           <div className="text-left max-w-4xl">
           {/* Badge */}
@@ -55,8 +38,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 text-white/70 text-xs font-semibold uppercase tracking-[.16em] mb-8"
           >
-            <ShieldCheck className="w-4 h-4 text-[#E6007E]" />
-            Finance · Technology · People — one governance model
+            Established 2002
           </motion.div>
 
           {/* Main Headline */}
@@ -66,8 +48,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-[5.4rem] font-semibold text-white mb-7 leading-[.98] tracking-[-.04em] max-w-3xl"
           >
-            The back office behind{' '}
-            <span className="text-[#E6007E]">international growth.</span>
+            One shared services partner for finance, technology and people operations.
           </motion.h1>
 
           {/* Subheadline */}
@@ -77,24 +58,23 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-white/65 max-w-xl mb-10 leading-relaxed"
           >
-            Hexa runs finance, technology, and people operations for companies operating across borders — under one governance model, with one accountable owner.
+            Named professionals, employed by us, selected and directed by you. Working in your systems,
+            in your meetings, on your outcomes.
           </motion.p>
 
-          {/* Credibility signals */}
+          {/* Credibility chips */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap gap-x-6 gap-y-3 mb-12"
           >
-            {operatingSignals.map((signal) => {
-              return (
-                <div key={signal.label} className="flex items-center gap-2 text-white/75 text-sm">
-                  <CheckCircle className="w-4 h-4 text-[#E6007E]" />
-                  <span>{signal.label}: {signal.value}</span>
-                </div>
-              );
-            })}
+            {chips.map((chip) => (
+              <div key={chip} className="flex items-center gap-2 text-white/75 text-sm">
+                <CheckCircle className="w-4 h-4 text-[#E6007E]" />
+                <span>{chip}</span>
+              </div>
+            ))}
           </motion.div>
 
           {/* CTAs */}
@@ -111,57 +91,15 @@ export default function HeroSection() {
               className="gradient-bg px-7 py-4 text-white font-semibold rounded-full hover:bg-[#b80065] transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
               <Calendar className="w-5 h-5" />
-              Book a 20-min Consultation
+              Book a 20-minute consultation
             </a>
             <a
-              href="#contact"
+              href="/how-it-works"
               className="px-7 py-4 text-white font-semibold rounded-full border border-white/25 hover:bg-white/10 transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
-              <FileText className="w-5 h-5" />
-              Get a Country-Specific Plan
+              See how it works
+              <ArrowRight className="w-5 h-5" />
             </a>
-          </motion.div>
-
-          {/* Countries */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-16"
-          >
-            <p className="text-white/40 text-xs uppercase tracking-[.14em] mb-4">Operational Excellence - Delivered Globally</p>
-            <div className="flex flex-wrap gap-2">
-              {countries.map((country, index) => {
-                const isPaused = hoveredCountry === country;
-                return (
-                  <motion.div
-                    key={country}
-                    onHoverStart={() => setHoveredCountry(country)}
-                    onHoverEnd={() => setHoveredCountry(null)}
-                    animate={
-                      isPaused
-                        ? { opacity: 1, y: 0, scale: 1.08 }
-                        : { opacity: [0, 1, 1, 0], y: [8, 0, 0, -4], scale: [0.94, 1, 1, 0.97] }
-                    }
-                    transition={
-                      isPaused
-                        ? { duration: 0.2 }
-                        : {
-                            duration: CYCLE_DURATION,
-                            times: [0, 0.2, 0.75, 1],
-                            ease: 'easeInOut',
-                            delay: index * STAGGER,
-                            repeat: Infinity,
-                            repeatDelay: REPEAT_DELAY,
-                          }
-                    }
-                    className="px-3 py-1.5 bg-white/5 rounded-full border border-white/10 hover:border-[#E6007E]/50 hover:bg-[#E6007E]/10 cursor-default transition-colors"
-                  >
-                    <span className="text-white/90 text-sm font-medium">{country}</span>
-                  </motion.div>
-                );
-              })}
-            </div>
           </motion.div>
           </div>
       </div>

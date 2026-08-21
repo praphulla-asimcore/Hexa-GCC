@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Mail, Globe } from 'lucide-react';
+import { Mail, Award } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -12,67 +12,63 @@ export default function Footer() {
             <div className="relative w-40 h-12 mb-6">
               <Image
                 src="/logo.png"
-                alt="Hexa GCC Logo"
+                alt="Hexa Logo"
                 fill
                 className="object-contain brightness-0 invert"
               />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Hexa runs finance, technology, and people operations for companies operating across borders —
-              under one governance model, with one accountable owner.
+              Hexa is one shared services partner for finance, technology and people operations,
+              delivered under one governance model for companies operating across borders.
             </p>
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-400">
-                <MapPin className="w-5 h-5 text-[#E6007E]" />
-                <span>Kathmandu, Nepal</span>
-              </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-[#E6007E]" />
                 <a href="mailto:praphulla@hexamatics.com" className="hover:text-white transition-colors">
                   praphulla@hexamatics.com
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-gray-400">
-                <Globe className="w-5 h-5 text-[#E6007E]" />
-                <span>Operational excellence. Delivered globally.</span>
+              <div className="flex items-center gap-3 text-gray-400 text-sm">
+                <Award className="w-5 h-5 text-[#E6007E] flex-shrink-0" />
+                <span>ISO 27001 · ISO 9001 certified · ACCA Approved Employer</span>
               </div>
             </div>
           </div>
 
-          {/* Towers */}
+          {/* Capabilities */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Towers</h4>
+            <h4 className="font-semibold text-lg mb-6">Capabilities</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/finance" className="text-gray-400 hover:text-white transition-colors">
-                  Hexa Finance
+                  Finance
                 </Link>
               </li>
               <li>
                 <Link href="/technology" className="text-gray-400 hover:text-white transition-colors">
-                  Hexa Technology
+                  Technology
                 </Link>
               </li>
               <li>
                 <Link href="/people" className="text-gray-400 hover:text-white transition-colors">
-                  Hexa People
+                  People
                 </Link>
               </li>
               <li>
-                <Link href="/engagement-models" className="text-gray-400 hover:text-white transition-colors">
-                  How to Buy
+                <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">
+                  Pricing
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company & Trust */}
+          {/* Company */}
           <div>
             <h4 className="font-semibold text-lg mb-6">Company</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/operating-model" className="text-gray-400 hover:text-white transition-colors">
-                  Operating Model
+                <Link href="/how-it-works" className="text-gray-400 hover:text-white transition-colors">
+                  How It Works
                 </Link>
               </li>
               <li>
@@ -81,18 +77,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/why-nepal" className="text-gray-400 hover:text-white transition-colors">
-                  Why Nepal
+                <Link href="/markets" className="text-gray-400 hover:text-white transition-colors">
+                  Markets
                 </Link>
               </li>
               <li>
-                <Link href="/countries#countries" className="text-gray-400 hover:text-white transition-colors">
-                  Countries We Serve
+                <Link href="/clients" className="text-gray-400 hover:text-white transition-colors">
+                  Clients
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                  About Us
+                  About
                 </Link>
               </li>
             </ul>
@@ -117,23 +113,13 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Hexa GCC. All rights reserved.
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+            <p className="text-gray-500">
+              © {new Date().getFullYear()} Hexa. Established 2002.
             </p>
-            <div className="flex items-center gap-4">
-              <span className="text-xs text-gray-600">Serving:</span>
-              <div className="flex gap-2 text-xl">
-                <span title="Singapore">🇸🇬</span>
-                <span title="Malaysia">🇲🇾</span>
-                <span title="Indonesia">🇮🇩</span>
-                <span title="Philippines">🇵🇭</span>
-                <span title="UK">🇬🇧</span>
-                <span title="USA">🇺🇸</span>
-                <span title="Australia">🇦🇺</span>
-                <span title="Canada">🇨🇦</span>
-              </div>
-            </div>
+            <p className="text-gray-500">
+              Core markets: Malaysia · Singapore · Australia · Indonesia. Other jurisdictions on request.
+            </p>
           </div>
         </div>
       </div>

@@ -1,22 +1,21 @@
 import { Metadata } from 'next';
 import Header from '@/components/header';
-import HeroSection from '@/components/hero-section';
-import PainPointsSection from '@/components/pain-points-section';
+import AboutContent from './about-content';
 import LeadForm from '@/components/lead-form';
 import Footer from '@/components/footer';
 import StickyCTA from '@/components/sticky-cta';
 
 export const metadata: Metadata = {
-  title: 'About Us | Hexa GCC - Finance & Accounting Global Capability Center',
-  description: 'Learn about Hexa GCC - a Finance & Accounting Global Capability Center serving 8 countries with country-specific compliance expertise.',
+  title: 'About Hexa | Established 2002',
+  description: 'Hexa has operated since 2002. Three centres of excellence — finance, technology, and people — under one accountable owner.',
 };
 
 export default function AboutPage() {
   return (
     <main>
       <Header />
-      <HeroSection />
-      <PainPointsSection />
+      <div className="h-20 bg-[#080818]" />
+      <AboutContent />
       <LeadForm />
       <Footer />
       <StickyCTA />

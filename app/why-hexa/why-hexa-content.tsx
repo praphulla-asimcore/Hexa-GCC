@@ -60,7 +60,7 @@ const whyHexaAdvantages = [
   {
     icon: DollarSign,
     title: 'Cost Efficiency',
-    description: '40-60% cost savings compared to in-house hires, without compromising on quality or accountability.',
+    description: 'Meaningfully lower cost than in-house hires, without compromising on quality or accountability.',
     color: 'text-green-600',
     bgColor: 'bg-green-500/10',
   },
@@ -133,7 +133,7 @@ export default function WhyHexaContent() {
             <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
               <p>
                 Founded in 2002 as a telecom consultancy firm, Hexa Business has grown into a trusted 
-                operating partner for companies across the BPO, Telecommunications, Technology, and Banking sectors.
+                operating partner for companies across the Telecommunications, Technology, and Banking sectors.
               </p>
               <p>
                 Over the years, we expanded beyond advisory into end-to-end HR and talent solutions — 
@@ -188,11 +188,11 @@ export default function WhyHexaContent() {
               </p>
               <div className="bg-white rounded-2xl p-8 border border-gray-200 mt-8">
                 <p className="text-xl font-semibold text-gray-900 mb-4">
-                  This is not outsourced accounting.
+                  This is not a vendor relationship.
                 </p>
                 <p className="text-lg text-gray-700">
-                  It is <span className="gradient-text font-bold">finance infrastructure</span> — 
-                  built remotely, operated professionally, and integrated into your business.
+                  It is <span className="gradient-text font-bold">an embedded team</span> —
+                  employed by us, directed by you, and integrated into your business.
                 </p>
               </div>
             </div>
@@ -233,7 +233,6 @@ export default function WhyHexaContent() {
               </div>
               <div>
                 <p className="text-lg font-bold text-gray-900">Praphulla Subedi</p>
-                <p className="text-gray-600 text-sm">Kathmandu, Nepal</p>
               </div>
             </div>
           </motion.div>

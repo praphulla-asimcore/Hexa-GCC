@@ -5,12 +5,12 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://hnpl.business'),
-  title: 'Hexa | Finance, Technology & People Operations',
-  description: 'Hexa runs finance, technology, and people operations for companies operating across borders — under one governance model, with one accountable owner.',
-  keywords: 'shared services centre, GBS, outsourced accounting, finance operations, IT delivery, HR operations, payroll, GCC, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping',
+  title: 'Hexa | Shared Services Partner for Finance, Technology and People Operations',
+  description: 'One shared services partner delivering finance, technology and people operations under one governance model. ISO 27001 and ISO 9001 certified. ACCA Approved Employer. Established 2002.',
+  keywords: 'shared services partner, embedded team, finance operations, technology delivery, people operations, payroll, ISO 27001, ACCA approved employer, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping',
   openGraph: {
-    title: 'Hexa | Finance, Technology & People Operations',
-    description: 'One centre, three towers, one governance model — finance, technology, and people operations delivered with human oversight and accountable governance.',
+    title: 'Hexa | Shared Services Partner for Finance, Technology and People Operations',
+    description: 'One shared services partner delivering finance, technology and people operations under one governance model. ISO 27001 and ISO 9001 certified. ACCA Approved Employer. Established 2002.',
     images: ['/og-image.png'],
     type: 'website',
   },
@@ -23,16 +23,12 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Hexa GCC',
+  name: 'Hexa',
   url: 'https://hnpl.business',
   logo: 'https://hnpl.business/logo.png',
-  description: 'Hexa runs finance, technology, and people operations for companies operating across borders — under one governance model, with one accountable owner.',
+  description: 'One shared services partner delivering finance, technology and people operations under one governance model. ISO 27001 and ISO 9001 certified. ACCA Approved Employer. Established 2002.',
   email: 'praphulla@hexamatics.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Kathmandu',
-    addressCountry: 'NP',
-  },
+  foundingDate: '2002',
 };
 
 export default function RootLayout({

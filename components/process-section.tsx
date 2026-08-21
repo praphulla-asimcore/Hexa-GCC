@@ -2,38 +2,57 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Search, ArrowRightLeft, PlayCircle, CheckSquare, BarChart3, Wrench } from 'lucide-react';
+import { Search, FileSearch, Puzzle, Eye, RefreshCw, PlayCircle, RefreshCcw, Wrench } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
-    title: 'Understand the operating requirement',
-    description: 'We map the business objective, current systems, country requirements, delivery constraints, and success measures.',
+    week: 'Week 1-2',
+    title: 'Discovery and scope definition',
+    description: 'Current state, systems, entities, volumes, statutory calendar, constraints and success measures. Output is a signed scope document.',
     icon: Search,
   },
   {
     number: '02',
-    title: 'Design the capability pod',
-    description: 'The right specialists, lead, workflows, tools, and review model are assembled around the work.',
-    icon: ArrowRightLeft,
+    week: 'Week 2-4',
+    title: 'Process mapping and SOP capture',
+    description: 'Every in-scope process documented to task level, with controls, approvals and exceptions. Output is a process manual you own.',
+    icon: FileSearch,
   },
   {
     number: '03',
-    title: 'Activate the delivery cadence',
-    description: 'The pod begins operating with defined milestones, communication rhythms, workflow controls, and named ownership.',
-    icon: PlayCircle,
+    week: 'Week 3-6',
+    title: 'Pod design and recruitment',
+    description: 'Roles, qualifications, lead and review model defined. You interview and select. Nobody joins the pod without your approval.',
+    icon: Puzzle,
   },
   {
     number: '04',
-    title: 'Review, approve, and govern',
-    description: 'Structured review cycles, approval workflows, documentation, and direct stakeholder visibility keep delivery accountable.',
-    icon: CheckSquare,
+    week: 'Week 5-8',
+    title: 'Shadow',
+    description: 'Your team executes, our team observes and documents variance against the SOP.',
+    icon: Eye,
   },
   {
     number: '05',
-    title: 'Measure and improve',
-    description: 'Performance is tracked against agreed outcomes, priorities are aligned, and the capability evolves as the business grows.',
-    icon: BarChart3,
+    week: 'Week 7-10',
+    title: 'Reverse shadow',
+    description: 'Our team executes, your team reviews. Errors are caught here, not in production.',
+    icon: RefreshCcw,
+  },
+  {
+    number: '06',
+    week: 'Week 9-12',
+    title: 'Go-live and hypercare',
+    description: 'Full handover with daily checkpoint calls through the first close cycle, then weekly.',
+    icon: PlayCircle,
+  },
+  {
+    number: '07',
+    week: 'Ongoing',
+    title: 'Steady state and governance',
+    description: 'Weekly operations call, monthly service review, quarterly business review against a documented improvement target.',
+    icon: RefreshCw,
   },
 ];
 
@@ -58,7 +77,7 @@ export default function ProcessSection() {
             How a Hexa capability becomes operational
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            From requirement to reliable delivery, every capability is designed with clear ownership, review, documentation, and measurable cadence.
+            Seven stages, a published timeline, and a named owner at each one. A ten-person finance transition runs eight to twelve weeks.
           </p>
         </motion.div>
 
@@ -79,10 +98,11 @@ export default function ProcessSection() {
                 >
                   <div className={`flex-1 ${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
                     <div className={`bg-white border border-gray-200 rounded-2xl p-6 inline-block w-full max-w-md ${isEven ? 'lg:ml-auto' : 'lg:mr-auto'}`}>
-                      <div className={`flex items-center gap-4 mb-3 ${isEven ? 'lg:flex-row-reverse' : ''}`}>
+                      <div className={`flex items-center gap-4 mb-1 ${isEven ? 'lg:flex-row-reverse' : ''}`}>
                         <span className="text-3xl font-bold gradient-text">{step?.number}</span>
                         <h3 className="text-lg font-bold text-gray-900">{step?.title}</h3>
                       </div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">{step?.week}</p>
                       <p className="text-gray-800">{step?.description}</p>
                     </div>
                   </div>

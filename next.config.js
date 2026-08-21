@@ -19,6 +19,26 @@ const nextConfig = {
         destination: '/finance',
         permanent: true,
       },
+      {
+        source: '/countries',
+        destination: '/markets',
+        permanent: true,
+      },
+      {
+        source: '/engagement-models',
+        destination: '/pricing',
+        permanent: true,
+      },
+      {
+        source: '/operating-model',
+        destination: '/how-it-works',
+        permanent: true,
+      },
+      {
+        source: '/why-nepal',
+        destination: '/why-hexa',
+        permanent: true,
+      },
     ];
   },
 };

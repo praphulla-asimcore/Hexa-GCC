@@ -4,13 +4,28 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
 
 const WHATSAPP_URL = 'https://wa.me/9779851338099';
+
+const capabilities = [
+  { label: 'Finance', href: '/finance' },
+  { label: 'Technology', href: '/technology' },
+  { label: 'People', href: '/people' },
+];
+
+const navItems = [
+  { label: 'How it works', href: '/how-it-works' },
+  { label: 'Markets', href: '/markets' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Trust', href: '/trust' },
+  { label: 'About', href: '/about' },
+];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,14 +35,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { label: 'Finance', href: '/finance' },
-    { label: 'Technology', href: '/technology' },
-    { label: 'People', href: '/people' },
-    { label: 'Countries', href: '/countries#countries' },
-    { label: 'Why Hexa', href: '/why-hexa' },
-    { label: 'About', href: '/about' },
-  ];
+  const linkClass = `text-[13px] font-medium transition-colors hover:text-[#E6007E] ${isScrolled ? 'text-[#17171a]/70' : 'text-white/75'}`;
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#f6f3ef]/95 text-[#17171a] shadow-sm backdrop-blur-md' : 'bg-[#17171a]/80 text-white backdrop-blur-md'}`}>
@@ -38,7 +46,7 @@ export default function Header() {
             <div className="relative w-40 h-12">
               <Image
                 src="/logo.png"
-                alt="Hexa GCC Logo"
+                alt="Hexa Logo"
                 fill
                 className="object-contain"
                 priority
@@ -48,13 +56,42 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems?.map((item) => (
-              <Link
-                key={item?.label}
-                href={item?.href ?? '#'}
-                className={`text-[13px] font-medium transition-colors hover:text-[#E6007E] ${isScrolled ? 'text-[#17171a]/70' : 'text-white/75'}`}
-              >
-                {item?.label}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsCapabilitiesOpen(true)}
+              onMouseLeave={() => setIsCapabilitiesOpen(false)}
+            >
+              <button className={`flex items-center gap-1 ${linkClass}`}>
+                Capabilities
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+              <AnimatePresence>
+                {isCapabilitiesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 pt-3"
+                  >
+                    <div className="bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[160px]">
+                      {capabilities.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#E6007E] transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            {navItems.map((item) => (
+              <Link key={item.label} href={item.href} className={linkClass}>
+                {item.label}
               </Link>
             ))}
           </nav>
@@ -94,16 +131,29 @@ export default function Header() {
             className="md:hidden bg-[#f6f3ef] border-t shadow-lg text-[#17171a]"
           >
             <div className="px-4 py-6 space-y-4">
-              {navItems?.map((item) => (
+              <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">Capabilities</p>
+              {capabilities.map((item) => (
                 <Link
-                  key={item?.label}
-                  href={item?.href ?? '#'}
+                  key={item.label}
+                  href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-gray-700 font-medium hover:text-[#E6007E]"
+                  className="block text-gray-700 font-medium hover:text-[#E6007E] pl-2"
                 >
-                  {item?.label}
+                  {item.label}
                 </Link>
               ))}
+              <div className="border-t border-gray-200 pt-4 space-y-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-gray-700 font-medium hover:text-[#E6007E]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
               <div className="pt-4 space-y-3">
                 <a
                   href={WHATSAPP_URL}

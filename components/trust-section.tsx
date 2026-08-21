@@ -7,7 +7,7 @@ import { Shield, Layers, Users, Clock, Lock, FileCheck, Eye, UserCheck, Award } 
 const certifications = [
   { label: 'ISO 27001', caption: 'Information security management' },
   { label: 'ISO 9001', caption: 'Quality management systems' },
-  { label: 'ACCA Approved Employer', caption: 'Recognized training & development standard' },
+  { label: 'ACCA Approved Employer', caption: 'Ref 2000003846 · valid to December 2029' },
 ];
 
 const trustItems = [

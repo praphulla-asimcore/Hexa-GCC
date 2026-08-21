@@ -5,15 +5,15 @@ import Footer from '@/components/footer';
 import StickyCTA from '@/components/sticky-cta';
 
 export const metadata: Metadata = {
-  title: 'Hexa Trust & Security | ISO 27001, ISO 9001, Data Handling',
-  description: 'ISO 27001, ISO 9001, and ACCA Approved Employer status, data residency architecture, access controls, SLAs, and facility continuity.',
+  title: 'Hexa Trust & Security | ISO 27001, ISO 9001, Co-Employment Position',
+  description: 'Certification, data residency, ownership model, published SLAs, professional indemnity cover, and the co-employment position for Hexa\'s embedded-team model.',
 };
 
 export default function TrustPage() {
   return (
     <main>
       <Header />
-      <div className="h-20 bg-[#17171a]" />
+      <div className="h-20 bg-[#080818]" />
       <TrustPageContent />
       <Footer />
       <StickyCTA />
