@@ -2,13 +2,20 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Shield, Layers, Users, Clock, Lock, FileCheck, Eye, UserCheck } from 'lucide-react';
+import { Shield, Layers, Users, Clock, Lock, FileCheck, Eye, UserCheck, Award } from 'lucide-react';
+
+const certifications = [
+  { label: 'ISO 27001', caption: 'Information security management' },
+  { label: 'ISO 9001', caption: 'Quality management systems' },
+  { label: 'ACCA Approved Employer', caption: 'Recognized training & development standard' },
+];
 
 const trustItems = [
   {
     icon: Lock,
     title: 'Security & Confidentiality',
     points: [
+      'Work performed directly on client systems — data never leaves your environment',
       'NDA-protected engagements',
       'Least-privilege access controls',
       'Full audit trail on all transactions',
@@ -39,6 +46,7 @@ const trustItems = [
     icon: Clock,
     title: 'SLAs & Timelines',
     points: [
+      'Live in 15 days from contract signing',
       'Month-end close: 5-7 business days',
       'Query response: within 24 hours',
       'Reconciliations: weekly cadence',
@@ -66,9 +74,29 @@ export default function TrustSection() {
             Accountability is a system, not a promise.
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Your data security and operational excellence are non-negotiable. 
+            Your data security and operational excellence are non-negotiable.
             Here&apos;s how we ensure both.
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-wrap gap-4 mb-10"
+        >
+          {certifications?.map((cert) => (
+            <div
+              key={cert.label}
+              className="flex items-center gap-3 bg-white/5 border border-white/15 rounded-xl px-5 py-3"
+            >
+              <Award className="w-6 h-6 text-[#E6007E] flex-shrink-0" />
+              <div>
+                <p className="text-white font-semibold text-sm leading-tight">{cert.label}</p>
+                <p className="text-gray-400 text-xs">{cert.caption}</p>
+              </div>
+            </div>
+          ))}
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 border border-white/15 relative">

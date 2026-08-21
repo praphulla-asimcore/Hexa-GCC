@@ -18,7 +18,7 @@ const whyHexaDifferentiators = [
   {
     number: '3',
     title: 'Infrastructure Included',
-    description: 'We provide the office, HR, payroll, supervision, governance, and performance tracking — so you don\'t carry operational overhead.',
+    description: 'A 120-person delivery center with 24/7 security and CCTV surveillance, dual network connectivity, backup power supply, and a round-the-clock operational office — so you don\'t carry operational overhead.',
   },
   {
     number: '4',
@@ -211,6 +211,31 @@ export default function WhyHexaContent() {
                 <div className="text-gray-600 text-sm">{stat?.label}</div>
               </div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              Led by <span className="gradient-text">Accountable People</span>
+            </h2>
+            <div className="flex items-center gap-5 bg-gray-50 rounded-2xl p-6 border border-gray-200 max-w-md">
+              <div className="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-xl font-bold">PS</span>
+              </div>
+              <div>
+                <p className="text-lg font-bold text-gray-900">Praphulla Subedi</p>
+                <p className="text-gray-600 text-sm">Kathmandu, Nepal</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

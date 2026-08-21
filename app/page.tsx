@@ -11,6 +11,7 @@ import StickyCTA from '@/components/sticky-cta';
 import FinancePlatformSection from '@/components/finance-platform-section';
 import OutcomesSection from '@/components/outcomes-section';
 import IntelligenceTeaserSection from '@/components/intelligence-teaser-section';
+import CaseStudiesSection from '@/components/case-studies-section';
 
 export const metadata: Metadata = {
   title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
@@ -24,6 +25,7 @@ export default function Home() {
       <HeroSection />
       <FinancePlatformSection />
       <OutcomesSection />
+      <CaseStudiesSection />
       <ServicesSection />
       <IntelligenceTeaserSection />
       <VerticalCountrySelector />
