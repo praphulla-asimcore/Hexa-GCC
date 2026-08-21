@@ -72,8 +72,8 @@ export default function ProcessSection() {
               return (
                 <motion.div
                   key={step?.number}
-                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`lg:flex items-center gap-8 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                 >

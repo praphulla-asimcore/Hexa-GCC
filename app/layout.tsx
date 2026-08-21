@@ -4,7 +4,7 @@ import './globals.css';
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://hnpl.business'),
   title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
   description: 'Hexa builds and operates country-aware finance infrastructure for companies scaling across markets.',
   keywords: 'outsourced accounting, finance operations, GCC, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping, payroll',
@@ -20,6 +20,21 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Hexa GCC',
+  url: 'https://hnpl.business',
+  logo: 'https://hnpl.business/logo.png',
+  description: 'Hexa builds and operates country-aware finance infrastructure for companies scaling across markets.',
+  email: 'praphulla@hexamatics.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Kathmandu',
+    addressCountry: 'NP',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -29,6 +44,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script src="https://apps.abacus.ai/chatllm/appllm-lib.js" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <style dangerouslySetInnerHTML={{ __html: `[data-hydration-error] { display: none !important; }` }} />
       </head>
       <body className="antialiased">
