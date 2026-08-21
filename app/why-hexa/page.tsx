@@ -8,7 +8,7 @@ import WhyHexaContent from './why-hexa-content';
 
 export const metadata: Metadata = {
   title: 'Why Hexa | Hexa GCC - Finance & Accounting Global Capability Center',
-  description: 'Discover why Hexa GCC is the right choice for your finance operations. Learn about our Nepal advantage, differentiators, and trust guarantees.',
+  description: 'Discover why Hexa GCC is the right choice for your finance operations. Learn about our delivery advantage, differentiators, and trust guarantees.',
 };
 
 export default function WhyHexaPage() {

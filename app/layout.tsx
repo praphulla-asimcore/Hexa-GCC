@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000'),
   title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
   description: 'Hexa builds and operates country-aware finance infrastructure for companies scaling across markets.',
-  keywords: 'outsourced accounting, finance operations, GCC, Nepal, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping, payroll',
+  keywords: 'outsourced accounting, finance operations, GCC, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping, payroll',
   openGraph: {
     title: 'Hexa Finance Operations | Country-Aware Finance Infrastructure',
     description: 'Country-aware finance operations with human oversight, internal intelligence, and accountable governance.',

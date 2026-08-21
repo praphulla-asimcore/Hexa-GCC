@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, FileText, CheckCircle, ShieldCheck } from 'lucide-react';
 
@@ -11,7 +12,19 @@ const operatingSignals = [
   { label: 'Country playbooks', value: '08 markets', tone: 'bg-[#83b8a3]' },
 ];
 
+const countries = ['Singapore', 'Malaysia', 'Indonesia', 'Philippines', 'United Kingdom', 'United States', 'Australia', 'Canada'];
+
+// Every badge loops on the same period so each one keeps its offset in the wave forever,
+// not just on its first pass — see the `delay` (phase) vs `repeatDelay` (period) split below.
+const CYCLE_DURATION = 1.6;
+const STAGGER = 0.22;
+const CYCLE_GAP = 1;
+const CYCLE_PERIOD = CYCLE_DURATION + CYCLE_GAP + (countries.length - 1) * STAGGER;
+const REPEAT_DELAY = CYCLE_PERIOD - CYCLE_DURATION;
+
 export default function HeroSection() {
+  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+
   return (
     <section className="relative min-h-[760px] overflow-hidden bg-[#17171a] text-white">
       {/* Video Background */}
@@ -43,7 +56,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 text-white/70 text-xs font-semibold uppercase tracking-[.16em] mb-8"
           >
             <ShieldCheck className="w-4 h-4 text-[#E6007E]" />
-            Country-aware finance infrastructure from Nepal
+            Country-aware finance infrastructure
           </motion.div>
 
           {/* Main Headline */}
@@ -116,16 +129,38 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-16"
           >
-            <p className="text-white/40 text-xs uppercase tracking-[.14em] mb-4">Finance operations from Nepal · delivered globally</p>
+            <p className="text-white/40 text-xs uppercase tracking-[.14em] mb-4">Finance Operational Excellence - Delivered Globally</p>
             <div className="flex flex-wrap gap-2">
-              {['Singapore', 'Malaysia', 'Indonesia', 'Philippines', 'United Kingdom', 'United States', 'Australia', 'Canada', 'Nepal'].map((country) => (
-                <div
-                  key={country}
-                  className="px-3 py-1.5 bg-white/5 rounded-full border border-white/10"
-                >
-                  <span className="text-white/90 text-sm font-medium">{country}</span>
-                </div>
-              ))}
+              {countries.map((country, index) => {
+                const isPaused = hoveredCountry === country;
+                return (
+                  <motion.div
+                    key={country}
+                    onHoverStart={() => setHoveredCountry(country)}
+                    onHoverEnd={() => setHoveredCountry(null)}
+                    animate={
+                      isPaused
+                        ? { opacity: 1, y: 0, scale: 1.08 }
+                        : { opacity: [0, 1, 1, 0], y: [8, 0, 0, -4], scale: [0.94, 1, 1, 0.97] }
+                    }
+                    transition={
+                      isPaused
+                        ? { duration: 0.2 }
+                        : {
+                            duration: CYCLE_DURATION,
+                            times: [0, 0.2, 0.75, 1],
+                            ease: 'easeInOut',
+                            delay: index * STAGGER,
+                            repeat: Infinity,
+                            repeatDelay: REPEAT_DELAY,
+                          }
+                    }
+                    className="px-3 py-1.5 bg-white/5 rounded-full border border-white/10 hover:border-[#E6007E]/50 hover:bg-[#E6007E]/10 cursor-default transition-colors"
+                  >
+                    <span className="text-white/90 text-sm font-medium">{country}</span>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
           </div>

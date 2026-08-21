@@ -144,10 +144,10 @@ export default function PainPointsSection() {
                 Who We <span className="gradient-text">Are</span>
               </h2>
               <p className="text-gray-700 text-lg">
-                We specialize in building remote finance infrastructure for global firms. From our 
-                hub in Nepal, we recruit, house, and manage elite finance talent tailored to your 
-                specific requirements. We provide the physical office, the talent architecture, 
-                and the delivery model; you get a professional finance team that is built for 
+                We specialize in building remote finance infrastructure for global firms. From our
+                delivery hub, we recruit, house, and manage elite finance talent tailored to your
+                specific requirements. We provide the physical office, the talent architecture,
+                and the delivery model; you get a professional finance team that is built for
                 scale and fully integrated into your business.
               </p>
             </motion.div>
@@ -173,7 +173,7 @@ export default function PainPointsSection() {
               The Operating <span className="gradient-text">Advantage</span>
             </h2>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              A dedicated Nepal-based finance team transforms remote work into a competitive edge. 
+              A dedicated finance team transforms remote work into a competitive edge.
               By decoupling your talent search from your local geography, you gain:
             </p>
           </motion.div>

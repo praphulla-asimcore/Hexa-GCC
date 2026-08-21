@@ -42,7 +42,7 @@ const whyHexaDifferentiators = [
   },
 ];
 
-const whyNepalReasons = [
+const whyHexaAdvantages = [
   {
     icon: GraduationCap,
     title: 'Skilled Talent Pool',
@@ -53,7 +53,7 @@ const whyNepalReasons = [
   {
     icon: Clock,
     title: 'Time Zone Advantage',
-    description: 'NPT (UTC+5:45) provides overlap with APAC morning hours and European afternoon hours, enabling responsive service.',
+    description: 'Our delivery hub timezone provides overlap with APAC morning hours and European afternoon hours, enabling responsive service.',
     color: 'text-purple-600',
     bgColor: 'bg-purple-500/10',
   },
@@ -74,7 +74,7 @@ const whyNepalReasons = [
   {
     icon: Building2,
     title: 'Growing GCC Hub',
-    description: 'Nepal is emerging as a preferred destination for global capability centers in finance and accounting.',
+    description: 'Our delivery hub is part of a fast-growing ecosystem of global capability centers in finance and accounting.',
     color: 'text-amber-600',
     bgColor: 'bg-amber-500/10',
   },
@@ -308,7 +308,7 @@ export default function WhyHexaContent() {
         </div>
       </section>
 
-      {/* Why Nepal Section */}
+      {/* Why Hexa Delivery Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -320,19 +320,19 @@ export default function WhyHexaContent() {
           >
             <div className="inline-flex items-center gap-2 bg-[#E6007E]/10 rounded-full px-4 py-2 mb-4">
               <MapPin className="w-4 h-4 text-[#E6007E]" />
-              <span className="text-[#E6007E] text-sm font-medium">Our Location Advantage</span>
+              <span className="text-[#E6007E] text-sm font-medium">Our Delivery Advantage</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Why <span className="gradient-text">Nepal?</span>
+              Why <span className="gradient-text">Hexa?</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Nepal offers a unique combination of talent, timezone, and cost advantages 
+              Hexa offers a unique combination of talent, timezone, and cost advantages
               for global finance operations.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyNepalReasons?.map((reason, index) => {
+            {whyHexaAdvantages?.map((reason, index) => {
               const IconComponent = reason?.icon;
               return (
                 <motion.div

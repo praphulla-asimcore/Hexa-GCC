@@ -8,7 +8,7 @@ import StickyCTA from '@/components/sticky-cta';
 
 export const metadata: Metadata = {
   title: 'About Us | Hexa GCC - Finance & Accounting Global Capability Center',
-  description: 'Learn about Hexa GCC - Nepal-based Finance & Accounting Global Capability Center serving 8 countries with country-specific compliance expertise.',
+  description: 'Learn about Hexa GCC - a Finance & Accounting Global Capability Center serving 8 countries with country-specific compliance expertise.',
 };
 
 export default function AboutPage() {
