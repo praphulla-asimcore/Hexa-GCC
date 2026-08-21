@@ -11,6 +11,7 @@ import {
 import { countryData, type CountryData } from '@/lib/country-data';
 
 const countries = ['SG', 'MY', 'ID', 'PH', 'UK', 'US', 'AU', 'CA'];
+const expandingCountries = ['Nepal', 'Myanmar', 'Bangladesh', 'Taiwan', 'Vietnam', 'Sri Lanka'];
 
 export default function SidebarCountrySelector() {
   const [selectedCountry, setSelectedCountry] = useState<string>('SG');
@@ -257,6 +258,32 @@ export default function SidebarCountrySelector() {
             </AnimatePresence>
           </div>
         </div>
+
+        {/* Expanding Markets */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-10 text-center"
+        >
+          <p className="text-gray-500 text-sm mb-4">Also expanding into</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {expandingCountries?.map((country) => (
+              <span
+                key={country}
+                className="text-sm bg-white text-gray-700 px-4 py-2 rounded-full border border-gray-200"
+              >
+                {country}
+              </span>
+            ))}
+            <a
+              href="#contact"
+              className="text-sm bg-[#E6007E]/10 text-[#E6007E] px-4 py-2 rounded-full border border-[#E6007E]/20 hover:bg-[#E6007E]/20 transition-colors font-medium"
+            >
+              More.... Contacts for consultation
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
