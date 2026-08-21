@@ -51,17 +51,19 @@ export default function TrustSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="py-20 hero-gradient">
+    <section className="py-28 hero-gradient text-white relative overflow-hidden">
+      <div className="absolute inset-0 grid-paper opacity-40" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-left mb-14 max-w-3xl relative"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Trust & <span className="gradient-text">Risk Reduction</span>
+          <p className="eyebrow mb-4">Built for scrutiny</p>
+          <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white mb-5">
+            Accountability is a system, not a promise.
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Your data security and operational excellence are non-negotiable. 
@@ -69,7 +71,7 @@ export default function TrustSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 border border-white/15 relative">
           {trustItems?.map((item, index) => {
             const IconComponent = item?.icon;
             return (
@@ -78,9 +80,9 @@ export default function TrustSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-colors"
+                className="bg-[#17171a] p-7 hover:bg-[#242427] transition-colors"
               >
-                <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
+                <div className="w-11 h-11 bg-[#E6007E] flex items-center justify-center mb-5">
                   {IconComponent && <IconComponent className="w-6 h-6 text-white" />}
                 </div>
                 <h3 className="text-lg font-bold text-white mb-4">{item?.title}</h3>

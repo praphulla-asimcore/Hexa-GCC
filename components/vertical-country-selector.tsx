@@ -22,17 +22,18 @@ export default function VerticalCountrySelector() {
   };
 
   return (
-    <section id="countries" className="py-20 bg-gray-50">
+    <section id="countries" className="py-28 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-left mb-12 max-w-3xl"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Country-Specific <span className="gradient-text">Compliance Expertise</span>
+          <p className="eyebrow mb-4">Local intelligence, central accountability</p>
+          <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900 mb-5">
+            The detail changes by country. The standard does not.
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Every country has unique statutory requirements. Click on a country to see 
@@ -58,8 +59,8 @@ export default function VerticalCountrySelector() {
                   onClick={() => toggleCountry(code)}
                   className={`w-full flex items-center justify-between p-5 rounded-xl font-medium transition-all ${
                     isExpanded
-                      ? 'gradient-bg text-white shadow-lg shadow-[#E6007E]/20'
-                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 shadow-sm'
+                      ? 'bg-[#17171a] text-white shadow-lg'
+                        : 'bg-[#f6f3ef] text-gray-700 hover:bg-white border border-gray-200'
                   }`}
                 >
                   <div className="flex items-center gap-4">

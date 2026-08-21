@@ -1,19 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, FileText, CheckCircle, Clock, Shield, Globe, MessageCircle } from 'lucide-react';
+import { Calendar, FileText, CheckCircle, ArrowUpRight, Activity, ShieldCheck, CircleDot } from 'lucide-react';
 
 const BOOKING_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI';
 
-const credibilityChips = [
-  { icon: CheckCircle, text: 'Month-end closed in 5-7 days' },
-  { icon: FileText, text: 'Audit-ready workpapers' },
-  { icon: Globe, text: 'Country-specific payroll & tax handling' },
+const operatingSignals = [
+  { label: 'Intelligence layer', value: 'Built in-house', tone: 'bg-[#e6007e]' },
+  { label: 'Human oversight', value: 'Always in control', tone: 'bg-[#f1c453]' },
+  { label: 'Country playbooks', value: '08 markets', tone: 'bg-[#83b8a3]' },
 ];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-[760px] overflow-hidden bg-[#17171a] text-white">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -26,28 +26,24 @@ export default function HeroSection() {
           <source src="/hexa-team-video.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay with gradient for readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/85 to-purple-900/80" />
+        <div className="absolute inset-0 bg-[#17171a]/80" />
       </div>
 
       {/* Abstract Background Pattern */}
-      <div className="absolute inset-0 overflow-hidden z-[1]">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#E6007E]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full" />
-      </div>
+      <div className="absolute inset-0 z-[1] grid-paper opacity-70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-        <div className="text-center">
+        <div className="grid lg:grid-cols-[1.02fr_.98fr] gap-14 items-center pt-16">
+          <div className="text-left">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm mb-8"
+            className="inline-flex items-center gap-2 text-white/70 text-xs font-semibold uppercase tracking-[.16em] mb-8"
           >
-            <Shield className="w-4 h-4 text-[#E6007E]" />
-            Nepal-Based Global Capability Center
+            <ShieldCheck className="w-4 h-4 text-[#E6007E]" />
+            Global capability infrastructure from Nepal
           </motion.div>
 
           {/* Main Headline */}
@@ -55,10 +51,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-[5.4rem] font-semibold text-white mb-7 leading-[.98] tracking-[-.04em] max-w-3xl"
           >
-            From Execution to{' '}
-            <span className="gradient-text">Accountability.</span>
+            The capability layer behind{' '}
+            <span className="text-[#E6007E]">ambitious growth.</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -66,27 +62,23 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10"
+            className="text-lg text-white/65 max-w-xl mb-10 leading-relaxed"
           >
-            Nepal-based Finance & Accounting operations for companies that need reliable, country-specific execution with compliance confidence.
+            Hexa builds and operates specialized finance and technology capabilities for companies scaling across markets.
           </motion.p>
 
-          {/* Credibility Chips */}
+          {/* Credibility signals */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap gap-x-6 gap-y-3 mb-12"
           >
-            {credibilityChips?.map((chip, index) => {
-              const IconComponent = chip?.icon;
+            {operatingSignals.map((signal) => {
               return (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10"
-                >
-                  {IconComponent && <IconComponent className="w-4 h-4 text-[#E6007E]" />}
-                  <span className="text-white/90 text-sm font-medium">{chip?.text}</span>
+                <div key={signal.label} className="flex items-center gap-2 text-white/75 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#E6007E]" />
+                  <span>{signal.label}: {signal.value}</span>
                 </div>
               );
             })}
@@ -97,20 +89,20 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-start gap-4"
           >
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-bg px-8 py-4 text-white font-semibold rounded-lg hover:opacity-90 transition-all shadow-xl shadow-[#E6007E]/20 flex items-center gap-2 w-full sm:w-auto justify-center"
+              className="gradient-bg px-7 py-4 text-white font-semibold rounded-full hover:bg-[#b80065] transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
               <Calendar className="w-5 h-5" />
               Book a 20-min Consultation
             </a>
             <a
               href="#contact"
-              className="px-8 py-4 text-white font-semibold rounded-lg border border-white/30 hover:bg-white/10 transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
+              className="px-7 py-4 text-white font-semibold rounded-full border border-white/25 hover:bg-white/10 transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
               <FileText className="w-5 h-5" />
               Get a Country-Specific Plan
@@ -124,12 +116,12 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-16"
           >
-            <p className="text-gray-400 text-sm mb-4">Serving companies in</p>
-            <div className="flex flex-wrap justify-center gap-3">
+            <p className="text-white/40 text-xs uppercase tracking-[.14em] mb-4">Built from Nepal · delivered globally</p>
+            <div className="flex flex-wrap gap-2">
               {['Singapore', 'Malaysia', 'Indonesia', 'Philippines', 'United Kingdom', 'United States', 'Australia', 'Canada', 'Nepal'].map((country) => (
                 <div
                   key={country}
-                  className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10"
+                  className="px-3 py-1.5 bg-white/5 rounded-full border border-white/10"
                 >
                   <span className="text-white/90 text-sm font-medium">{country}</span>
                 </div>
@@ -137,6 +129,42 @@ export default function HeroSection() {
             </div>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="relative hidden lg:block"
+        >
+          <div className="absolute -inset-6 border border-white/10 rotate-3" />
+          <div className="relative bg-[#242427] border border-white/15 p-5 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+              <div>
+                <p className="text-[10px] uppercase tracking-[.18em] text-white/40">Hexa control room</p>
+                <p className="mt-1 text-sm font-semibold">Finance Intelligence layer</p>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-[#83b8a3]"><CircleDot className="w-3 h-3" /> Live</div>
+            </div>
+            <div className="grid grid-cols-3 gap-2 mb-6">
+              {operatingSignals.map((signal) => (
+                <div key={signal.label} className="bg-white/[.06] p-3">
+                  <div className={`w-2 h-2 rounded-full ${signal.tone} mb-5`} />
+                  <p className="text-lg font-semibold">{signal.value}</p>
+                  <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">{signal.label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="bg-[#1b1b1e] p-4">
+                <div className="flex justify-between items-center mb-5"><p className="text-xs font-semibold">Operational signals</p><Activity className="w-4 h-4 text-[#E6007E]" /></div>
+              <div className="flex items-end gap-1 h-24">
+                {[42, 55, 48, 66, 62, 80, 76, 91, 87, 100].map((height, index) => <div key={index} className="flex-1 bg-[#E6007E]" style={{ height: `${height}%`, opacity: .35 + index * .06 }} />)}
+              </div>
+              <div className="flex justify-between text-[10px] text-white/35 mt-3"><span>Day 01</span><span>Day 10</span></div>
+            </div>
+            <div className="flex items-center justify-between mt-5 text-xs text-white/55"><span>People + intelligence + governance</span><ArrowUpRight className="w-4 h-4 text-[#E6007E]" /></div>
+          </div>
+        </motion.div>
+      </div>
       </div>
 
       {/* Scroll Indicator */}

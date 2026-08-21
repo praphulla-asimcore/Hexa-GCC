@@ -7,38 +7,38 @@ import { Search, ArrowRightLeft, PlayCircle, CheckSquare, BarChart3, Wrench } fr
 const steps = [
   {
     number: '01',
-    title: 'Discovery + Scope Mapping',
-    description: 'Deep dive into your current state, country requirements, pain points, and desired outcomes. We map statutory deadlines and define success metrics.',
+    title: 'Understand the operating requirement',
+    description: 'We map the business objective, current systems, country requirements, delivery constraints, and success measures.',
     icon: Search,
   },
   {
     number: '02',
-    title: 'Team Selection & Onboarding',
-    description: 'Right finance professionals, fully onboarded before day one.',
+    title: 'Design the capability pod',
+    description: 'The right specialists, lead, workflows, tools, and review model are assembled around the work.',
     icon: ArrowRightLeft,
   },
   {
     number: '03',
-    title: 'Execution Cadence',
-    description: 'Daily transaction processing, weekly reconciliations, monthly close cycles. Clear ownership with your dedicated team lead.',
+    title: 'Activate the delivery cadence',
+    description: 'The pod begins operating with defined milestones, communication rhythms, workflow controls, and named ownership.',
     icon: PlayCircle,
   },
   {
     number: '04',
-    title: 'Client Review, Approvals & Governance',
-    description: 'Structured review cycles, approval workflows, and direct communication with your finance leadership — ensuring transparency, control, and no surprises.',
+    title: 'Review, approve, and govern',
+    description: 'Structured review cycles, approval workflows, documentation, and direct stakeholder visibility keep delivery accountable.',
     icon: CheckSquare,
   },
   {
     number: '05',
-    title: 'Partnership Performance & Continuous Alignment',
-    description: 'Ongoing performance tracking, priority alignment, and process refinement — guided by your business needs, not a fixed outsourcing playbook.',
+    title: 'Measure and improve',
+    description: 'Performance is tracked against agreed outcomes, priorities are aligned, and the capability evolves as the business grows.',
     icon: BarChart3,
   },
 ];
 
 const tools = [
-  'Zoho Books', 'Xero', 'QuickBooks', 'NetSuite', 'SAP', 'Tally', 'Excel/Sheets'
+  'QuickBooks', 'Xero', 'NetSuite', 'SAP', 'React', 'Node.js', 'AWS', 'Excel/Sheets'
 ];
 
 export default function ProcessSection() {
@@ -55,19 +55,16 @@ export default function ProcessSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            How We <span className="gradient-text">Work Together</span>
+            How a Hexa capability becomes operational
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            A structured approach with clear ownership at every stage. 
-            No handoffs without documentation, no deliverables without review.
+            From requirement to reliable delivery, every capability is designed with clear ownership, review, documentation, and measurable cadence.
           </p>
         </motion.div>
 
         {/* Process Steps */}
         <div className="relative">
-          {/* Connection Line */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#E6007E] to-purple-500" />
-
           <div className="space-y-12">
             {steps?.map((step, index) => {
               const IconComponent = step?.icon;
@@ -78,29 +75,20 @@ export default function ProcessSection() {
                   initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`lg:flex items-center gap-8 ${
-                    isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  }`}
+                  className={`lg:flex items-center gap-8 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                 >
                   <div className={`flex-1 ${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
-                    <div className={`bg-white border border-gray-200 rounded-2xl p-6 inline-block w-full max-w-md ${
-                      isEven ? 'lg:ml-auto' : 'lg:mr-auto'
-                    }`}>
-                      <div className={`flex items-center gap-4 mb-3 ${
-                        isEven ? 'lg:flex-row-reverse' : ''
-                      }`}>
+                    <div className={`bg-white border border-gray-200 rounded-2xl p-6 inline-block w-full max-w-md ${isEven ? 'lg:ml-auto' : 'lg:mr-auto'}`}>
+                      <div className={`flex items-center gap-4 mb-3 ${isEven ? 'lg:flex-row-reverse' : ''}`}>
                         <span className="text-3xl font-bold gradient-text">{step?.number}</span>
                         <h3 className="text-lg font-bold text-gray-900">{step?.title}</h3>
                       </div>
                       <p className="text-gray-800">{step?.description}</p>
                     </div>
                   </div>
-
-                  {/* Center Icon */}
                   <div className="hidden lg:flex w-16 h-16 gradient-bg rounded-full items-center justify-center shadow-lg shadow-[#E6007E]/20 z-10">
                     {IconComponent && <IconComponent className="w-7 h-7 text-white" />}
                   </div>
-
                   <div className="flex-1" />
                 </motion.div>
               );
@@ -118,7 +106,7 @@ export default function ProcessSection() {
           <div className="bg-gray-50 rounded-2xl p-8 inline-block">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Wrench className="w-5 h-5 text-[#E6007E]" />
-              <h4 className="font-bold text-gray-900">We Work With Your Stack</h4>
+              <h4 className="font-bold text-gray-900">We Align With Your Stack</h4>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
               {tools?.map((tool, i) => (

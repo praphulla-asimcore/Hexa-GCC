@@ -18,8 +18,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Nepal-based Finance & Accounting Global Capability Center delivering 
-              country-specific compliance with confidence. From execution to accountability.
+              Hexa builds and operates specialized finance and technology capability centers for companies scaling across markets.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
@@ -34,7 +33,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Globe className="w-5 h-5 text-[#E6007E]" />
-                <span>Serving 8 Countries Globally</span>
+                <span>Built from Nepal. Delivered globally.</span>
               </div>
             </div>
           </div>
@@ -45,7 +44,12 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="#services" className="text-gray-400 hover:text-white transition-colors">
-                  Services
+                  Finance Operations
+                </Link>
+              </li>
+              <li>
+                <Link href="/technology-delivery" className="text-gray-400 hover:text-white transition-colors">
+                  Technology Delivery
                 </Link>
               </li>
               <li>
