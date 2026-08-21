@@ -38,8 +38,8 @@ export default function CapabilitiesSection() {
   const Icon = capability.icon;
 
   return (
-    <section id="capabilities" className="relative overflow-hidden py-28 bg-[#e9e5df] border-b border-[#ded9d3]">
-      <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(23,23,26,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(23,23,26,.06)_1px,transparent_1px)] [background-size:44px_44px]" />
+    <section id="capabilities" className="relative overflow-hidden py-28 bg-white border-b border-[#ece9e6]">
+      <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(23,23,26,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(23,23,26,.035)_1px,transparent_1px)] [background-size:44px_44px]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative grid lg:grid-cols-[.8fr_1.2fr] gap-14 items-start">
           <div className="lg:sticky lg:top-32">
@@ -74,20 +74,20 @@ export default function CapabilitiesSection() {
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: 'spring', stiffness: 260, damping: 20 }}
                     style={{ transformStyle: 'preserve-3d' }}
-                    className={`group relative min-h-[290px] overflow-hidden rounded-[2px] border p-6 sm:p-7 text-left backdrop-blur-xl transition-all duration-300 ${isActive ? 'border-white/30 bg-[#17171a]/90 text-white shadow-[16px_18px_0_rgba(230,0,126,.82)]' : 'border-white/75 bg-white/35 text-gray-900 shadow-[8px_10px_0_rgba(23,23,26,.08)] hover:border-white'}`}
+                    className={`group relative min-h-[290px] overflow-hidden rounded-[2px] border p-6 sm:p-7 text-left backdrop-blur-xl transition-all duration-300 ${isActive ? 'border-[#E6007E]/70 bg-white/90 text-gray-900 shadow-[0_18px_45px_rgba(230,0,126,.14)]' : 'border-[#e7e3df] bg-white/55 text-gray-900 shadow-[0_12px_32px_rgba(23,23,26,.06)] hover:border-[#E6007E]/35 hover:shadow-[0_18px_42px_rgba(23,23,26,.1)]'}`}
                   >
-                    <div className={`absolute inset-3 translate-x-2 translate-y-2 border ${isActive ? 'border-[#E6007E]/35' : 'border-white/55'} pointer-events-none`} style={{ transform: 'translateZ(-18px)' }} />
-                    <div className={`absolute -right-12 -top-12 h-40 w-40 rotate-45 border ${isActive ? 'border-[#E6007E]/35' : 'border-gray-900/10'} pointer-events-none`} style={{ transform: 'translateZ(12px) rotate(45deg)' }} />
+                    <div className={`absolute inset-3 translate-x-2 translate-y-2 border ${isActive ? 'border-[#E6007E]/30' : 'border-[#e7e3df]'} pointer-events-none`} style={{ transform: 'translateZ(-18px)' }} />
+                    <div className={`absolute -right-12 -top-12 h-40 w-40 rotate-45 border ${isActive ? 'border-[#E6007E]/35' : 'border-[#17171a]/[.08]'} pointer-events-none`} style={{ transform: 'translateZ(12px) rotate(45deg)' }} />
                     <div className="relative flex items-start justify-between mb-12" style={{ transform: 'translateZ(28px)' }}>
                       <span className={`text-xs font-semibold tracking-[.16em] ${isActive ? 'text-white/45' : 'text-gray-400'}`}>0{key === 'finance' ? '1' : '2'}</span>
-                      <span className={`flex h-12 w-12 items-center justify-center ${isActive ? item.accent : 'bg-[#17171a]'} shadow-[4px_4px_0_rgba(23,23,26,.16)]`}><ItemIcon className="h-5 w-5 text-white" /></span>
+                      <span className={`flex h-12 w-12 items-center justify-center ${isActive ? item.accent : 'bg-[#17171a]'} shadow-[4px_4px_0_rgba(23,23,26,.12)]`}><ItemIcon className="h-5 w-5 text-white" /></span>
                     </div>
                     <div className="relative" style={{ transform: 'translateZ(22px)' }}>
-                      <p className={`mb-2 text-xs font-semibold uppercase tracking-[.14em] ${isActive ? 'text-[#ff8ac5]' : 'text-[#E6007E]'}`}>{item.eyebrow}</p>
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-[.14em] text-[#E6007E]">{item.eyebrow}</p>
                       <h3 className="text-2xl font-semibold tracking-tight">{item.label}</h3>
                       <p className={`mt-3 max-w-xs text-sm leading-relaxed ${isActive ? 'text-white/60' : 'text-gray-500'}`}>{item.outcomes[0]}</p>
                     </div>
-                    <span className={`absolute bottom-6 right-6 text-xs font-semibold uppercase tracking-wider ${isActive ? 'text-white/70' : 'text-gray-500'}`} style={{ transform: 'translateZ(30px)' }}>{isActive ? 'Selected' : 'Select'} <span className="ml-1 text-base">↗</span></span>
+                    <span className={`absolute bottom-6 right-6 text-xs font-semibold uppercase tracking-wider ${isActive ? 'text-[#E6007E]' : 'text-gray-500'}`} style={{ transform: 'translateZ(30px)' }}>{isActive ? 'Selected' : 'Select'} <span className="ml-1 text-base">↗</span></span>
                   </motion.button>
                 );
               })}
@@ -98,7 +98,7 @@ export default function CapabilitiesSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
-              className="mt-5 border border-white/75 bg-white/45 p-7 sm:p-9 shadow-[8px_10px_0_rgba(23,23,26,.06)] backdrop-blur-xl"
+              className="mt-5 border border-[#e7e3df] bg-white/75 p-7 sm:p-9 shadow-[0_14px_36px_rgba(23,23,26,.06)] backdrop-blur-xl"
             >
                 <div className="flex items-start justify-between gap-4 mb-7">
                   <div>
