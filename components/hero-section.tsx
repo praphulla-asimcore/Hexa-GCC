@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, FileText, CheckCircle, ArrowUpRight, Activity, ShieldCheck, CircleDot } from 'lucide-react';
+import { Calendar, FileText, CheckCircle, ShieldCheck } from 'lucide-react';
 
 const BOOKING_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI';
 
@@ -33,8 +33,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-[1] grid-paper opacity-70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-        <div className="grid lg:grid-cols-[1.02fr_.98fr] gap-14 items-center pt-16">
-          <div className="text-left">
+        <div className="pt-16">
+          <div className="text-left max-w-4xl">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,42 +128,7 @@ export default function HeroSection() {
               ))}
             </div>
           </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="relative hidden lg:block"
-        >
-          <div className="absolute -inset-6 border border-white/10 rotate-3" />
-          <div className="relative bg-[#242427] border border-white/15 p-5 shadow-2xl">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-              <div>
-                <p className="text-[10px] uppercase tracking-[.18em] text-white/40">Hexa control room</p>
-                <p className="mt-1 text-sm font-semibold">Finance Intelligence layer</p>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-[#83b8a3]"><CircleDot className="w-3 h-3" /> Live</div>
-            </div>
-            <div className="grid grid-cols-3 gap-2 mb-6">
-              {operatingSignals.map((signal) => (
-                <div key={signal.label} className="bg-white/[.06] p-3">
-                  <div className={`w-2 h-2 rounded-full ${signal.tone} mb-5`} />
-                  <p className="text-lg font-semibold">{signal.value}</p>
-                  <p className="text-[10px] text-white/45 uppercase tracking-wider mt-1">{signal.label}</p>
-                </div>
-              ))}
-            </div>
-            <div className="bg-[#1b1b1e] p-4">
-                <div className="flex justify-between items-center mb-5"><p className="text-xs font-semibold">Operational signals</p><Activity className="w-4 h-4 text-[#E6007E]" /></div>
-              <div className="flex items-end gap-1 h-24">
-                {[42, 55, 48, 66, 62, 80, 76, 91, 87, 100].map((height, index) => <div key={index} className="flex-1 bg-[#E6007E]" style={{ height: `${height}%`, opacity: .35 + index * .06 }} />)}
-              </div>
-              <div className="flex justify-between text-[10px] text-white/35 mt-3"><span>Day 01</span><span>Day 10</span></div>
-            </div>
-            <div className="flex items-center justify-between mt-5 text-xs text-white/55"><span>People + intelligence + governance</span><ArrowUpRight className="w-4 h-4 text-[#E6007E]" /></div>
           </div>
-        </motion.div>
       </div>
       </div>
 
