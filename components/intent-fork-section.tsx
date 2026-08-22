@@ -11,7 +11,7 @@ const cards = [
     body: 'Junior, mid and senior professionals assembled to the shape your requirement actually needs. Not one hire you promote past their depth, but a working function with execution at the base and judgement above it, employed by us and directed by you.',
     chips: ['Finance', 'Technology', 'People'],
     cta: 'See how a function is built',
-    href: '/embedded-team',
+    href: '/embedded-team#capability-centre',
   },
   {
     k: '02',
@@ -20,7 +20,7 @@ const cards = [
     body: 'Your people, our building. Dedicated seats on a secured floor with managed IT, network failover, backup power, and cover when someone is out. You direct the work. Everything underneath the work is ours.',
     chips: ['Dedicated seats', 'Managed IT', 'Continuity cover'],
     cta: 'See what a seat includes',
-    href: '/embedded-team',
+    href: '/embedded-team#pod-engagement',
   },
 ];
 

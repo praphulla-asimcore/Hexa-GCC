@@ -15,14 +15,23 @@ const rungs = [
 const weSupply = ['Recruitment', 'Legal employment', 'Payroll', 'Statutory compliance', 'Workspace', 'IT', 'Welfare', 'Retention', 'Replacement'];
 const youKeep = ['Direction', 'Systems', 'Outputs', 'IP', 'Priorities'];
 
+const podIncludes = [
+  'Dedicated seats on a secured floor',
+  'Managed IT and network',
+  'Power and network redundancy',
+  'Supervised operations',
+  'Cover when someone is out',
+];
+
 export default function EmbeddedTeamContent() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#080818] text-white py-24 lg:py-32">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] font-semibold mb-6">A function, assembled.</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] font-semibold mb-6">Two ways to engage Hexa.</h1>
           <p className="text-lg text-white/65 max-w-2xl leading-relaxed mb-10">
-            You tell us the shape you need. We find the people, employ them, house them, and keep them there.
+            A capability centre, where we find, employ, and manage the people for you. Or a pod engagement,
+            where you bring the people and we provide the seat, the IT, and everything holding it up.
           </p>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 gradient-bg px-7 py-4 rounded-full font-semibold hover:bg-[#b80065] transition-colors">
             Book a 20-minute consultation <ArrowRight className="w-5 h-5" />
@@ -30,8 +39,19 @@ export default function EmbeddedTeamContent() {
         </div>
       </section>
 
+      {/* Capability centre */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#E6007E] mb-3">Capability centre</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">A function, assembled.</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mt-4">
+            You tell us the shape you need. We find the people, employ them, house them, and keep them there.
+          </p>
+        </div>
+      </section>
+
       {/* The problem */}
-      <section className="py-20 bg-white">
+      <section id="capability-centre" className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-5">The problem, as you're living it</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
@@ -148,11 +168,37 @@ export default function EmbeddedTeamContent() {
             defined corporate function to distribute, and limited capacity to direct remote staff — we
             screen for this at the sale. Above a thousand, companies typically build their own centre.
           </p>
-          <div className="mt-8">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 gradient-bg px-7 py-4 text-white font-semibold rounded-full hover:bg-[#b80065] transition-colors">
-              Book a 20-minute consultation <ArrowRight className="w-5 h-5" />
-            </a>
+        </div>
+      </section>
+
+      {/* Pod engagement */}
+      <section id="pod-engagement" className="py-20 bg-white border-t border-gray-200">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#E6007E] mb-3">Pod engagement</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-5">A desk, a floor, and everything holding it up.</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            Your people, our building. If you already have the hire — or want to place one here yourself —
+            we provide the seat and everything underneath it: a secured floor, managed IT, and continuity
+            when someone is out. You direct the work. Everything underneath the work is ours.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3 mb-8">
+            {podIncludes.map((item) => (
+              <div key={item} className="flex items-center gap-2 text-gray-700 bg-gray-50 rounded-lg p-3">
+                <CheckCircle className="w-4 h-4 text-[#E6007E] flex-shrink-0" />
+                <span className="text-sm">{item}</span>
+              </div>
+            ))}
           </div>
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
+            <p className="text-gray-900 font-semibold">How this differs from a capability centre</p>
+            <p className="text-gray-600 text-sm mt-2">
+              In a capability centre, Hexa finds and employs the person. In a pod engagement, the person is
+              already yours — Hexa supplies the desk, the infrastructure, and the operational cover around them.
+            </p>
+          </div>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 gradient-bg px-7 py-4 text-white font-semibold rounded-full hover:bg-[#b80065] transition-colors">
+            Book a 20-minute consultation <ArrowRight className="w-5 h-5" />
+          </a>
         </div>
       </section>
     </>
