@@ -1,13 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Lock, Server, Users, ShieldCheck, Scale } from 'lucide-react';
+import { Award, Lock, Server, Users, ShieldCheck, Scale, Trophy } from 'lucide-react';
 
 const certifications = [
   { label: 'ISO 27001', caption: 'Certified · certificate reference pending' },
   { label: 'ISO 9001', caption: 'Certified · certificate reference pending' },
   { label: 'ACCA Approved Employer', caption: 'Ref 2000003846 · valid to December 2029' },
   { label: 'Professional indemnity', caption: 'Cover in place' },
+];
+
+const awards = [
+  { label: 'Top 10 CFO in Nepal', year: '2024', body: 'CEO Insights Asia' },
+  { label: 'Excellence in Operational Accounting & Control', year: '2022', body: 'Operational Excellence Award' },
+  { label: 'Excellence in Diversity & Inclusion', year: '2020', body: 'Human Resource Excellence Award' },
 ];
 
 const dataPoints = [
@@ -60,6 +66,35 @@ export default function TrustPageContent() {
                 <Award className="w-6 h-6 text-[#E6007E] mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900">{cert.label}</h3>
                 <p className="text-gray-600 text-sm mt-1">{cert.caption}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Awards */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-10">
+            <Trophy className="w-6 h-6 text-[#E6007E]" />
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">Awards & recognition</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {awards.map((award, index) => (
+              <motion.div
+                key={award.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: index * 0.08 }}
+                className="bg-white border border-gray-200 rounded-2xl p-6"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <Trophy className="w-6 h-6 text-[#E6007E]" />
+                  <span className="text-xs font-semibold text-gray-400 tracking-wide">{award.year}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 leading-snug">{award.label}</h3>
+                <p className="text-gray-600 text-sm mt-2">{award.body}</p>
               </motion.div>
             ))}
           </div>

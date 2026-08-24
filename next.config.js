@@ -44,6 +44,11 @@ const nextConfig = {
         destination: 'https://calendar.app.google/eq4mJvdvNWXjK5du8',
         permanent: false,
       },
+      {
+        source: '/finance-intelligence',
+        destination: '/hexa-intelligence',
+        permanent: true,
+      },
     ];
   },
 };

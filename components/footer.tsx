@@ -82,6 +82,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/hexa-intelligence" className="text-gray-400 hover:text-white transition-colors">
+                  Hexa Intelligence
+                </Link>
+              </li>
+              <li>
                 <Link href="/markets" className="text-gray-400 hover:text-white transition-colors">
                   Markets
                 </Link>

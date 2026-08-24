@@ -19,6 +19,7 @@ const navItems = [
   { label: 'Markets', href: '/markets' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Trust', href: '/trust' },
+  { label: 'Hexa Intelligence', href: '/hexa-intelligence' },
   { label: 'About', href: '/about' },
 ];
 
