@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Landmark, Receipt, Wallet, FileCheck2, Calendar, ArrowRight } from 'lucide-react';
 import { markets } from '@/lib/markets-data';
 
-const BOOKING_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI';
+const BOOKING_URL = 'https://www.hnpl.business/call';
 
 const detailBlocks = [
   { key: 'regulators' as const, label: 'Regulators & compliance bodies', icon: Landmark },

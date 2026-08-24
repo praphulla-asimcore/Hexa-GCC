@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Send, Calendar, CheckCircle, Loader2, Building2, User, Mail, Globe, MessageSquare } from 'lucide-react';
 
-const BOOKING_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI';
+const BOOKING_URL = 'https://www.hnpl.business/call';
 
 const countries = [
   { value: 'SG', label: 'Singapore' },

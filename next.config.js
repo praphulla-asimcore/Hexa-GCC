@@ -39,6 +39,11 @@ const nextConfig = {
         destination: '/why-hexa',
         permanent: true,
       },
+      {
+        source: '/call',
+        destination: 'https://calendar.app.google/eq4mJvdvNWXjK5du8',
+        permanent: false,
+      },
     ];
   },
 };

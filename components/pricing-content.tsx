@@ -2,7 +2,7 @@
 
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
-const BOOKING_URL = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI';
+const BOOKING_URL = 'https://www.hnpl.business/call';
 
 const tiers = [
   { tier: 'Junior', description: 'Full-time execution. Priced as a fixed monthly fee per person.' },

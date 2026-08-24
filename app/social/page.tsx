@@ -188,7 +188,7 @@ export default function HexaSocialPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1RonhRpn6mMNI3Yq8PocQXHx-mZNFj7nIAFh0qndnlOMlGiUtO_DAP3D9P7J5BkXSmpK5Qx0vI"
+              href="https://www.hnpl.business/call"
               target="_blank"
               rel="noopener noreferrer"
               className="gradient-bg px-8 py-4 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
