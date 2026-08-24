@@ -9,7 +9,7 @@ import RetentionGuaranteeSection from '@/components/retention-guarantee-section'
 import OutcomesSection from '@/components/outcomes-section';
 import ProcessSection from '@/components/process-section';
 import IntelligenceLayerSection from '@/components/intelligence-layer-section';
-import MarketsTeaserSection from '@/components/markets-teaser-section';
+import MarketsExplorer from '@/components/markets-explorer';
 import TrustSection from '@/components/trust-section';
 import LeadForm from '@/components/lead-form';
 import Footer from '@/components/footer';
@@ -33,7 +33,7 @@ export default function Home() {
       <OutcomesSection />
       <ProcessSection />
       <IntelligenceLayerSection />
-      <MarketsTeaserSection />
+      <MarketsExplorer />
       <TrustSection />
       <LeadForm />
       <Footer />
