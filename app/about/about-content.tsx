@@ -2,7 +2,15 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Landmark, Cpu, Users, Camera } from 'lucide-react';
+import { Landmark, Cpu, Users, Camera, ShieldCheck, Network, BatteryCharging, Clock3 } from 'lucide-react';
+
+const facilityFacts = [
+  { icon: Users, label: '120-person delivery centre' },
+  { icon: ShieldCheck, label: '24/7 security and CCTV surveillance' },
+  { icon: Network, label: 'Dual network connectivity' },
+  { icon: BatteryCharging, label: 'Backup power supply' },
+  { icon: Clock3, label: 'Round-the-clock operational office' },
+];
 
 const centres = [
   { icon: Landmark, name: 'Finance', description: 'Accounting, bookkeeping, compliance, audit support, and financial reporting.' },
@@ -102,9 +110,28 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* Facility placeholder */}
-      <section className="py-16 bg-gray-50">
+      {/* Facility */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Our home in <span className="gradient-text">Kathmandu, Nepal</span>
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed mb-8">
+            Every centre of excellence runs from our own delivery centre in Kathmandu, Nepal, rather than
+            shared or rented seats. The building, the network and the people are ours, so the team you
+            work with is the team that shows up every day.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3 mb-10">
+            {facilityFacts.map((fact) => {
+              const Icon = fact.icon;
+              return (
+                <div key={fact.label} className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-4">
+                  <Icon className="w-5 h-5 text-[#E6007E] flex-shrink-0" />
+                  <span className="text-gray-800 text-sm font-medium">{fact.label}</span>
+                </div>
+              );
+            })}
+          </div>
           <div className="border border-dashed border-gray-300 rounded-2xl p-10 text-center bg-white">
             <Camera className="w-8 h-8 text-gray-300 mx-auto mb-3" />
             <p className="text-sm text-gray-500">Facility and team photographs pending.</p>

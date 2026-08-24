@@ -18,8 +18,8 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Hexa is one shared services partner for finance, technology and people operations,
-              delivered under one governance model for companies operating across borders.
+              Dedicated people. Managed performance. AI-improved productivity. Finance, technology and
+              people capability, built and continuously improved by Hexa.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
@@ -57,6 +57,11 @@ export default function Footer() {
               <li>
                 <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">
                   Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/#hexa-academy" className="text-gray-400 hover:text-white transition-colors">
+                  Hexa Academy
                 </Link>
               </li>
             </ul>

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, CheckCircle } from 'lucide-react';
+import { Calendar, Download, CheckCircle } from 'lucide-react';
 
 const BOOKING_URL = 'https://www.hnpl.business/call';
 
@@ -43,9 +43,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl sm:text-6xl lg:text-[5.4rem] font-semibold text-white mb-7 leading-[.98] tracking-[-.04em] max-w-3xl"
+            className="text-4xl sm:text-5xl lg:text-[3.25rem] font-semibold text-white mb-6 leading-[1.1] tracking-[-.03em] max-w-2xl"
           >
-            One shared services partner for finance, technology and people operations.
+            Your dedicated capability centre. Built, operated and continuously improved.
           </motion.h1>
 
           {/* Subheadline */}
@@ -53,10 +53,22 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-white/65 max-w-xl mb-10 leading-relaxed"
+            className="text-lg text-white/65 max-w-xl leading-relaxed"
           >
-            Named professionals, employed by us, selected and directed by you. Working in your systems,
-            in your meetings, on your outcomes.
+            You choose the people. You control the work and own the IP. We handle talent, employment,
+            infrastructure, security and retention, and continuously improve productivity through process
+            expertise and automation.
+          </motion.p>
+
+          {/* Strapline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="text-xl text-white mt-6 mb-10 border-l-2 border-[#E6007E] pl-4 max-w-xl"
+            style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+          >
+            Dedicated people. Managed performance. AI-improved productivity.
           </motion.p>
 
           {/* Credibility chips */}
@@ -91,11 +103,11 @@ export default function HeroSection() {
               Book a 20-minute consultation
             </a>
             <a
-              href="/how-it-works"
+              href="/resources"
               className="px-7 py-4 text-white font-semibold rounded-full border border-white/25 hover:bg-white/10 transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
-              See how it works
-              <ArrowRight className="w-5 h-5" />
+              <Download className="w-5 h-5" />
+              Download the operating model
             </a>
           </motion.div>
           </div>

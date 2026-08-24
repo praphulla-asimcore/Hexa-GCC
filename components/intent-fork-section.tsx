@@ -7,8 +7,8 @@ const cards = [
   {
     k: '01',
     tag: 'Capability centre',
-    title: 'A whole function, not a headcount.',
-    body: 'Junior, mid and senior professionals assembled to the shape your requirement actually needs. Not one hire you promote past their depth, but a working function with execution at the base and judgement above it, employed by us and directed by you.',
+    title: 'One team that owns the work.',
+    body: 'Junior, mid and senior professionals assembled to the shape your requirement actually needs. Not a set of individual hires you have to knit together, but a team with execution at the base and judgement above it, employed by us, directed by you, accountable as one unit.',
     chips: ['Finance', 'Technology', 'People'],
     cta: 'See how a function is built',
     href: '/embedded-team#capability-centre',

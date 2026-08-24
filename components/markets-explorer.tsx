@@ -26,13 +26,14 @@ export default function MarketsExplorer() {
       />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-14">
-          <p className="eyebrow mb-4">13 markets, one governance model</p>
+          <p className="eyebrow mb-4">Work we already do</p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-5">
-            Select a market to see what we handle there.
+            These are not markets we could cover. They are markets we close books in.
           </h2>
           <p className="text-lg text-white/65 leading-relaxed">
-            Every market comes with its own regulators, tax calendar, statutory payroll obligations and
-            reporting standard. Select a country to see exactly what we're capable of.
+            In each one below, our own teams keep the ledgers, prepare the workpapers and meet the filing
+            calendar, in house, on live client entities. Select any market to see exactly what we handle
+            there. Nothing here is subcontracted and nothing is aspirational.
           </p>
         </div>
 
