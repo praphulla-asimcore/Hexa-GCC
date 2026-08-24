@@ -25,9 +25,6 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[#17171a]/80" />
       </div>
 
-      {/* Abstract Background Pattern */}
-      <div className="absolute inset-0 z-[1] grid-paper opacity-70" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
         <div className="pt-16">
           <div className="text-left max-w-4xl">
