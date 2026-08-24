@@ -60,7 +60,6 @@ export default function TrustSection() {
 
   return (
     <section className="py-28 hero-gradient text-white relative overflow-hidden">
-      <div className="absolute inset-0 grid-paper opacity-40" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}

@@ -16,10 +16,14 @@ const detailBlocks = [
 export default function MarketsExplorer() {
   const [activeCode, setActiveCode] = useState(markets[0].code);
   const active = markets.find((m) => m.code === activeCode) ?? markets[0];
+  const activeIndex = markets.findIndex((m) => m.code === active.code);
 
   return (
     <section className="relative overflow-hidden bg-[#0c0c14] text-white py-24 lg:py-28">
-      <div className="absolute inset-0 grid-paper opacity-60" />
+      <div
+        className="absolute -top-40 right-0 w-[560px] h-[560px] rounded-full opacity-[0.12] blur-[120px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, #E6007E, transparent 70%)' }}
+      />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-14">
           <p className="eyebrow mb-4">13 markets, one governance model</p>
@@ -28,7 +32,7 @@ export default function MarketsExplorer() {
           </h2>
           <p className="text-lg text-white/65 leading-relaxed">
             Every market comes with its own regulators, tax calendar, statutory payroll obligations and
-            reporting standard. Click a country to see exactly what we're capable of.
+            reporting standard. Select a country to see exactly what we're capable of.
           </p>
         </div>
 
@@ -43,22 +47,38 @@ export default function MarketsExplorer() {
                   type="button"
                   aria-pressed={isActive}
                   onClick={() => setActiveCode(market.code)}
-                  className={`group flex items-center gap-3 rounded-xl border px-4 py-3.5 text-left transition-all ${
-                    isActive
-                      ? 'bg-white/10 border-[#E6007E]/60'
-                      : 'bg-white/[0.02] border-white/10 hover:bg-white/5 hover:border-white/20'
-                  }`}
+                  className="group relative flex items-center gap-3 rounded-xl px-4 py-3.5 text-left"
                 >
+                  {isActive && (
+                    <motion.div
+                      layoutId="market-highlight"
+                      className="absolute inset-0 rounded-xl bg-white/10 border border-[#E6007E]/60"
+                      transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                    />
+                  )}
                   <span
-                    className={`text-xs font-semibold w-5 shrink-0 tabular-nums ${
-                      isActive ? 'text-[#E6007E]' : 'text-white/35'
+                    className={`absolute inset-0 rounded-xl border transition-colors ${
+                      isActive ? 'border-transparent' : 'border-white/10 group-hover:border-white/20 group-hover:bg-white/[0.04]'
+                    }`}
+                  />
+                  <span
+                    className={`relative flex items-center justify-center w-9 h-9 shrink-0 rounded-lg text-[11px] font-bold tracking-wide transition-colors ${
+                      isActive
+                        ? 'bg-[#E6007E]/15 border border-[#E6007E]/50 text-white'
+                        : 'bg-white/5 border border-white/10 text-white/60'
+                    }`}
+                  >
+                    {market.code}
+                  </span>
+                  <span className={`relative text-sm font-medium ${isActive ? 'text-white' : 'text-white/75'}`}>
+                    {market.name}
+                  </span>
+                  <span
+                    className={`relative ml-auto text-[11px] font-semibold tabular-nums ${
+                      isActive ? 'text-[#E6007E]' : 'text-white/25'
                     }`}
                   >
                     {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="text-xl shrink-0" aria-hidden="true">{market.flag}</span>
-                  <span className={`text-sm font-medium ${isActive ? 'text-white' : 'text-white/75'}`}>
-                    {market.name}
                   </span>
                 </button>
               );
@@ -77,11 +97,13 @@ export default function MarketsExplorer() {
                 className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
               >
                 <div className="flex items-center gap-4 mb-8">
-                  <span className="text-4xl" aria-hidden="true">{active.flag}</span>
+                  <span className="flex items-center justify-center w-14 h-14 rounded-xl bg-[#E6007E]/10 border border-[#E6007E]/30 text-sm font-bold tracking-wide text-white">
+                    {active.code}
+                  </span>
                   <div>
                     <h3 className="text-2xl font-semibold text-white">{active.name}</h3>
                     <p className="text-xs font-semibold text-[#E6007E] tracking-wide uppercase mt-1">
-                      Market {markets.findIndex((m) => m.code === active.code) + 1} of {markets.length}
+                      Market {activeIndex + 1} of {markets.length}
                     </p>
                   </div>
                 </div>
@@ -113,6 +135,20 @@ export default function MarketsExplorer() {
                     </div>
                     <p className="text-sm text-white/70 leading-relaxed">{active.standard}</p>
                   </div>
+                </div>
+
+                <div className="mt-8 flex gap-1.5">
+                  {markets.map((m) => (
+                    <button
+                      key={m.code}
+                      type="button"
+                      aria-label={`Show ${m.name}`}
+                      onClick={() => setActiveCode(m.code)}
+                      className={`h-1 rounded-full transition-all ${
+                        m.code === active.code ? 'w-6 bg-[#E6007E]' : 'w-3 bg-white/15 hover:bg-white/30'
+                      }`}
+                    />
+                  ))}
                 </div>
               </motion.div>
             </AnimatePresence>
