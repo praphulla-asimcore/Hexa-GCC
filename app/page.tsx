@@ -9,7 +9,6 @@ import BuildRunImproveTransferSection from '@/components/build-run-improve-trans
 import HexaAcademySection from '@/components/hexa-academy-section';
 import DecisionHierarchySection from '@/components/decision-hierarchy-section';
 import ImprovementLayerSection from '@/components/improvement-layer-section';
-import MarketsExplorer from '@/components/markets-explorer';
 import WhyHereSection from '@/components/why-here-section';
 import TrustSection from '@/components/trust-section';
 import LeadForm from '@/components/lead-form';
@@ -34,7 +33,6 @@ export default function Home() {
       <HexaAcademySection />
       <DecisionHierarchySection />
       <ImprovementLayerSection />
-      <MarketsExplorer />
       <WhyHereSection />
       <TrustSection />
       <LeadForm />
