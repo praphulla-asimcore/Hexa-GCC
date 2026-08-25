@@ -8,7 +8,7 @@ const cells = [
   { number: '02', title: 'Quality', description: 'Qualified people, reviewed work, documented controls and a named owner accountable for the output.' },
   { number: '03', title: 'Productivity', description: 'More capability without proportionately more headcount, reviewed and evidenced every quarter.' },
   { number: '04', title: 'Continuity', description: 'Retention you can see, replacement at our cost, and documented cover on every role.' },
-  { number: '05', title: 'Speed', description: 'Brief to live in 15 days, against three to six months for a local hire.' },
+  { number: '05', title: 'Speed', description: 'A published, staged transition in weeks, not the three to six months a local hire takes.' },
   { number: '06', title: 'Cost', description: 'Materially lower than a local hire on fully loaded cost. Listed last, deliberately.' },
 ];
 

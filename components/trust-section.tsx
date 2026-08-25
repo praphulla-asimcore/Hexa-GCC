@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Shield, Layers, Users, Clock, Lock, FileCheck, Eye, UserCheck, Award } from 'lucide-react';
+import { Shield, Clock, Lock, Award } from 'lucide-react';
 import TiltCard from '@/components/tilt-card';
 
 const certifications = [
@@ -24,30 +24,19 @@ const trustItems = [
     ]
   },
   {
-    icon: Layers,
-    title: 'Quality Assurance',
+    icon: Shield,
+    title: 'Data Residency',
     points: [
-      'Multi-layer review process',
-      'Standardized templates & checklists',
-      'Reconciliation-first approach',
-      'Error tracking & resolution log'
-    ]
-  },
-  {
-    icon: UserCheck,
-    title: 'Ownership Model',
-    points: [
-      'Named account lead assigned',
-      'Clear escalation matrix',
-      'Direct communication channels',
-      'Cross-trained backup resources'
+      'Client data stays in your chosen cloud region',
+      'Accessed via virtual desktop — no local download',
+      'No removable media, full session logging',
+      'Access scoped and logged per named individual'
     ]
   },
   {
     icon: Clock,
     title: 'SLAs & Timelines',
     points: [
-      'Live in 15 days from contract signing',
       'Month-end close: 5-7 business days',
       'Query response: within 24 hours',
       'Reconciliations: weekly cadence',
@@ -103,7 +92,7 @@ export default function TrustSection() {
           ))}
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 border border-white/15 relative">
+        <div className="grid md:grid-cols-3 gap-px bg-white/15 border border-white/15 relative">
           {trustItems?.map((item, index) => {
             const IconComponent = item?.icon;
             return (

@@ -17,7 +17,7 @@ export default function RetentionGuaranteeSection() {
           transition={{ duration: 0.4 }}
           className="text-xs font-semibold uppercase tracking-[.14em] text-[#E6007E] mb-5"
         >
-          Retention, guaranteed
+          Capability Centre · Retention, guaranteed
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

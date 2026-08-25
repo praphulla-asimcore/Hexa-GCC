@@ -14,7 +14,7 @@ export default function LadderSection() {
     <section className="py-24 bg-white border-b border-gray-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-12">
-          <p className="eyebrow mb-4">The shape, not the headcount</p>
+          <p className="eyebrow mb-4">Capability Centre · The shape, not the headcount</p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-5">
             A growing company needs a function. It cannot afford to hire one.
           </h2>

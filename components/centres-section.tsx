@@ -110,6 +110,11 @@ export default function CentresSection() {
             ))}
           </div>
         </div>
+        <p className="mt-6 text-sm text-gray-500 max-w-2xl">
+          This is the Capability Centre model — Hexa runs selection, employment and retention throughout.
+          In a Pod Engagement, you keep the employment relationship; Hexa supplies the seat, the
+          infrastructure and the cover around it.
+        </p>
       </div>
     </section>
   );
