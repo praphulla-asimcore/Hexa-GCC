@@ -6,7 +6,7 @@ import TiltCard from '@/components/tilt-card';
 const stages = [
   { name: 'Start with 3', description: 'A named team, interviewed and selected by you, running one defined workstream.' },
   { name: 'Scale to 10', description: 'Add seniority and adjacent processes under the same contract and governance.' },
-  { name: 'Then 30 or above', description: 'A full function across disciplines, with its own leadership and reporting line.' },
+  { name: 'Then 50 and above', description: 'A full function across disciplines, with its own leadership and reporting line.' },
   { name: 'Transfer, optionally', description: 'After an agreed period, the team and the capability can become yours.' },
 ];
 
@@ -22,7 +22,7 @@ export default function BuildRunImproveTransferSection() {
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
             The full capability centre model has always been priced for enterprises building at scale.
-            This is the same structure, sized for a company that needs three people now and thirty later,
+            This is the same structure, sized for a company that needs three people now and fifty later,
             with an optional path to make the team your own.
           </p>
         </div>
