@@ -8,7 +8,7 @@ const cells = [
   { number: '02', title: 'Quality', description: 'Qualified people, reviewed work, documented controls and a named owner accountable for the output.' },
   { number: '03', title: 'Productivity', description: 'More capability without proportionately more headcount, reviewed and evidenced every quarter.' },
   { number: '04', title: 'Continuity', description: 'Retention you can see, replacement at our cost, and documented cover on every role.' },
-  { number: '05', title: 'Speed', description: 'A published, staged transition in weeks, not the three to six months a local hire takes.' },
+  { number: '05', title: 'Speed', description: 'A single hire live in 15 days. A full function transition runs 8-12 weeks, published and staged.' },
   { number: '06', title: 'Cost', description: 'Materially lower than a local hire on fully loaded cost. Listed last, deliberately.' },
 ];
 
@@ -44,6 +44,12 @@ export default function DecisionHierarchySection() {
             </motion.div>
           ))}
         </div>
+        <a
+          href="/how-it-works"
+          className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-[#E6007E] hover:gap-2.5 transition-all"
+        >
+          See the full onboarding and retention model &rarr;
+        </a>
       </div>
     </section>
   );

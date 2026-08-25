@@ -7,9 +7,7 @@ import LadderSection from '@/components/ladder-section';
 import CentresSection from '@/components/centres-section';
 import BuildRunImproveTransferSection from '@/components/build-run-improve-transfer-section';
 import HexaAcademySection from '@/components/hexa-academy-section';
-import RetentionGuaranteeSection from '@/components/retention-guarantee-section';
 import DecisionHierarchySection from '@/components/decision-hierarchy-section';
-import ProcessSection from '@/components/process-section';
 import ImprovementLayerSection from '@/components/improvement-layer-section';
 import MarketsExplorer from '@/components/markets-explorer';
 import WhyHereSection from '@/components/why-here-section';
@@ -34,9 +32,7 @@ export default function Home() {
       <CentresSection />
       <BuildRunImproveTransferSection />
       <HexaAcademySection />
-      <RetentionGuaranteeSection />
       <DecisionHierarchySection />
-      <ProcessSection />
       <ImprovementLayerSection />
       <MarketsExplorer />
       <WhyHereSection />
