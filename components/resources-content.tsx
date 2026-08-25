@@ -5,9 +5,9 @@ import { FileText, Calendar, Calculator, BookOpen } from 'lucide-react';
 import TiltCard from '@/components/tilt-card';
 
 const resources = [
-  { icon: FileText, title: 'The operating model', description: 'How a Hexa function becomes operational, stage by stage.' },
-  { icon: Calendar, title: 'A market compliance calendar', description: 'Statutory filing dates for the markets we work in.' },
-  { icon: Calculator, title: 'The cost comparison model', description: 'A downloadable model for comparing embedded-team cost against a local hire.' },
+  { icon: FileText, title: 'The operating model', description: 'How a Hexa function becomes operational, stage by stage.', status: 'pending' as const },
+  { icon: Calendar, title: 'Market compliance, by country', description: 'Regulators, statutory filings and reporting standards for the markets we work in.', status: 'live' as const, href: '/markets' },
+  { icon: Calculator, title: 'The cost comparison model', description: 'A downloadable, market-by-market comparison of Hexa\'s price against a local hire.', status: 'live' as const, href: '/resources/cost-comparison' },
 ];
 
 export default function ResourcesContent() {
@@ -58,6 +58,20 @@ export default function ResourcesContent() {
           <div className="grid md:grid-cols-3 gap-6 mb-14">
             {resources.map((resource, index) => {
               const Icon = resource.icon;
+              const card = (
+                <TiltCard className="h-full border border-gray-200 rounded-2xl p-6 hover:border-[#E6007E]/40 transition-colors">
+                  <div className="w-11 h-11 gradient-bg rounded-xl flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{resource.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                  {resource.status === 'live' ? (
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#E6007E]">View →</span>
+                  ) : (
+                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">Pending</span>
+                  )}
+                </TiltCard>
+              );
               return (
                 <motion.div
                   key={resource.title}
@@ -66,14 +80,11 @@ export default function ResourcesContent() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.35, delay: index * 0.08 }}
                 >
-                  <TiltCard className="h-full border border-gray-200 rounded-2xl p-6 hover:border-[#E6007E]/40 transition-colors">
-                    <div className="w-11 h-11 gradient-bg rounded-xl flex items-center justify-center mb-5">
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{resource.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">Pending</span>
-                  </TiltCard>
+                  {resource.status === 'live' ? (
+                    <a href={resource.href} className="block h-full">{card}</a>
+                  ) : (
+                    card
+                  )}
                 </motion.div>
               );
             })}
