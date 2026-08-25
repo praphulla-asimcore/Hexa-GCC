@@ -10,7 +10,8 @@ export default function HexaAcademySection() {
     <section id="hexa-academy" className="py-24 bg-[#f7f7fa] border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-12">
-          <p className="eyebrow mb-4">Capability Centre · Hexa Academy</p>
+          <span className="inline-block text-[10px] font-semibold uppercase tracking-[.12em] px-2.5 py-1 rounded bg-[#ffe9f4] text-[#8d0d51] mb-4">Capability Centre</span>
+          <p className="eyebrow mb-4">Hexa Academy</p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-5">
             Gaps get trained, not tolerated.
           </h2>

@@ -10,14 +10,23 @@ export default function RetentionGuaranteeSection() {
         style={{ background: 'radial-gradient(circle, #E6007E, transparent 70%)' }}
       />
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.p
+        <motion.span
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
+          className="inline-block text-[10px] font-semibold uppercase tracking-[.12em] px-2.5 py-1 rounded bg-white/10 border border-white/15 text-[#ff8ac4] mb-4"
+        >
+          Capability Centre
+        </motion.span>
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.03 }}
           className="text-xs font-semibold uppercase tracking-[.14em] text-[#E6007E] mb-5"
         >
-          Capability Centre · Retention, guaranteed
+          Retention, guaranteed
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
