@@ -1,23 +1,24 @@
 // Finance service line, phase 1. Researched 25 Aug 2026 — see the cost-per-hire
 // research memo for full methodology, sources and the two models tested.
 //
-// Hexa always delivers from its Nepal centre. Hexa's price per tier is therefore
-// fixed regardless of the market selected: Nepal salary + greater of (RM 500 or
-// 15% of salary) + RM 160 office allocation, converted to USD at 25 Aug 2026 rates.
+// Hexa's price per tier is the actual all-in monthly rate charged for Nepal-delivered
+// accounting resources (Junior/Mid/Senior internally), inclusive of office space,
+// management fee and salary: RM 2,730 / RM 4,155 / RM 5,880, converted to USD at
+// 25 Aug 2026 rates. This is quoted pricing, not a formula-derived estimate.
 //
 // Only country/tier combinations where that fixed Hexa price is actually cheaper
 // than a fully-loaded local hire (local salary + statutory employer on-costs +
-// 15% office/HR/recruitment overhead) are listed below. Sri Lanka, Myanmar and
-// Bangladesh are excluded entirely — Hexa's Nepal-delivered price does not beat
-// local hiring in any tier there. Indonesia's Mid tier and Nepal's Semi-Qualified
-// tier are excluded for the same reason within otherwise-valid markets.
+// 15% office/HR/recruitment overhead) are listed below. Sri Lanka and Myanmar are
+// excluded entirely — Hexa's price does not beat local hiring in any tier there.
+// Indonesia (Semi), Philippines (Semi), Nepal (Semi + Mid) and Bangladesh (Semi + Mid)
+// are excluded for the same reason within otherwise-valid markets.
 
 export type TierKey = 'semi' | 'mid' | 'senior';
 
 export const HEXA_PRICE_USD: Record<TierKey, number> = {
-  semi: 392,
-  mid: 881,
-  senior: 1653,
+  semi: 675,
+  mid: 1028,
+  senior: 1455,
 };
 
 export interface TierOption {
@@ -61,14 +62,12 @@ export const markets: Market[] = [
   {
     code: 'ID', name: 'Indonesia', currency: 'IDR', source: 'JobStreet ID / Indeed / PayScale aggregate 2026',
     tiers: [
-      { key: 'semi', label: TIER_LABELS.semi, localSalary: 6000000, fullyLoadedLocalUsd: 424 },
       { key: 'senior', label: TIER_LABELS.senior, localSalary: 25000000, fullyLoadedLocalUsd: 1765 },
     ],
   },
   {
     code: 'PH', name: 'Philippines', currency: 'PHP', source: 'CPA Review PH / Bossjob / SchoolFinderPH 2026',
     tiers: [
-      { key: 'semi', label: TIER_LABELS.semi, localSalary: 25000, fullyLoadedLocalUsd: 518 },
       { key: 'mid', label: TIER_LABELS.mid, localSalary: 57500, fullyLoadedLocalUsd: 1192 },
       { key: 'senior', label: TIER_LABELS.senior, localSalary: 115000, fullyLoadedLocalUsd: 2384 },
     ],
@@ -108,7 +107,6 @@ export const markets: Market[] = [
   {
     code: 'NP', name: 'Nepal', currency: 'NPR', source: 'KumariJob / NecoJobs Nepal 2026',
     tiers: [
-      { key: 'mid', label: TIER_LABELS.mid, localSalary: 110000, fullyLoadedLocalUsd: 969 },
       { key: 'senior', label: TIER_LABELS.senior, localSalary: 215000, fullyLoadedLocalUsd: 1894 },
     ],
   },
@@ -118,6 +116,12 @@ export const markets: Market[] = [
       { key: 'semi', label: TIER_LABELS.semi, localSalary: 85077, fullyLoadedLocalUsd: 3549 },
       { key: 'mid', label: TIER_LABELS.mid, localSalary: 109990, fullyLoadedLocalUsd: 4588 },
       { key: 'senior', label: TIER_LABELS.senior, localSalary: 134903, fullyLoadedLocalUsd: 5628 },
+    ],
+  },
+  {
+    code: 'BD', name: 'Bangladesh', currency: 'BDT', source: 'RakibHassan.eu / WorldSalaries aggregate 2026 (lower confidence)',
+    tiers: [
+      { key: 'senior', label: TIER_LABELS.senior, localSalary: 300000, fullyLoadedLocalUsd: 3001 },
     ],
   },
 ];

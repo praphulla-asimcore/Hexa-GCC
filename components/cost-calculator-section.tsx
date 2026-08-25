@@ -207,9 +207,9 @@ export default function CostCalculatorSection() {
 
         <p className="text-xs text-gray-400 mt-6 max-w-2xl">
           "Local, fully-loaded" = published market salary + statutory employer contributions + a standard
-          15% office/HR/recruitment overhead allowance, in that market. Ten markets and tiers are shown here
-          because they're the ones where Hexa's Nepal-delivered price is genuinely lower — we don't show a
-          market or tier where it isn't.
+          15% office/HR/recruitment overhead allowance, in that market. Only the markets and tiers shown here
+          are ones where Hexa's Nepal-delivered price is genuinely lower — we don't show a market or tier
+          where it isn't.
         </p>
       </div>
     </section>
