@@ -29,7 +29,7 @@ export default function MarketsExplorer() {
         <div className="max-w-2xl mb-14">
           <p className="eyebrow mb-4">Work we already do</p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-5">
-            These are not markets we could cover. They are markets we close books in.
+            Four markets in depth. Eleven supported.
           </h2>
           <p className="text-lg text-white/65 leading-relaxed">
             In each one below, our own teams keep the ledgers, prepare the workpapers and meet the filing
