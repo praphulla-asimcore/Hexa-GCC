@@ -20,6 +20,7 @@ const navItems = [
   { label: 'Pricing', href: '/pricing' },
   { label: 'Trust', href: '/trust' },
   { label: 'Hexa Intelligence', href: '/hexa-intelligence' },
+  { label: 'Hexa Academy', href: '/hexa-academy' },
   { label: 'About', href: '/about' },
 ];
 
