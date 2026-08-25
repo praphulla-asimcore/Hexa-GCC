@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import TiltCard from '@/components/tilt-card';
 
 const points = [
   { title: 'A less saturated talent market', description: 'Fewer operators bidding for the same shortlist, so we recruit against depth rather than against each other.' },
@@ -35,10 +36,11 @@ export default function WhyHereSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.06 }}
-              className="border border-white/15 rounded-xl p-6 bg-white/[0.03]"
             >
-              <h4 className="font-semibold mb-2.5">{point.title}</h4>
-              <p className="text-sm text-white/55 leading-relaxed">{point.description}</p>
+              <TiltCard glareColor="rgba(230,0,126,0.2)" className="h-full border border-white/15 rounded-xl p-6 bg-white/[0.03] hover:border-[#E6007E]/30 transition-colors">
+                <h4 className="font-semibold mb-2.5">{point.title}</h4>
+                <p className="text-sm text-white/55 leading-relaxed">{point.description}</p>
+              </TiltCard>
             </motion.div>
           ))}
         </div>

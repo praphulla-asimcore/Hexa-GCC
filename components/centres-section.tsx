@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Landmark, Cpu, Users } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 export const centres = [
   {
@@ -73,26 +74,28 @@ export default function CentresSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.08 }}
-                className="group p-8 border-r border-gray-200 last:border-r-0 hover:bg-[#fffafd] transition-colors"
+                className="block"
               >
-                <span className="inline-block text-[10px] font-semibold uppercase tracking-[.12em] px-2.5 py-1 rounded bg-[#ffe9f4] text-[#8d0d51]">
-                  Centre of excellence
-                </span>
-                <div className="w-11 h-11 bg-[#080818] rounded-xl flex items-center justify-center my-5">
-                  <Icon className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{centre.name}</h3>
-                <ul className="space-y-1.5 text-sm text-gray-600 mb-6 min-h-[130px]">
-                  {centre.roles.map((role) => (
-                    <li key={role} className="flex items-start gap-2">
-                      <span className="w-1 h-1 rounded-full bg-[#E6007E] mt-2 flex-shrink-0" />
-                      {role}
-                    </li>
-                  ))}
-                </ul>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#E6007E]">
-                  Explore the centre <ArrowRight className="w-4 h-4" />
-                </span>
+                <TiltCard className="group h-full p-8 border-r border-gray-200 last:border-r-0 hover:bg-[#fffafd] transition-colors">
+                  <span className="inline-block text-[10px] font-semibold uppercase tracking-[.12em] px-2.5 py-1 rounded bg-[#ffe9f4] text-[#8d0d51]">
+                    Centre of excellence
+                  </span>
+                  <div className="w-11 h-11 bg-[#080818] rounded-xl flex items-center justify-center my-5">
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{centre.name}</h3>
+                  <ul className="space-y-1.5 text-sm text-gray-600 mb-6 min-h-[130px]">
+                    {centre.roles.map((role) => (
+                      <li key={role} className="flex items-start gap-2">
+                        <span className="w-1 h-1 rounded-full bg-[#E6007E] mt-2 flex-shrink-0" />
+                        {role}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#E6007E]">
+                    Explore the centre <ArrowRight className="w-4 h-4" />
+                  </span>
+                </TiltCard>
               </motion.a>
             );
           })}

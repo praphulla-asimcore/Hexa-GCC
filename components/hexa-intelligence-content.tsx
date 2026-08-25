@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, Wallet, LineChart, ShieldCheck, ScrollText, MessagesSquare, Gauge } from 'lucide-react';
+import { Calendar, ArrowRight, Wallet, LineChart, ShieldCheck, ScrollText, MessagesSquare, Gauge, Cpu } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 const BOOKING_URL = 'https://www.hnpl.business/call';
 
@@ -42,17 +43,64 @@ export default function HexaIntelligenceContent() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#080818] text-white py-24 lg:py-28">
+        <div
+          className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-[0.14] blur-[130px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #E6007E, transparent 70%)' }}
+        />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#E6007E] text-xs font-semibold uppercase tracking-[.16em] mb-6">Built in-house</p>
-          <h1 className="text-4xl sm:text-5xl leading-[1.05] font-semibold mb-6">Hexa Intelligence</h1>
-          <p className="text-lg text-white/65 max-w-2xl mx-auto leading-relaxed">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="relative w-16 h-16 mx-auto mb-8"
+          >
+            <motion.div
+              animate={{ scale: [1, 1.35, 1], opacity: [0.5, 0, 0.5] }}
+              transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 rounded-full border border-[#E6007E]/40"
+            />
+            <div className="relative w-16 h-16 rounded-full bg-white/5 border border-white/15 flex items-center justify-center">
+              <Cpu className="w-7 h-7 text-[#E6007E]" />
+            </div>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-[#E6007E] text-xs font-semibold uppercase tracking-[.16em] mb-6"
+          >
+            Built in-house
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl sm:text-5xl leading-[1.05] font-semibold mb-6"
+          >
+            Hexa Intelligence
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-lg text-white/65 max-w-2xl mx-auto leading-relaxed"
+          >
             Our own business intelligence and automation platform, built internally and running in production
             across every centre. Not a demo, not a slide — software our own teams depend on every day.
-          </p>
-          <div className="inline-flex items-center gap-2 mt-8 text-sm text-white/75 border border-white/15 rounded-full px-5 py-2.5">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="inline-flex items-center gap-2 mt-8 text-sm text-white/75 border border-white/15 rounded-full px-5 py-2.5"
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E6007E] opacity-60" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#E6007E]" />
+            </span>
             <Gauge className="w-4 h-4 text-[#E6007E]" />
             99.9% platform uptime across all five products
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -80,14 +128,15 @@ export default function HexaIntelligenceContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.35, delay: index * 0.08 }}
-                  className="bg-gray-50 border border-gray-200 rounded-2xl p-7 hover:border-[#E6007E]/40 transition-colors"
                 >
-                  <div className="w-11 h-11 bg-[#080818] rounded-xl flex items-center justify-center mb-5">
-                    <Icon className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1.5">{product.name}</h3>
-                  <p className="text-xs font-semibold text-[#E6007E] tracking-wide uppercase mb-3">{product.tagline}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+                  <TiltCard className="h-full bg-gray-50 border border-gray-200 rounded-2xl p-7 hover:border-[#E6007E]/40 transition-colors">
+                    <div className="w-11 h-11 bg-[#080818] rounded-xl flex items-center justify-center mb-5">
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-1.5">{product.name}</h3>
+                    <p className="text-xs font-semibold text-[#E6007E] tracking-wide uppercase mb-3">{product.tagline}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+                  </TiltCard>
                 </motion.div>
               );
             })}

@@ -3,6 +3,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import StickyCTA from '@/components/sticky-cta';
 import Image from 'next/image';
+import TiltCard from '@/components/tilt-card';
 
 export const metadata: Metadata = {
   title: 'Hexa Social | Life at Hexa',
@@ -47,22 +48,22 @@ export default function HexaSocialPage() {
                 technology, and people teams. Built for collaboration, security, and round-the-clock delivery.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
+                <TiltCard className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors">
                   <div className="text-2xl font-bold gradient-text">50+</div>
                   <div className="text-gray-600 text-sm">Finance Professionals</div>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
+                </TiltCard>
+                <TiltCard className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors">
                   <div className="text-2xl font-bold gradient-text">24/7</div>
                   <div className="text-gray-600 text-sm">Operational Capability</div>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
+                </TiltCard>
+                <TiltCard className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors">
                   <div className="text-2xl font-bold gradient-text">8</div>
                   <div className="text-gray-600 text-sm">Countries Served</div>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
+                </TiltCard>
+                <TiltCard className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors">
                   <div className="text-2xl font-bold gradient-text">ISO</div>
                   <div className="text-gray-600 text-sm">Security Standards</div>
-                </div>
+                </TiltCard>
               </div>
             </div>
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">

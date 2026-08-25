@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Shield, Layers, Users, Clock, Lock, FileCheck, Eye, UserCheck, Award } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 const certifications = [
   { label: 'ISO 27001', caption: 'Information security management' },
@@ -60,7 +61,11 @@ export default function TrustSection() {
 
   return (
     <section className="py-28 hero-gradient text-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        className="absolute -top-40 left-0 w-[560px] h-[560px] rounded-full opacity-[0.12] blur-[130px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, #E6007E, transparent 70%)' }}
+      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -107,20 +112,21 @@ export default function TrustSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-[#17171a] p-7 hover:bg-[#242427] transition-colors"
               >
-                <div className="w-11 h-11 bg-[#E6007E] flex items-center justify-center mb-5">
-                  {IconComponent && <IconComponent className="w-6 h-6 text-white" />}
-                </div>
-                <h3 className="text-lg font-bold text-white mb-4">{item?.title}</h3>
-                <ul className="space-y-2">
-                  {item?.points?.map((point, i) => (
-                    <li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
-                      <span className="text-[#E6007E]">✓</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                <TiltCard glareColor="rgba(230,0,126,0.2)" className="h-full bg-[#17171a] p-7 hover:bg-[#242427] transition-colors">
+                  <div className="w-11 h-11 bg-[#E6007E] flex items-center justify-center mb-5">
+                    {IconComponent && <IconComponent className="w-6 h-6 text-white" />}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-4">{item?.title}</h3>
+                  <ul className="space-y-2">
+                    {item?.points?.map((point, i) => (
+                      <li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
+                        <span className="text-[#E6007E]">✓</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </TiltCard>
               </motion.div>
             );
           })}

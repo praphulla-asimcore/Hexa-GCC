@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Landmark, Cpu, Users, Camera, ShieldCheck, Network, BatteryCharging, Clock3 } from 'lucide-react';
+import { Landmark, Cpu, Users, Camera, ShieldCheck, Network, BatteryCharging, Clock3, Building2 } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 const facilityFacts = [
   { icon: Users, label: '120-person delivery centre' },
@@ -25,9 +26,42 @@ export default function AboutContent() {
     <div>
       {/* Intro */}
       <section className="relative overflow-hidden bg-[#080818] text-white py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[.14em] text-[#E6007E] mb-5">Established 2002</p>
-          <h1 className="text-4xl sm:text-5xl font-semibold leading-tight">Built to be a long-term operating partner, not a vendor.</h1>
+        <div
+          className="absolute -top-32 left-0 w-[540px] h-[540px] rounded-full opacity-[0.13] blur-[120px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #E6007E, transparent 70%)' }}
+        />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="relative w-16 h-16 mb-8"
+          >
+            <motion.div
+              animate={{ scale: [1, 1.35, 1], opacity: [0.5, 0, 0.5] }}
+              transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 rounded-full border border-[#E6007E]/40"
+            />
+            <div className="relative w-16 h-16 rounded-full bg-white/5 border border-white/15 flex items-center justify-center">
+              <Building2 className="w-7 h-7 text-[#E6007E]" />
+            </div>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-xs font-semibold uppercase tracking-[.14em] text-[#E6007E] mb-5"
+          >
+            Established 2002
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl sm:text-5xl font-semibold leading-tight"
+          >
+            Built to be a long-term operating partner, not a vendor.
+          </motion.h1>
         </div>
       </section>
 
@@ -76,14 +110,16 @@ export default function AboutContent() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Led by <span className="gradient-text">Accountable People</span>
           </h2>
-          <div className="flex items-center gap-5 bg-white rounded-2xl p-6 border border-gray-200 max-w-md">
-            <div className="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-xl font-bold">PS</span>
-            </div>
-            <div>
-              <p className="text-lg font-bold text-gray-900">Praphulla Subedi</p>
-            </div>
-          </div>
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+            <TiltCard className="flex items-center gap-5 bg-white rounded-2xl p-6 border border-gray-200 max-w-md hover:border-[#E6007E]/40 transition-colors">
+              <div className="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-xl font-bold">PS</span>
+              </div>
+              <div>
+                <p className="text-lg font-bold text-gray-900">Praphulla Subedi</p>
+              </div>
+            </TiltCard>
+          </motion.div>
         </div>
       </section>
 
@@ -94,16 +130,24 @@ export default function AboutContent() {
             Three <span className="gradient-text">Centres of Excellence</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {centres.map((centre) => {
+            {centres.map((centre, index) => {
               const Icon = centre.icon;
               return (
-                <div key={centre.name} className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-                  <div className="w-11 h-11 bg-[#080818] rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{centre.name}</h3>
-                  <p className="text-gray-600 text-sm">{centre.description}</p>
-                </div>
+                <motion.div
+                  key={centre.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: index * 0.08 }}
+                >
+                  <TiltCard className="h-full bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#E6007E]/40 transition-colors">
+                    <div className="w-11 h-11 bg-[#080818] rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{centre.name}</h3>
+                    <p className="text-gray-600 text-sm">{centre.description}</p>
+                  </TiltCard>
+                </motion.div>
               );
             })}
           </div>
@@ -122,13 +166,21 @@ export default function AboutContent() {
             work with is the team that shows up every day.
           </p>
           <div className="grid sm:grid-cols-2 gap-3 mb-10">
-            {facilityFacts.map((fact) => {
+            {facilityFacts.map((fact, index) => {
               const Icon = fact.icon;
               return (
-                <div key={fact.label} className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-4">
-                  <Icon className="w-5 h-5 text-[#E6007E] flex-shrink-0" />
-                  <span className="text-gray-800 text-sm font-medium">{fact.label}</span>
-                </div>
+                <motion.div
+                  key={fact.label}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.06 }}
+                >
+                  <TiltCard className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-4 h-full hover:border-[#E6007E]/40 transition-colors">
+                    <Icon className="w-5 h-5 text-[#E6007E] flex-shrink-0" />
+                    <span className="text-gray-800 text-sm font-medium">{fact.label}</span>
+                  </TiltCard>
+                </motion.div>
               );
             })}
           </div>

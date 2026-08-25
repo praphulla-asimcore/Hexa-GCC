@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 const cards = [
   {
@@ -36,21 +37,23 @@ export default function IntentForkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: index * 0.08 }}
-            className="group border border-gray-200 rounded-2xl p-9 hover:border-[#E6007E]/40 hover:bg-[#fffafd] transition-colors"
+            className="block"
           >
-            <span className="text-xs font-semibold uppercase tracking-[.1em] text-gray-400">{card.tag}</span>
-            <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mt-3 mb-4 max-w-sm">{card.title}</h3>
-            <p className="text-gray-600 leading-relaxed mb-6 min-h-[110px]">{card.body}</p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {card.chips.map((chip) => (
-                <span key={chip} className="text-xs border border-gray-200 rounded px-2.5 py-1 text-gray-500 group-hover:border-[#E6007E]/30 group-hover:text-[#8d0d51] transition-colors">
-                  {chip}
-                </span>
-              ))}
-            </div>
-            <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#E6007E]">
-              {card.cta} <ArrowRight className="w-4 h-4" />
-            </span>
+            <TiltCard className="group h-full border border-gray-200 rounded-2xl p-9 hover:border-[#E6007E]/40 hover:bg-[#fffafd] transition-colors">
+              <span className="text-xs font-semibold uppercase tracking-[.1em] text-gray-400">{card.tag}</span>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mt-3 mb-4 max-w-sm">{card.title}</h3>
+              <p className="text-gray-600 leading-relaxed mb-6 min-h-[110px]">{card.body}</p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {card.chips.map((chip) => (
+                  <span key={chip} className="text-xs border border-gray-200 rounded px-2.5 py-1 text-gray-500 group-hover:border-[#E6007E]/30 group-hover:text-[#8d0d51] transition-colors">
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#E6007E]">
+                {card.cta} <ArrowRight className="w-4 h-4" />
+              </span>
+            </TiltCard>
           </motion.a>
         ))}
       </div>

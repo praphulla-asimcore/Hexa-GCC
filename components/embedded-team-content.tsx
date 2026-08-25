@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, XCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, XCircle, Layers } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 const BOOKING_URL = 'https://www.hnpl.business/call';
 
@@ -27,15 +28,54 @@ export default function EmbeddedTeamContent() {
   return (
     <>
       <section className="relative overflow-hidden bg-[#080818] text-white py-24 lg:py-32">
+        <div
+          className="absolute -top-32 right-0 w-[560px] h-[560px] rounded-full opacity-[0.13] blur-[130px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #E6007E, transparent 70%)' }}
+        />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] font-semibold mb-6">Two ways to engage Hexa.</h1>
-          <p className="text-lg text-white/65 max-w-2xl leading-relaxed mb-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="relative w-16 h-16 mb-8"
+          >
+            <motion.div
+              animate={{ scale: [1, 1.35, 1], opacity: [0.5, 0, 0.5] }}
+              transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 rounded-full border border-[#E6007E]/40"
+            />
+            <div className="relative w-16 h-16 rounded-full bg-white/5 border border-white/15 flex items-center justify-center">
+              <Layers className="w-7 h-7 text-[#E6007E]" />
+            </div>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] font-semibold mb-6"
+          >
+            Two ways to engage Hexa.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg text-white/65 max-w-2xl leading-relaxed mb-10"
+          >
             A capability centre, where we find, employ, and manage the people for you. Or a pod engagement,
             where you bring the people and we provide the seat, the IT, and everything holding it up.
-          </p>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 gradient-bg px-7 py-4 rounded-full font-semibold hover:bg-[#b80065] transition-colors">
+          </motion.p>
+          <motion.a
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 gradient-bg px-7 py-4 rounded-full font-semibold hover:bg-[#b80065] transition-colors"
+          >
             Book a 20-minute consultation <ArrowRight className="w-5 h-5" />
-          </a>
+          </motion.a>
         </div>
       </section>
 
@@ -74,10 +114,11 @@ export default function EmbeddedTeamContent() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.08 }}
-                className="bg-white border border-gray-200 rounded-xl px-6 py-4 flex items-baseline gap-5 flex-wrap"
               >
-                <span className="font-serif text-xl text-gray-900 min-w-[88px]">{rung.tier}</span>
-                <span className="text-gray-600">{rung.role}</span>
+                <TiltCard className="bg-white border border-gray-200 rounded-xl px-6 py-4 flex items-baseline gap-5 flex-wrap hover:border-[#E6007E]/40 transition-colors">
+                  <span className="font-serif text-xl text-gray-900 min-w-[88px]">{rung.tier}</span>
+                  <span className="text-gray-600">{rung.role}</span>
+                </TiltCard>
               </motion.div>
             ))}
           </div>
@@ -182,11 +223,19 @@ export default function EmbeddedTeamContent() {
             when someone is out. You direct the work. Everything underneath the work is ours.
           </p>
           <div className="grid sm:grid-cols-2 gap-3 mb-8">
-            {podIncludes.map((item) => (
-              <div key={item} className="flex items-center gap-2 text-gray-700 bg-gray-50 rounded-lg p-3">
-                <CheckCircle className="w-4 h-4 text-[#E6007E] flex-shrink-0" />
-                <span className="text-sm">{item}</span>
-              </div>
+            {podIncludes.map((item, index) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.06 }}
+              >
+                <TiltCard className="flex items-center gap-2 text-gray-700 bg-gray-50 rounded-lg p-3 h-full hover:bg-gray-100 transition-colors">
+                  <CheckCircle className="w-4 h-4 text-[#E6007E] flex-shrink-0" />
+                  <span className="text-sm">{item}</span>
+                </TiltCard>
+              </motion.div>
             ))}
           </div>
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">

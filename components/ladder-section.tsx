@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import TiltCard from '@/components/tilt-card';
 
 const rungs = [
   { name: 'Senior', description: 'Judgement, exceptions, escalation, direction', width: '56%' },
@@ -34,12 +35,13 @@ export default function LadderSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               style={{ width: rung.width }}
-              className="border border-gray-200 rounded-xl px-6 py-5 hover:border-[#E6007E]/40 hover:bg-[#fffafd] transition-colors"
             >
-              <div className="flex items-baseline gap-5 flex-wrap">
-                <span className="font-serif text-2xl text-gray-900 min-w-[88px]">{rung.name}</span>
-                <span className="text-gray-600">{rung.description}</span>
-              </div>
+              <TiltCard style={{ width: '100%' }} className="border border-gray-200 rounded-xl px-6 py-5 hover:border-[#E6007E]/40 hover:bg-[#fffafd] transition-colors">
+                <div className="flex items-baseline gap-5 flex-wrap">
+                  <span className="font-serif text-2xl text-gray-900 min-w-[88px]">{rung.name}</span>
+                  <span className="text-gray-600">{rung.description}</span>
+                </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>

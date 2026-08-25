@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Search, FileSearch, Puzzle, Eye, RefreshCw, PlayCircle, RefreshCcw, Wrench } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 const steps = [
   {
@@ -97,14 +98,14 @@ export default function ProcessSection() {
                   className={`lg:flex items-center gap-8 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                 >
                   <div className={`flex-1 ${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
-                    <div className={`bg-white border border-gray-200 rounded-2xl p-6 inline-block w-full max-w-md ${isEven ? 'lg:ml-auto' : 'lg:mr-auto'}`}>
+                    <TiltCard className={`bg-white border border-gray-200 rounded-2xl p-6 inline-block w-full max-w-md hover:border-[#E6007E]/40 transition-colors ${isEven ? 'lg:ml-auto' : 'lg:mr-auto'}`}>
                       <div className={`flex items-center gap-4 mb-1 ${isEven ? 'lg:flex-row-reverse' : ''}`}>
                         <span className="text-3xl font-bold gradient-text">{step?.number}</span>
                         <h3 className="text-lg font-bold text-gray-900">{step?.title}</h3>
                       </div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">{step?.week}</p>
                       <p className="text-gray-800">{step?.description}</p>
-                    </div>
+                    </TiltCard>
                   </div>
                   <div className="hidden lg:flex w-16 h-16 gradient-bg rounded-full items-center justify-center shadow-lg shadow-[#E6007E]/20 z-10">
                     {IconComponent && <IconComponent className="w-7 h-7 text-white" />}

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Users, Globe, CheckCircle, MapPin, Clock, DollarSign, GraduationCap, Building2, Target, Shield, TrendingUp } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 const whyHexaDifferentiators = [
   {
@@ -206,10 +207,10 @@ export default function WhyHexaContent() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12"
           >
             {stats?.map((stat, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 text-center border border-gray-200">
+              <TiltCard key={index} className="bg-white rounded-2xl p-6 text-center border border-gray-200 hover:border-[#E6007E]/40 transition-colors">
                 <div className="text-3xl font-bold gradient-text mb-2">{stat?.value}</div>
                 <div className="text-gray-600 text-sm">{stat?.label}</div>
-              </div>
+              </TiltCard>
             ))}
           </motion.div>
         </div>
@@ -227,14 +228,14 @@ export default function WhyHexaContent() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">
               Led by <span className="gradient-text">Accountable People</span>
             </h2>
-            <div className="flex items-center gap-5 bg-gray-50 rounded-2xl p-6 border border-gray-200 max-w-md">
+            <TiltCard className="flex items-center gap-5 bg-gray-50 rounded-2xl p-6 border border-gray-200 max-w-md hover:border-[#E6007E]/40 transition-colors">
               <div className="w-16 h-16 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-xl font-bold">PS</span>
               </div>
               <div>
                 <p className="text-lg font-bold text-gray-900">Praphulla Subedi</p>
               </div>
-            </div>
+            </TiltCard>
           </motion.div>
         </div>
       </section>
@@ -265,13 +266,14 @@ export default function WhyHexaContent() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gray-50 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100"
                 >
-                  <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
-                    {IconComponent && <IconComponent className="w-6 h-6 text-white" />}
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{value?.title}</h3>
-                  <p className="text-gray-600 text-sm">{value?.description}</p>
+                  <TiltCard className="h-full bg-gray-50 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100 hover:border-[#E6007E]/30">
+                    <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-4">
+                      {IconComponent && <IconComponent className="w-6 h-6 text-white" />}
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{value?.title}</h3>
+                    <p className="text-gray-600 text-sm">{value?.description}</p>
+                  </TiltCard>
                 </motion.div>
               );
             })}
@@ -304,17 +306,18 @@ export default function WhyHexaContent() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView2 ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-sm">{item?.number}</span>
+                <TiltCard className="h-full bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg hover:border-[#E6007E]/30 transition-[box-shadow,border-color]">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-sm">{item?.number}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-gray-900 text-lg mb-2">{item?.title}</h4>
+                      <p className="text-gray-600">{item?.description}</p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-gray-900 text-lg mb-2">{item?.title}</h4>
-                    <p className="text-gray-600">{item?.description}</p>
-                  </div>
-                </div>
+                </TiltCard>
               </motion.div>
             ))}
           </div>
@@ -364,13 +367,14 @@ export default function WhyHexaContent() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView3 ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gray-50 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100"
                 >
-                  <div className={`w-14 h-14 ${reason?.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
-                    {IconComponent && <IconComponent className={`w-7 h-7 ${reason?.color}`} />}
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{reason?.title}</h3>
-                  <p className="text-gray-600">{reason?.description}</p>
+                  <TiltCard className="h-full bg-gray-50 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:border-[#E6007E]/30 transition-[box-shadow,border-color] border border-gray-100">
+                    <div className={`w-14 h-14 ${reason?.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
+                      {IconComponent && <IconComponent className={`w-7 h-7 ${reason?.color}`} />}
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{reason?.title}</h3>
+                    <p className="text-gray-600">{reason?.description}</p>
+                  </TiltCard>
                 </motion.div>
               );
             })}

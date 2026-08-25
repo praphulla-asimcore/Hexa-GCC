@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Landmark, Receipt, Wallet, FileCheck2, Calendar, ArrowRight } from 'lucide-react';
 import { markets } from '@/lib/markets-data';
+import TiltCard from '@/components/tilt-card';
 
 const BOOKING_URL = 'https://www.hnpl.business/call';
 
@@ -95,8 +96,8 @@ export default function MarketsExplorer() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.25 }}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
               >
+              <TiltCard glareColor="rgba(230,0,126,0.18)" className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
                 <div className="flex items-center gap-4 mb-8">
                   <span className="flex items-center justify-center w-14 h-14 rounded-xl bg-[#E6007E]/10 border border-[#E6007E]/30 text-sm font-bold tracking-wide text-white">
                     {active.code}
@@ -151,6 +152,7 @@ export default function MarketsExplorer() {
                     />
                   ))}
                 </div>
+              </TiltCard>
               </motion.div>
             </AnimatePresence>
           </div>

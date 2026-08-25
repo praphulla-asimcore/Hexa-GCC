@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import TiltCard from '@/components/tilt-card';
 
 const cells = [
   { number: '01', title: 'Control', description: 'You select every person, direct the work, and keep the systems, the access and the IP.' },
@@ -34,11 +35,12 @@ export default function DecisionHierarchySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.06 }}
-              className={`p-7 ${index === cells.length - 1 ? 'bg-[#242427]' : 'bg-[#17171a]'}`}
             >
-              <span className="text-xs font-semibold text-[#E6007E]">{cell.number}</span>
-              <h3 className="text-xl font-semibold mt-2 mb-2.5">{cell.title}</h3>
-              <p className="text-white/55 leading-relaxed text-sm">{cell.description}</p>
+              <TiltCard glareColor="rgba(230,0,126,0.22)" className={`h-full p-7 ${index === cells.length - 1 ? 'bg-[#242427]' : 'bg-[#17171a]'}`}>
+                <span className="text-xs font-semibold text-[#E6007E]">{cell.number}</span>
+                <h3 className="text-xl font-semibold mt-2 mb-2.5">{cell.title}</h3>
+                <p className="text-white/55 leading-relaxed text-sm">{cell.description}</p>
+              </TiltCard>
             </motion.div>
           ))}
         </div>

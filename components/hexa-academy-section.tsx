@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Globe2, Laptop, Bot, MessagesSquare } from 'lucide-react';
+import TiltCard from '@/components/tilt-card';
 
 const tracks = [
   { icon: Globe2, title: 'Market and standard', description: 'Country-specific accounting, statutory calendars and reporting standards for the markets your entities sit in.' },
@@ -36,11 +37,12 @@ export default function HexaAcademySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.08 }}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#E6007E]/40 transition-colors"
               >
-                <Icon className="w-5 h-5 text-[#E6007E] mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2.5">{track.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{track.description}</p>
+                <TiltCard className="h-full bg-white border border-gray-200 rounded-xl p-6 hover:border-[#E6007E]/40 transition-colors">
+                  <Icon className="w-5 h-5 text-[#E6007E] mb-4" />
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2.5">{track.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{track.description}</p>
+                </TiltCard>
               </motion.div>
             );
           })}

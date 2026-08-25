@@ -6,9 +6,11 @@ import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } fr
 interface TiltCardProps {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
+  glareColor?: string;
 }
 
-export default function TiltCard({ children, className = '' }: TiltCardProps) {
+export default function TiltCard({ children, className = '', style, glareColor = 'rgba(230,0,126,0.16)' }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
   const x = useMotionValue(0.5);
@@ -17,7 +19,7 @@ export default function TiltCard({ children, className = '' }: TiltCardProps) {
   const rotateY = useSpring(useTransform(x, [0, 1], [-7, 7]), { stiffness: 300, damping: 26 });
   const glareX = useTransform(x, [0, 1], [0, 100]);
   const glareY = useTransform(y, [0, 1], [0, 100]);
-  const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, rgba(230,0,126,0.16), transparent 55%)`;
+  const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, ${glareColor}, transparent 55%)`;
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     const rect = ref.current?.getBoundingClientRect();
@@ -38,7 +40,7 @@ export default function TiltCard({ children, className = '' }: TiltCardProps) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY, transformPerspective: 900 }}
+      style={{ ...style, rotateX, rotateY, transformPerspective: 900 }}
       className={`relative ${className}`}
     >
       <motion.div

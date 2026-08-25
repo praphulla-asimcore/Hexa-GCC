@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import TiltCard from '@/components/tilt-card';
 
 const stats = [
   { to: 5000, suffix: '+', label: 'Professionals placed since 2002' },
@@ -54,13 +55,13 @@ export default function ProofBarSection() {
     <section className="bg-[#12122a] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-[#12122a] p-8 group hover:bg-[#181834] transition-colors">
+          <TiltCard key={stat.label} glareColor="rgba(230,0,126,0.22)" className="bg-[#12122a] p-8 group hover:bg-[#181834] transition-colors">
             <p className="text-3xl sm:text-4xl font-semibold text-white">
               <Counter to={stat.to} suffix={stat.suffix} />
             </p>
             <p className="text-sm text-white/50 mt-3">{stat.label}</p>
             <div className="h-0.5 w-0 bg-[#E6007E] mt-4 group-hover:w-full transition-all duration-500" />
-          </div>
+          </TiltCard>
         ))}
       </div>
     </section>

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import TiltCard from '@/components/tilt-card';
 
 const stages = [
   { name: 'Start with 3', description: 'A named team, interviewed and selected by you, running one defined workstream.' },
@@ -33,12 +34,15 @@ export default function BuildRunImproveTransferSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.08 }}
-              className={`p-7 border-r border-gray-200 last:border-r-0 border-t sm:border-t-0 first:border-t-0 ${
-                index === stages.length - 1 ? 'bg-[#fff4fa]' : 'bg-white'
-              }`}
             >
-              <span className="block font-semibold text-xl text-gray-900 mb-2.5">{stage.name}</span>
-              <p className="text-sm text-gray-600 leading-relaxed">{stage.description}</p>
+              <TiltCard
+                className={`h-full p-7 border-r border-gray-200 last:border-r-0 border-t sm:border-t-0 first:border-t-0 ${
+                  index === stages.length - 1 ? 'bg-[#fff4fa]' : 'bg-white'
+                }`}
+              >
+                <span className="block font-semibold text-xl text-gray-900 mb-2.5">{stage.name}</span>
+                <p className="text-sm text-gray-600 leading-relaxed">{stage.description}</p>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
