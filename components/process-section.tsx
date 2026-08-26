@@ -2,66 +2,87 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Search, FileSearch, Puzzle, Eye, RefreshCw, PlayCircle, RefreshCcw, Wrench } from 'lucide-react';
+import { Wrench } from 'lucide-react';
 import TiltCard from '@/components/tilt-card';
+import { iconMap, IconKey } from '@/lib/icon-map';
 
-const steps = [
+export interface ProcessStep {
+  number: string;
+  week: string;
+  title: string;
+  description: string;
+  icon: IconKey;
+}
+
+const defaultSteps: ProcessStep[] = [
   {
     number: '01',
     week: 'Week 1-2',
     title: 'Discovery and scope definition',
     description: 'Current state, systems, entities, volumes, statutory calendar, constraints and success measures. Output is a signed scope document.',
-    icon: Search,
+    icon: 'search',
   },
   {
     number: '02',
     week: 'Week 2-4',
     title: 'Process mapping and SOP capture',
     description: 'Every in-scope process documented to task level, with controls, approvals and exceptions. Output is a process manual you own.',
-    icon: FileSearch,
+    icon: 'file-search',
   },
   {
     number: '03',
     week: 'Week 3-6',
     title: 'Pod design and recruitment',
     description: 'Roles, qualifications, lead and review model defined. You interview and select. Nobody joins the pod without your approval.',
-    icon: Puzzle,
+    icon: 'puzzle',
   },
   {
     number: '04',
     week: 'Week 5-8',
     title: 'Shadow',
     description: 'Your team executes, our team observes and documents variance against the SOP.',
-    icon: Eye,
+    icon: 'eye',
   },
   {
     number: '05',
     week: 'Week 7-10',
     title: 'Reverse shadow',
     description: 'Our team executes, your team reviews. Errors are caught here, not in production.',
-    icon: RefreshCcw,
+    icon: 'refresh-ccw',
   },
   {
     number: '06',
     week: 'Week 9-12',
     title: 'Go-live and hypercare',
     description: 'Full handover with daily checkpoint calls through the first close cycle, then weekly.',
-    icon: PlayCircle,
+    icon: 'play-circle',
   },
   {
     number: '07',
     week: 'Ongoing',
     title: 'Steady state and governance',
     description: 'Weekly operations call, monthly service review, quarterly business review against a documented improvement target.',
-    icon: RefreshCw,
+    icon: 'refresh-cw',
   },
 ];
 
-const tools = [
+const defaultTools = [
   'QuickBooks', 'Xero', 'NetSuite', 'SAP', 'React', 'Node.js', 'AWS', 'Excel/Sheets'
 ];
 
-export default function ProcessSection() {
+export interface ProcessSectionProps {
+  heading?: string;
+  subheading?: string;
+  steps?: ProcessStep[];
+  tools?: string[] | null;
+}
+
+export default function ProcessSection({
+  heading = 'How a Hexa capability becomes operational',
+  subheading = 'Seven stages, a published timeline, and a named owner at each one. A ten-person finance transition runs eight to twelve weeks.',
+  steps = defaultSteps,
+  tools = defaultTools,
+}: ProcessSectionProps) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
@@ -75,10 +96,10 @@ export default function ProcessSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            How a Hexa capability becomes operational
+            {heading}
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Seven stages, a published timeline, and a named owner at each one. A ten-person finance transition runs eight to twelve weeks.
+            {subheading}
           </p>
         </motion.div>
 
@@ -87,7 +108,7 @@ export default function ProcessSection() {
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#E6007E] to-purple-500" />
           <div className="space-y-12">
             {steps?.map((step, index) => {
-              const IconComponent = step?.icon;
+              const IconComponent = step?.icon ? iconMap[step.icon] : null;
               const isEven = index % 2 === 0;
               return (
                 <motion.div
@@ -118,6 +139,7 @@ export default function ProcessSection() {
         </div>
 
         {/* Tools Section */}
+        {tools && tools.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -138,6 +160,7 @@ export default function ProcessSection() {
             </div>
           </div>
         </motion.div>
+        )}
       </div>
     </section>
   );

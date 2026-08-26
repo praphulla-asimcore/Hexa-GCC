@@ -4,7 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import TiltCard from '@/components/tilt-card';
 
-const stats = [
+export interface ProofStat {
+  to: number;
+  suffix: string;
+  label: string;
+}
+
+const defaultStats: ProofStat[] = [
   { to: 5000, suffix: '+', label: 'Professionals placed since 2002' },
   { to: 3, suffix: '', label: 'Centres of excellence' },
   { to: 200, suffix: '+', label: 'Seats in delivery' },
@@ -50,7 +56,7 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
   );
 }
 
-export default function ProofBarSection() {
+export default function ProofBarSection({ stats = defaultStats }: { stats?: ProofStat[] }) {
   return (
     <section className="bg-[#12122a] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10">

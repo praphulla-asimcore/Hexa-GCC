@@ -1,13 +1,43 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Download, CheckCircle } from 'lucide-react';
+import { Calendar, Download, ArrowRight, CheckCircle } from 'lucide-react';
 
 const BOOKING_URL = 'https://www.hnpl.business/call';
 
-const chips = ['5,000+ professionals placed', 'ISO 27001 · ISO 9001 certified', 'ACCA Approved Employer'];
+const defaultChips = ['5,000+ professionals placed', 'ISO 27001 · ISO 9001 certified', 'ACCA Approved Employer'];
 
-export default function HeroSection() {
+const icons = { calendar: Calendar, download: Download, arrow: ArrowRight } as const;
+
+export interface HeroCta {
+  label: string;
+  href: string;
+  external?: boolean;
+  icon: keyof typeof icons;
+}
+
+export interface HeroSectionProps {
+  eyebrow?: string;
+  heading?: string;
+  subheading?: string;
+  strapline?: string;
+  chips?: string[];
+  primaryCta?: HeroCta;
+  secondaryCta?: HeroCta;
+}
+
+export default function HeroSection({
+  eyebrow = 'Established 2002',
+  heading = 'Your dedicated capability centre. Built, operated and continuously improved.',
+  subheading = 'You choose the people. You control the work and own the IP. We handle talent, employment, infrastructure, security and retention, and continuously improve productivity through process expertise and automation.',
+  strapline = 'Dedicated people. Managed performance. AI-improved productivity.',
+  chips = defaultChips,
+  primaryCta = { label: 'Book a 20-minute consultation', href: BOOKING_URL, external: true, icon: 'calendar' },
+  secondaryCta = { label: 'Download the operating model', href: '/resources', icon: 'download' },
+}: HeroSectionProps) {
+  const PrimaryIcon = icons[primaryCta.icon];
+  const SecondaryIcon = secondaryCta ? icons[secondaryCta.icon] : null;
+
   return (
     <section className="relative min-h-[760px] overflow-hidden bg-[#17171a] text-white">
       {/* Video Background */}
@@ -35,7 +65,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 text-white/70 text-xs font-semibold uppercase tracking-[.16em] mb-8"
           >
-            Established 2002
+            {eyebrow}
           </motion.div>
 
           {/* Main Headline */}
@@ -45,7 +75,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-[3.25rem] font-semibold text-white mb-6 leading-[1.1] tracking-[-.03em] max-w-2xl"
           >
-            Your dedicated capability centre. Built, operated and continuously improved.
+            {heading}
           </motion.h1>
 
           {/* Subheadline */}
@@ -55,60 +85,66 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-white/65 max-w-xl leading-relaxed"
           >
-            You choose the people. You control the work and own the IP. We handle talent, employment,
-            infrastructure, security and retention, and continuously improve productivity through process
-            expertise and automation.
+            {subheading}
           </motion.p>
 
           {/* Strapline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-xl text-white mt-6 mb-10 border-l-2 border-[#E6007E] pl-4 max-w-xl"
-            style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-          >
-            Dedicated people. Managed performance. AI-improved productivity.
-          </motion.p>
+          {strapline && (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="text-xl text-white mt-6 mb-10 border-l-2 border-[#E6007E] pl-4 max-w-xl"
+              style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+            >
+              {strapline}
+            </motion.p>
+          )}
 
           {/* Credibility chips */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap gap-x-6 gap-y-3 mb-12"
-          >
-            {chips.map((chip) => (
-              <div key={chip} className="flex items-center gap-2 text-white/75 text-sm">
-                <CheckCircle className="w-4 h-4 text-[#E6007E]" />
-                <span>{chip}</span>
-              </div>
-            ))}
-          </motion.div>
+          {chips && chips.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className={`flex flex-wrap gap-x-6 gap-y-3 ${strapline ? 'mb-12' : 'mt-6 mb-12'}`}
+            >
+              {chips.map((chip) => (
+                <div key={chip} className="flex items-center gap-2 text-white/75 text-sm">
+                  <CheckCircle className="w-4 h-4 text-[#E6007E]" />
+                  <span>{chip}</span>
+                </div>
+              ))}
+            </motion.div>
+          )}
 
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-start gap-4"
+            className={`flex flex-col sm:flex-row items-start gap-4${!strapline && (!chips || chips.length === 0) ? ' mt-10' : ''}`}
           >
             <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={primaryCta.href}
+              target={primaryCta.external ? '_blank' : undefined}
+              rel={primaryCta.external ? 'noopener noreferrer' : undefined}
               className="gradient-bg px-7 py-4 text-white font-semibold rounded-full hover:bg-[#b80065] transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
             >
-              <Calendar className="w-5 h-5" />
-              Book a 20-minute consultation
+              <PrimaryIcon className="w-5 h-5" />
+              {primaryCta.label}
             </a>
-            <a
-              href="/resources"
-              className="px-7 py-4 text-white font-semibold rounded-full border border-white/25 hover:bg-white/10 transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
-            >
-              <Download className="w-5 h-5" />
-              Download the operating model
-            </a>
+            {secondaryCta && SecondaryIcon && (
+              <a
+                href={secondaryCta.href}
+                target={secondaryCta.external ? '_blank' : undefined}
+                rel={secondaryCta.external ? 'noopener noreferrer' : undefined}
+                className="px-7 py-4 text-white font-semibold rounded-full border border-white/25 hover:bg-white/10 transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
+              >
+                <SecondaryIcon className="w-5 h-5" />
+                {secondaryCta.label}
+              </a>
+            )}
           </motion.div>
           </div>
       </div>

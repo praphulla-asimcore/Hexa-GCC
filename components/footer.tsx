@@ -101,6 +101,11 @@ export default function Footer() {
                   About
                 </Link>
               </li>
+              <li>
+                <Link href="/why-hexa" className="text-gray-400 hover:text-white transition-colors">
+                  Why Hexa
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -116,6 +121,16 @@ export default function Footer() {
               <li>
                 <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
                   Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/workspace" className="text-gray-400 hover:text-white transition-colors">
+                  Workspace
+                </Link>
+              </li>
+              <li>
+                <Link href="/social" className="text-gray-400 hover:text-white transition-colors">
+                  Social
                 </Link>
               </li>
             </ul>

@@ -3,11 +3,14 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
 
 const WHATSAPP_URL = 'https://wa.me/9779851338099';
 
+// Capability-centre nav: unchanged from before R4. Shown on /capability-centres
+// and every route that isn't explicitly part of the group layer below.
 const capabilities = [
   { label: 'Finance', href: '/finance' },
   { label: 'Technology', href: '/technology' },
@@ -24,7 +27,22 @@ const navItems = [
   { label: 'About', href: '/about' },
 ];
 
+// Group nav: only on /, /in-market* and /advisory* (R4 Task 5).
+const groupNavItems = [
+  { label: 'In your market', href: '/in-market' },
+  { label: 'Capability centres', href: '/capability-centres' },
+  { label: 'Advisory', href: '/advisory' },
+  { label: 'Clients', href: '/clients' },
+  { label: 'About', href: '/about' },
+];
+
+function isGroupRoute(pathname: string) {
+  return pathname === '/' || pathname.startsWith('/in-market') || pathname.startsWith('/advisory');
+}
+
 export default function Header() {
+  const pathname = usePathname();
+  const isGroup = isGroupRoute(pathname ?? '/');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false);
@@ -58,40 +76,42 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <div
-              className="relative"
-              onMouseEnter={() => setIsCapabilitiesOpen(true)}
-              onMouseLeave={() => setIsCapabilitiesOpen(false)}
-            >
-              <button className={`flex items-center gap-1 ${linkClass}`}>
-                Capabilities
-                <ChevronDown className="w-3.5 h-3.5" />
-              </button>
-              <AnimatePresence>
-                {isCapabilitiesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 6 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 pt-3"
-                  >
-                    <div className="bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[160px]">
-                      {capabilities.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#E6007E] transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-            {navItems.map((item) => (
+            {!isGroup && (
+              <div
+                className="relative"
+                onMouseEnter={() => setIsCapabilitiesOpen(true)}
+                onMouseLeave={() => setIsCapabilitiesOpen(false)}
+              >
+                <button className={`flex items-center gap-1 ${linkClass}`}>
+                  Capabilities
+                  <ChevronDown className="w-3.5 h-3.5" />
+                </button>
+                <AnimatePresence>
+                  {isCapabilitiesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 6 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 pt-3"
+                    >
+                      <div className="bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[160px]">
+                        {capabilities.map((item) => (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#E6007E] transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            )}
+            {(isGroup ? groupNavItems : navItems).map((item) => (
               <Link key={item.label} href={item.href} className={linkClass}>
                 {item.label}
               </Link>
@@ -133,19 +153,23 @@ export default function Header() {
             className="md:hidden bg-[#f6f3ef] border-t shadow-lg text-[#17171a]"
           >
             <div className="px-4 py-6 space-y-4">
-              <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">Capabilities</p>
-              {capabilities.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-gray-700 font-medium hover:text-[#E6007E] pl-2"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <div className="border-t border-gray-200 pt-4 space-y-4">
-                {navItems.map((item) => (
+              {!isGroup && (
+                <>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">Capabilities</p>
+                  {capabilities.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block text-gray-700 font-medium hover:text-[#E6007E] pl-2"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </>
+              )}
+              <div className={isGroup ? 'space-y-4' : 'border-t border-gray-200 pt-4 space-y-4'}>
+                {(isGroup ? groupNavItems : navItems).map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
