@@ -37,7 +37,7 @@ export default function EorPage() {
           { number: '03', week: 'Onboard', title: 'Payroll and benefits set up', description: 'Statutory registrations, payroll and benefits in place before day one.', icon: 'user-plus' },
           { number: '04', week: 'Operate', title: 'Ongoing administration', description: 'Payroll, compliance and employment administration, with a named point of contact.', icon: 'refresh-cw' },
         ]}
-        markets="We hold direct presence in 8 markets and serve 13 in total. Employer of record coverage is confirmed market by market against current local employment law."
+        markets="We hold direct presence in 10 markets and serve 13 in total. Employer of record coverage is confirmed market by market against current local employment law."
       />
       <Footer />
       <StickyCTA />

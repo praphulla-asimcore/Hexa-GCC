@@ -37,7 +37,7 @@ export default function MobilityPage() {
           { number: '03', week: 'Relocate', title: 'Relocation coordinated', description: 'Travel, accommodation and settling-in support arranged around the approved status.', icon: 'plane' },
           { number: '04', week: 'Maintain', title: 'Status maintained', description: 'Renewals, reporting and compliance tracked for the duration of the assignment.', icon: 'refresh-cw' },
         ]}
-        markets="We hold direct presence in 8 markets and serve 13 in total. Immigration and mobility support is confirmed route by route against current rules in the markets involved."
+        markets="We hold direct presence in 10 markets and serve 13 in total. Immigration and mobility support is confirmed route by route against current rules in the markets involved."
       />
       <Footer />
       <StickyCTA />

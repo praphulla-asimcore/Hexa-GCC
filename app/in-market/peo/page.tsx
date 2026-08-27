@@ -37,7 +37,7 @@ export default function PeoPage() {
           { number: '03', week: 'Run', title: 'Payroll goes live', description: 'Payroll, filings and remittances run to a published statutory calendar.', icon: 'calculator' },
           { number: '04', week: 'Govern', title: 'Ongoing compliance', description: 'Continuous monitoring as regulation and rates change.', icon: 'shield-check' },
         ]}
-        markets="We hold direct presence in 8 markets and serve 13 in total. Professional employer organisation coverage is confirmed market by market against current local employment law."
+        markets="We hold direct presence in 10 markets and serve 13 in total. Professional employer organisation coverage is confirmed market by market against current local employment law."
       />
       <Footer />
       <StickyCTA />

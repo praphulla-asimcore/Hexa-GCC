@@ -37,7 +37,7 @@ export default function BusinessSupportPage() {
           { number: '03', week: 'Run', title: 'Operations handled', description: 'Procurement, logistics and receivables run to an agreed cadence.', icon: 'truck' },
           { number: '04', week: 'Review', title: 'Ongoing review', description: 'Regular review of scope and service as the local operation changes.', icon: 'refresh-cw' },
         ]}
-        markets="We hold direct presence in 8 markets and serve 13 in total. Business support is scoped market by market against local requirements."
+        markets="We hold direct presence in 10 markets and serve 13 in total. Business support is scoped market by market against local requirements."
       />
       <Footer />
       <StickyCTA />

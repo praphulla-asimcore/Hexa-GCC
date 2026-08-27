@@ -37,7 +37,7 @@ export default function RpoPage() {
           { number: '03', week: 'Interview', title: 'Interviews coordinated', description: 'Scheduling, logistics and reference checks handled end to end.', icon: 'calendar-check' },
           { number: '04', week: 'Offer', title: 'Offer administered', description: 'Offer prepared, issued and tracked through to acceptance.', icon: 'file-signature' },
         ]}
-        markets="We hold direct presence in 8 markets and serve 13 in total. RPO draws on local and regional sourcing channels in each."
+        markets="We hold direct presence in 10 markets and serve 13 in total. RPO draws on local and regional sourcing channels in each."
       />
       <Footer />
       <StickyCTA />

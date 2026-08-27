@@ -8,7 +8,6 @@ import ClientLogosSection from '@/components/client-logos-section';
 import CaseStudyStripSection from '@/components/case-study-strip-section';
 import HexaAcademySection from '@/components/hexa-academy-section';
 import RetentionGuaranteeSection from '@/components/retention-guarantee-section';
-import MarketsExplorer from '@/components/markets-explorer';
 import LeadForm from '@/components/lead-form';
 import Footer from '@/components/footer';
 import StickyCTA from '@/components/sticky-cta';
@@ -34,13 +33,13 @@ export default function GroupHomePage() {
       <ProofBarSection
         stats={[
           { to: 24, suffix: '', label: 'Years operating, established 2002' },
-          { to: 50, suffix: '+', label: 'Enterprise and government clients' },
-          { to: 8, suffix: '', label: 'Markets with direct presence' },
-          { to: 13, suffix: '', label: 'Markets served' },
+          { to: 1000, suffix: '+', label: 'Customers served' },
+          { to: 10, suffix: '', label: 'Markets with direct presence' },
+          { to: 12000, suffix: '+', label: 'Professionals deployed since 2002' },
         ]}
       />
-      <TrustSection />
       <ThreeWaysSection />
+      <TrustSection />
       <ClientLogosSection />
       <CaseStudyStripSection />
       <HexaAcademySection />
@@ -51,7 +50,6 @@ export default function GroupHomePage() {
         body="Pandemics, civil unrest and political instability across multiple markets. Through each, payroll continued, statutory obligations were met, personnel were moved where they needed to move, and clients were advised rather than left to work it out. Continuity is not a clause in our contracts. It is a record."
         footnote={undefined}
       />
-      <MarketsExplorer />
       <LeadForm />
       <Footer />
       <StickyCTA />
