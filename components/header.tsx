@@ -32,6 +32,7 @@ const groupNavItems = [
   { label: 'In your market', href: '/in-market' },
   { label: 'Capability centres', href: '/capability-centres' },
   { label: 'Advisory', href: '/advisory' },
+  { label: 'Hexa Intelligence', href: '/hexa-intelligence' },
   { label: 'Clients', href: '/clients' },
   { label: 'About', href: '/about' },
 ];

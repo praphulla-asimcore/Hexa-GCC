@@ -2,9 +2,11 @@ import type { Metadata } from 'next';
 import Header from '@/components/header';
 import HeroSection from '@/components/hero-section';
 import ProofBarSection from '@/components/proof-bar-section';
+import TrustSection from '@/components/trust-section';
 import ThreeWaysSection from '@/components/three-ways-section';
 import ClientLogosSection from '@/components/client-logos-section';
 import CaseStudyStripSection from '@/components/case-study-strip-section';
+import HexaAcademySection from '@/components/hexa-academy-section';
 import RetentionGuaranteeSection from '@/components/retention-guarantee-section';
 import MarketsExplorer from '@/components/markets-explorer';
 import LeadForm from '@/components/lead-form';
@@ -37,9 +39,11 @@ export default function GroupHomePage() {
           { to: 13, suffix: '', label: 'Markets served' },
         ]}
       />
+      <TrustSection />
       <ThreeWaysSection />
       <ClientLogosSection />
       <CaseStudyStripSection />
+      <HexaAcademySection />
       <RetentionGuaranteeSection
         badge={undefined}
         eyebrow="Proven across disruption"
