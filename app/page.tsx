@@ -14,8 +14,8 @@ import Footer from '@/components/footer';
 import StickyCTA from '@/components/sticky-cta';
 
 export const metadata: Metadata = {
-  title: 'Hexa | One Partner, Every Market',
-  description: 'Companies do not fail in Asia because Asia is hard. They fail because no single partner covers it. Hexa is the one partner who covers your market, our centres of excellence, and the strategy that comes before either. Established 2002.',
+  title: 'Hexa | Expand Across Asia With One Trusted Partner',
+  description: 'Our integrated Asia operating platform brings together local compliance, finance, technology, talent and operations giving you one accountable system for launching, managing and scaling across markets. Established 2002.',
 };
 
 export default function GroupHomePage() {
@@ -24,9 +24,9 @@ export default function GroupHomePage() {
       <Header />
       <HeroSection
         eyebrow="One partner. Every market. Established 2002."
-        heading="Companies do not fail in Asia because Asia is hard. They fail because no single partner covers it."
-        subheading="Every market has its own lawyers, accountants, employment rules and vendors. We are the one partner who covers all of it, whether the work happens in your country, in ours, or has to be designed before it can happen at all."
-        strapline={undefined}
+        heading="Expand across Asia with one trusted partner."
+        subheading="Our integrated Asia operating platform brings together local compliance, finance, technology, talent and operations giving you one accountable system for launching, managing and scaling across markets."
+        strapline="Local intelligence. AI-orchestrated execution. Regional scale."
         chips={undefined}
         primaryCta={{ label: 'Book a 20-minute consultation', href: 'https://www.hnpl.business/call', external: true, icon: 'calendar' }}
         secondaryCta={{ label: 'See how we work', href: '#three-ways', icon: 'arrow' }}
