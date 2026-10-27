@@ -35,6 +35,7 @@ export function PageHero({
   subline,
   primary,
   secondary,
+  video,
   children,
 }: {
   eyebrow?: string;
@@ -42,10 +43,18 @@ export function PageHero({
   subline?: React.ReactNode;
   primary?: Cta;
   secondary?: Cta;
+  video?: { src: string; poster: string };
   children?: React.ReactNode;
 }) {
   return (
     <section className="section-dark pt-[136px] pb-20 md:pt-[168px] md:pb-24">
+      {video && (
+        <div className="hero-video" style={{ backgroundImage: `url(${video.poster})` }} aria-hidden>
+          <video autoPlay muted loop playsInline preload="metadata" poster={video.poster}>
+            <source src={video.src} type="video/mp4" />
+          </video>
+        </div>
+      )}
       <div className="blob blob-magenta w-[520px] h-[520px] -top-40 -left-40" aria-hidden />
       <div className="blob blob-purple w-[560px] h-[560px] -top-24 -right-48" aria-hidden />
       <div className="container-hexa">

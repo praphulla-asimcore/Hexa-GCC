@@ -58,6 +58,7 @@ export default function HomePage() {
         subline="Managed shared services and dedicated capability centres for growing companies in Australia, the UK, the US and Asia."
         primary={{ label: 'Book a 20-minute call', href: '/call' }}
         secondary={{ label: 'See our products', href: '#products' }}
+        video={{ src: '/hexa-hero.mp4', poster: '/hexa-hero-poster.jpg' }}
       >
         <ProofBar />
       </PageHero>

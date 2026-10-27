@@ -78,6 +78,29 @@ body {
   .blob-magenta { background: var(--hexa-magenta); }
   .blob-purple { background: var(--hexa-purple); }
 
+  /* Background video behind the home hero, under an ink overlay for contrast */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-position: center;
+    background-size: cover;
+  }
+  .hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-video::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 8, 24, 0.78) 0%, rgba(8, 8, 24, 0.84) 60%, var(--hexa-ink) 100%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video video { display: none; }
+  }
+
   /* Type */
   .eyebrow {
     font-size: 0.75rem;
