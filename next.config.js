@@ -1,4 +1,31 @@
 /** @type {import('next').NextConfig} */
+
+// Retired URLs (website plan v1.1, section 7) plus older legacy paths.
+// statusCode 301 rather than `permanent: true`, which would send 308.
+const retired = [
+  ['/in-market/:path*', '/'],
+  ['/capability-centres', '/centre'],
+  ['/advisory/:path*', '/centre'],
+  ['/people', '/'],
+  ['/workspace', '/'],
+  ['/pricing', '/call'],
+  ['/hexa-academy', '/about#quality'],
+  ['/markets', '/about'],
+  ['/why-hexa', '/about'],
+  ['/how-it-works', '/about'],
+  ['/trust', '/about#security'],
+  ['/clients', '/case-studies'],
+  ['/resources/:path*', '/'],
+  ['/social', '/'],
+  ['/embedded-team', '/support'],
+  ['/technology-delivery', '/technology'],
+  ['/other-services', '/finance'],
+  ['/countries', '/about'],
+  ['/engagement-models', '/call'],
+  ['/operating-model', '/about'],
+  ['/finance-intelligence', '/hexa-intelligence'],
+];
+
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -8,48 +35,7 @@ const nextConfig = {
   },
   images: { unoptimized: true },
   async redirects() {
-    return [
-      {
-        source: '/technology-delivery',
-        destination: '/technology',
-        permanent: true,
-      },
-      {
-        source: '/other-services',
-        destination: '/finance',
-        permanent: true,
-      },
-      {
-        source: '/countries',
-        destination: '/markets',
-        permanent: true,
-      },
-      {
-        source: '/engagement-models',
-        destination: '/pricing',
-        permanent: true,
-      },
-      {
-        source: '/operating-model',
-        destination: '/how-it-works',
-        permanent: true,
-      },
-      {
-        source: '/why-nepal',
-        destination: '/why-hexa',
-        permanent: true,
-      },
-      {
-        source: '/call',
-        destination: 'https://calendar.app.google/eq4mJvdvNWXjK5du8',
-        permanent: false,
-      },
-      {
-        source: '/finance-intelligence',
-        destination: '/hexa-intelligence',
-        permanent: true,
-      },
-    ];
+    return retired.map(([source, destination]) => ({ source, destination, statusCode: 301 }));
   },
 };
 

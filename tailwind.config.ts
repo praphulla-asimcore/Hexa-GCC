@@ -19,8 +19,17 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      fontFamily: {
+        sans: ['Arial', '"Liberation Sans"', 'Helvetica', 'sans-serif'],
+      },
       colors: {
-        background: 'hsl(var(--background))',
+        hexa: {
+          ink: '#080818',
+          magenta: '#E91E8C',
+          purple: '#7B2FBE',
+          soft: '#F6F5FA',
+        },
+        background:'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
           DEFAULT: 'hsl(var(--card))',

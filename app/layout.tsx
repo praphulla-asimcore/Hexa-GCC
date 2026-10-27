@@ -1,16 +1,23 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import SiteHeader from '@/components/site-header';
+import SiteFooter from '@/components/site-footer';
+import { CONTACT_EMAIL, SITE_URL } from '@/lib/site';
 
-export const dynamic = "force-dynamic";
+const description =
+  'Hexa builds and runs Finance and Technology shared services for growing companies, from added capacity to a full capability centre. Part of the Hexamatics Group, established 2002.';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://hnpl.business'),
-  title: 'Hexa | Shared Services Partner for Finance, Technology and People Operations',
-  description: 'One shared services partner delivering finance, technology and people operations under one governance model. ISO 27001 and ISO 9001 certified. ACCA Approved Employer. Established 2002.',
-  keywords: 'shared services partner, embedded team, finance operations, technology delivery, people operations, payroll, ISO 27001, ACCA approved employer, CPF, SST, PPh21, HMRC, CRA, BAS, compliance, bookkeeping',
+  metadataBase: new URL(process.env.NEXTAUTH_URL || SITE_URL),
+  title: {
+    default: 'Hexa | Finance and Technology Shared Services, Built and Run for You',
+    template: '%s | Hexa',
+  },
+  description,
   openGraph: {
-    title: 'Hexa | Shared Services Partner for Finance, Technology and People Operations',
-    description: 'One shared services partner delivering finance, technology and people operations under one governance model. ISO 27001 and ISO 9001 certified. ACCA Approved Employer. Established 2002.',
+    siteName: 'Hexa',
+    title: 'Hexa | Finance and Technology Shared Services, Built and Run for You',
+    description,
     images: ['/og-image.png'],
     type: 'website',
   },
@@ -24,11 +31,11 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Hexa',
-  url: 'https://hnpl.business',
-  logo: 'https://hnpl.business/logo.png',
-  description: 'One shared services partner delivering finance, technology and people operations under one governance model. ISO 27001 and ISO 9001 certified. ACCA Approved Employer. Established 2002.',
-  email: 'praphulla@hexamatics.com',
-  foundingDate: '2002',
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  description,
+  email: CONTACT_EMAIL,
+  parentOrganization: { '@type': 'Organization', name: 'Hexamatics Group', foundingDate: '2002' },
 };
 
 export default function RootLayout({
@@ -47,7 +54,15 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: `[data-hydration-error] { display: none !important; }` }} />
       </head>
       <body className="antialiased">
-        {children}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:bg-white focus:text-hexa-ink focus:px-4 focus:py-2 focus:rounded-full"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="main">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );
