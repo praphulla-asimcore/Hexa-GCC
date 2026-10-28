@@ -37,6 +37,14 @@ const sources = {
     label: 'The Kathmandu Post, “Nepal records Rs18.76 billion electricity trade surplus in fiscal 2025-26”, 24 July 2026',
     href: 'https://kathmandupost.com/money/2026/07/24/nepal-records-rs18-76-billion-electricity-trade-surplus-in-fiscal-2025-26',
   },
+  peg: {
+    label: 'The Kathmandu Post, “Is the peg to INR still a safe harbour?”, 26 February 2026',
+    href: 'https://kathmandupost.com/columns/2026/02/26/is-the-peg-to-inr-still-a-safe-harbour',
+  },
+  nyc: {
+    label: 'WIPO Lex, Nepal: Convention on the Recognition and Enforcement of Foreign Arbitral Awards (New York, 1958)',
+    href: 'https://www.wipo.int/wipolex/es/treaties/parties/remarks/NP/973',
+  },
   fibre: {
     label: 'The Kathmandu Post, “Nepal ends India’s internet monopoly with Chinese link”, 13 January 2018',
     href: 'https://kathmandupost.com/money/2018/01/13/nepal-ends-indias-internet-monopoly-with-chinese-link',
@@ -113,17 +121,19 @@ const risks: { title: string; body: string; sources?: SourceKey[] }[] = [
   },
   {
     title: 'FX and repatriation of fees',
-    body: '[CONFIRM: which Hexamatics entity invoices clients in each region, the billing currency, and where fees are received. Buyers want to know whether they ever pay into Nepal and whether Nepal Rastra Bank rules touch their money.]',
+    body: 'You are invoiced by Hexamatics Nepal, the company that employs the team and runs the centre, and pay by international bank transfer in [CONFIRM: invoice currency, for example US dollars]. Fees arrive as export earnings through Nepal’s regulated banking system, and nothing needs to leave Nepal for your work to be delivered: salaries and the centre are paid locally. Those local costs are in Nepalese rupees, pegged to the Indian rupee at 1.6 since 1993.',
+    sources: ['peg'],
   },
   {
     title: 'Contract jurisdiction',
-    body: '[CONFIRM: contracting entity and governing law by client region, for example a Singapore or Malaysia entity under Singapore law with SIAC arbitration, so no client contracts under Nepali law unless it chooses to.]',
+    body: 'You contract directly with Hexamatics Nepal, under Nepali law. There is no intermediary between your contract and the people doing the work, and Hexamatics Nepal answers to the same group governance as every Hexamatics company. Nepal has been party to the New York Convention on arbitral awards since 1998.',
+    sources: ['nyc'],
   },
 ];
 
 // What happened inside Hexa during September 2025. These are the facts a buyer will test.
 const september2025 = [
-  '[CONFIRM: September 2025 payroll paid in full on its normal date, and the date]',
+  'September 2025 payroll paid on 29 September',
   '[CONFIRM: days the Kathmandu centre was closed during the curfew, and how work moved to secure remote working]',
   '[CONFIRM: client deliverables and service levels met that month, for example month-end closes delivered on time]',
   '[CONFIRM: no security incidents, no data loss, no client work lost]',
