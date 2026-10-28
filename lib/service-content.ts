@@ -38,7 +38,7 @@ export const serviceContent: Record<'finance' | 'technology', ServicePageContent
         title: 'Tools',
         items: [
           'Your accounting platform, ERP and document stores. We work in your systems, not ours.',
-          'Hexa Intelligence tools for multi-entity reporting and compliance tracking, where they fit.',
+          'Hexa Intelligence apps for multi-entity reporting and compliance tracking, built in-house to your needs.',
         ],
       },
       {

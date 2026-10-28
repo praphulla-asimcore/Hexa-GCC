@@ -4,17 +4,35 @@ import { CheckList, CtaBand, PageHero, SectionHeader } from '@/components/blocks
 import { liveTools } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Hexa Intelligence: The Platform Layer Behind Every Engagement',
+  title: 'Hexa Intelligence: In-House Apps Built for Your Operation',
   description:
-    'Hexa Intelligence is the tooling layer that runs every Hexa engagement: automation, review and audit trails, built by our own engineers and in use with clients today.',
+    'Hexa Intelligence is our in-house app platform. From month 3 of an engagement, our own engineers build apps to your needs for operational efficiency and excellence: automation, checks and reporting.',
   alternates: { canonical: '/hexa-intelligence' },
 };
 
 const layer = [
   'Repeat work is automated, so people spend their time on review and judgement.',
-  'Every step leaves an audit trail you can inspect.',
   'Checks run before work reaches you, not after.',
-  'Tools are introduced once your core workflow is stable, where they fit your work.',
+  'Every step leaves an audit trail you can inspect.',
+  'Reporting you would otherwise build by hand arrives ready to read.',
+];
+
+const timeline = [
+  {
+    when: 'Months 1 and 2',
+    title: 'Stabilise',
+    body: 'We take over the work, run it to your process and map where time goes and where errors creep in.',
+  },
+  {
+    when: 'Month 3',
+    title: 'Build',
+    body: 'Our engineers build the apps your operation needs, on what we have learned: automation, checks and reporting, shaped around your process.',
+  },
+  {
+    when: 'From then on',
+    title: 'Improve',
+    body: 'Apps run inside the engagement and are maintained by the team that built them, and they change as your needs change.',
+  },
 ];
 
 export default function HexaIntelligencePage() {
@@ -24,19 +42,19 @@ export default function HexaIntelligencePage() {
         eyebrow="Platform"
         title={
           <>
-            <span className="gradient-text">Hexa Intelligence</span> runs underneath every engagement.
+            <span className="gradient-text">Hexa Intelligence</span>: in-house apps, built for your operation.
           </>
         }
-        subline="Our own automation and review tooling, built by the same engineers who deliver for clients and used by our finance teams every day."
-        primary={{ label: 'See it in a working engagement', href: '/call' }}
+        subline="Our own engineers build apps for operational efficiency and excellence, to your needs, from month 3 of an engagement."
+        primary={{ label: 'Talk to us about your operation', href: '/call' }}
       />
 
       <section className="section">
         <div className="container-hexa grid gap-14 lg:grid-cols-[1fr_1.2fr]">
           <SectionHeader
-            eyebrow="The layer"
-            title="What it changes in your engagement."
-            intro="Hexa Intelligence is part of every product: Support, Delivery and Centre."
+            eyebrow="What the apps do"
+            title="Built in-house, around your process."
+            intro="Hexa Intelligence is available in every product: Support, Delivery and Centre. The apps are built by the same engineers who deliver technology work for our clients."
           />
           <div className="lg:pt-10">
             <CheckList items={layer} />
@@ -46,10 +64,25 @@ export default function HexaIntelligencePage() {
 
       <section className="section bg-hexa-soft">
         <div className="container-hexa">
+          <SectionHeader eyebrow="How it works" title="Apps for your operation by month 3." />
+          <ol className="grid gap-5 md:grid-cols-3">
+            {timeline.map((step) => (
+              <li key={step.title} className="card p-7">
+                <p className="eyebrow">{step.when}</p>
+                <h3 className="mt-3 text-xl font-bold">{step.title}</h3>
+                <p className="mt-3 text-muted leading-relaxed">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-hexa">
           <SectionHeader
             eyebrow="Live with clients"
-            title="Tools in client use today."
-            intro="We only list tools that are running in client engagements now."
+            title="Apps in client use today."
+            intro="We only list apps that are running in client engagements now."
           />
           <ul className="grid gap-5 md:grid-cols-2">
             {liveTools.map((tool) => (
@@ -69,8 +102,8 @@ export default function HexaIntelligencePage() {
       </section>
 
       <CtaBand
-        title="See Hexa Intelligence in a working engagement."
-        body="We will walk you through the tools against your own process."
+        title="See what we would build for your operation."
+        body="We will walk you through Hexa Intelligence against your own process."
       />
     </>
   );

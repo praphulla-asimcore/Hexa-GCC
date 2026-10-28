@@ -95,14 +95,14 @@ export default function HomePage() {
         <div className="container-hexa py-14 md:py-16 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div className="max-w-2xl">
             <p className="eyebrow mb-3">Platform</p>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Hexa Intelligence runs underneath every engagement.</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Hexa Intelligence: in-house apps, built for your operation.</h2>
             <p className="mt-3 text-muted text-lg leading-relaxed">
-              Our own automation and review tools, built by our engineers and used by our finance teams, so work is
-              checked, traceable and faster to close.
+              From month 3 of an engagement, our own engineers build apps to your needs: automation, checks and reporting
+              that make your operation faster, more controlled and easier to run.
             </p>
           </div>
           <Link href="/hexa-intelligence" className="btn btn-ghost-light self-start md:self-center">
-            See the platform <ArrowRight className="w-4 h-4" aria-hidden />
+            See the apps <ArrowRight className="w-4 h-4" aria-hidden />
           </Link>
         </div>
       </section>

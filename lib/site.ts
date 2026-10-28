@@ -108,7 +108,7 @@ export const towers = [finance, technology];
 export const included = [
   { name: 'Secure workspace', description: 'A controlled delivery centre with dual-network failover and backup power.' },
   { name: 'ISO 27001 controls', description: 'Information security controls certified to ISO 27001, applied to every engagement.' },
-  { name: 'Hexa Intelligence tooling', description: 'Our own automation and review tools, brought in where they fit your work.' },
+  { name: 'Hexa Intelligence apps', description: 'In-house apps built by our engineers around your process, from month 3.' },
   { name: 'Quality review', description: 'Work is reviewed inside Hexa before it reaches you.' },
   { name: 'Replacement guarantee', description: 'If someone leaves, we replace them and run the handover.' },
   { name: 'Monthly governance report', description: 'Output, quality, risks and continuity, reported every month.' },
@@ -221,7 +221,7 @@ export const clientLogos = [
   { name: 'Datacrats', src: '/clients/datacrats.png', width: 402, height: 126 },
 ];
 
-// Only tools in client use today (plan, section 4.4). Add or remove entries here.
+// Only apps in client use today (plan, section 4.4). Add or remove entries here.
 export const liveTools = [
   {
     name: 'HexaInsights',
