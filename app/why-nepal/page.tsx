@@ -134,7 +134,7 @@ const risks: { title: string; body: string; sources?: SourceKey[] }[] = [
 // What happened inside Hexa during September 2025. These are the facts a buyer will test.
 const september2025 = [
   'September 2025 payroll paid on 29 September',
-  '[CONFIRM: days the Kathmandu centre was closed during the curfew, and how work moved to secure remote working]',
+  'The team worked from home through September, with online check-in and working protocols set by each manager',
   '[CONFIRM: client deliverables and service levels met that month, for example month-end closes delivered on time]',
   '[CONFIRM: no security incidents, no data loss, no client work lost]',
   '[CONFIRM: how and when clients were briefed, for example a written update to every client within 24 hours]',
