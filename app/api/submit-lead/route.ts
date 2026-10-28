@@ -44,7 +44,7 @@ export async function POST(request: Request) {
     const htmlBody = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="background: linear-gradient(90deg, #E91E8C, #7B2FBE); padding: 20px; border-radius: 12px 12px 0 0;">
-          <h2 style="color: white; margin: 0;">New proposal request from hnpl.business</h2>
+          <h2 style="color: white; margin: 0;">New proposal request from gcc.hexabusiness.com</h2>
         </div>
         <div style="background: #f9fafb; padding: 24px; border-radius: 0 0 12px 12px;">
           <table style="width: 100%; border-collapse: collapse;">${rows}

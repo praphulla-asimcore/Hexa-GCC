@@ -2,7 +2,7 @@
 // Every figure here must be verified against a source before it goes live
 // (website plan v1.1, section 6).
 
-export const SITE_URL = 'https://hnpl.business';
+export const SITE_URL = 'https://gcc.hexabusiness.com';
 export const BOOKING_URL = 'https://calendar.app.google/eq4mJvdvNWXjK5du8';
 export const CONTACT_EMAIL = 'praphulla@hexamatics.com';
 export const WHATSAPP_URL = 'https://wa.me/9779851338099';

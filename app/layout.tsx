@@ -8,7 +8,7 @@ const description =
   'Hexa builds and runs Finance and Technology shared services for growing companies, from added capacity to a full capability centre. Part of the Hexamatics Group, established 2002.';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXTAUTH_URL || SITE_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Hexa | Finance and Technology Shared Services, Built and Run for You',
     template: '%s | Hexa',
