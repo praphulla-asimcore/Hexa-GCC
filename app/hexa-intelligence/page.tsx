@@ -80,9 +80,9 @@ export default function HexaIntelligencePage() {
       <section className="section">
         <div className="container-hexa">
           <SectionHeader
-            eyebrow="Live with clients"
-            title="Apps in client use today."
-            intro="We only list apps that are running in client engagements now."
+            eyebrow="Live in operation"
+            title="Apps in live operation today."
+            intro="We only list apps running in live operations now, for clients and across Hexamatics group companies."
           />
           <ul className="grid gap-5 md:grid-cols-2">
             {liveTools.map((tool) => (

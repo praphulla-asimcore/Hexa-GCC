@@ -221,7 +221,8 @@ export const clientLogos = [
   { name: 'Datacrats', src: '/clients/datacrats.png', width: 402, height: 126 },
 ];
 
-// Only apps in client use today (plan, section 4.4). Add or remove entries here.
+// Only apps running in live operations today, for clients or across Hexamatics group
+// companies (plan, section 4.4). Add or remove entries here.
 export const liveTools = [
   {
     name: 'HexaInsights',
@@ -234,5 +235,17 @@ export const liveTools = [
     area: 'Compliance tracking',
     description:
       'Compliance tracking across group entities: deadlines monitored, documents held in one place and audit-ready reporting on what has been filed and what is due.',
+  },
+  {
+    name: 'APEX',
+    area: 'Payroll and consultant payments',
+    description:
+      'Payroll and consultant payment processing that takes the monthly payroll file through validation, approval, accounting, statutory filing and bank payment, with a full audit trail.',
+  },
+  {
+    name: 'HexaFlow-AP',
+    area: 'Accounts payable',
+    description:
+      'Purchase request to Zoho purchase order, structured and auditable: a full approval chain, OCR document matching, an immutable audit trail and no manual entry at any step, across multiple entities.',
   },
 ];
