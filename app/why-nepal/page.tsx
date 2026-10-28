@@ -121,7 +121,7 @@ const risks: { title: string; body: string; sources?: SourceKey[] }[] = [
   },
   {
     title: 'FX and repatriation of fees',
-    body: 'You are invoiced by Hexamatics Nepal, the company that employs the team and runs the centre, and pay by international bank transfer in [CONFIRM: invoice currency, for example US dollars]. Fees arrive as export earnings through Nepal’s regulated banking system, and nothing needs to leave Nepal for your work to be delivered: salaries and the centre are paid locally. Those local costs are in Nepalese rupees, pegged to the Indian rupee at 1.6 since 1993.',
+    body: 'You are invoiced by Hexamatics Nepal, the company that employs the team and runs the centre, and pay by international bank transfer in your choice of currency, including US dollars, Australian dollars and Malaysian ringgit. Fees arrive as export earnings through Nepal’s regulated banking system, and nothing needs to leave Nepal for your work to be delivered: salaries and the centre are paid locally. Those local costs are in Nepalese rupees, pegged to the Indian rupee at 1.6 since 1993.',
     sources: ['peg'],
   },
   {
@@ -135,9 +135,9 @@ const risks: { title: string; body: string; sources?: SourceKey[] }[] = [
 const september2025 = [
   'September 2025 payroll paid on 29 September',
   'The team worked from home through September, with online check-in and working protocols set by each manager',
-  '[CONFIRM: client deliverables and service levels met that month, for example month-end closes delivered on time]',
-  '[CONFIRM: no security incidents, no data loss, no client work lost]',
-  '[CONFIRM: how and when clients were briefed, for example a written update to every client within 24 hours]',
+  'Every client deliverable and service level met that month: 100 percent',
+  'No security incident and no data loss, with home working covered by our data loss prevention (DLP) system',
+  'Clients briefed immediately, with our risk assessment, as soon as the risk was known',
 ];
 
 const controls = [
