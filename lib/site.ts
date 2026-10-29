@@ -11,6 +11,11 @@ export const GROUP_MARKET_COUNT = 10;
 export const RETENTION = '89.2%';
 export const ACCA_REF = '2000003846';
 
+// Set to true once persistent file encryption is confirmed as running on Hexa's own
+// file handling. While false, /security and /faq describe it as available on request
+// and do not offer a live revocation demo.
+export const FILE_ENCRYPTION_DEPLOYED = false;
+
 export type NavLink = { label: string; href: string; description?: string };
 
 export type ProductSlug = 'support' | 'delivery' | 'centre';
@@ -125,6 +130,8 @@ export const navigation: { label: string; href?: string; items?: NavLink[] }[] =
   },
   { label: 'Platform', href: '/hexa-intelligence' },
   { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Security', href: '/security' },
+  { label: 'FAQ', href: '/faq' },
   {
     label: 'About',
     items: [
@@ -214,7 +221,6 @@ export const featuredCaseIds = ['australian-software', 'global-technology', 'mal
 
 // Client logos from Uploads/. Written permission confirmed for each (plan, section 4.5).
 export const clientLogos = [
-  { name: 'GuardWare', src: '/clients/guardware.png', width: 480, height: 122 },
   { name: 'Kudos', src: '/clients/kudos.png', width: 448, height: 240 },
   { name: 'Emit Solar', src: '/clients/emit-solar.png', width: 361, height: 183 },
   { name: 'Seven Sunday Films', src: '/clients/seven-sunday-films.png', width: 436, height: 121 },

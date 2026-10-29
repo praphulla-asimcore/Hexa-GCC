@@ -18,6 +18,8 @@ const columns = [
       { label: 'About', href: '/about' },
       { label: 'Why Nepal', href: '/why-nepal' },
       { label: 'Case Studies', href: '/case-studies' },
+      { label: 'Security', href: '/security' },
+      { label: 'FAQ', href: '/faq' },
       { label: 'Book a call', href: '/call' },
     ],
   },

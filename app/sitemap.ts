@@ -12,6 +12,8 @@ const routes = [
   '/case-studies',
   '/about',
   '/why-nepal',
+  '/security',
+  '/faq',
   '/call',
   '/privacy',
   '/terms',

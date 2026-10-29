@@ -200,7 +200,7 @@ export function ClientLogos({ title = 'Clients we work with' }: { title?: string
   return (
     <div>
       <p className="text-sm font-bold uppercase tracking-[0.12em] text-muted mb-6">{title}</p>
-      <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      <ul className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {clientLogos.map((logo) => (
           <li key={logo.name} className="card h-24 flex items-center justify-center px-6">
             <Image
@@ -257,7 +257,7 @@ export function CtaBand({
   title?: string;
   body?: string;
   primary?: Cta;
-  secondary?: Cta;
+  secondary?: Cta | null;
 }) {
   return (
     <section className="section-dark section">
@@ -265,7 +265,7 @@ export function CtaBand({
       <div className="blob blob-purple w-[460px] h-[460px] -bottom-40 right-1/4" aria-hidden />
       <div className="container-hexa text-center">
         <h2 className="text-3xl sm:text-[2.5rem] leading-[1.12] font-bold tracking-tight max-w-3xl mx-auto">{title}</h2>
-        <p className="mt-5 text-lg text-on-dark-muted max-w-xl mx-auto">{body}</p>
+        {body && <p className="mt-5 text-lg text-on-dark-muted max-w-xl mx-auto">{body}</p>}
         <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
           <CtaLink cta={primary} variant="primary" />
           {secondary && <CtaLink cta={secondary} variant="ghost-dark" />}

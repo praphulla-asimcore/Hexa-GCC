@@ -30,6 +30,7 @@ const whyHexa = [
     icon: ShieldCheck,
     title: 'Work happens inside your systems',
     body: 'Your data stays in your systems and cloud region. Our people access it through your controls, with session logging, under ISO 27001.',
+    href: '/security',
   },
   {
     icon: Building2,
@@ -128,11 +129,24 @@ export default function HomePage() {
         <div className="container-hexa">
           <SectionHeader eyebrow="Why Hexa" title="What you can hold us to." />
           <ul className="grid gap-5 sm:grid-cols-2">
-            {whyHexa.map(({ icon: Icon, title, body }) => (
-              <li key={title} className="card p-7">
-                <Icon className="w-6 h-6 text-hexa-magenta mb-5" aria-hidden />
-                <h3 className="text-lg font-bold">{title}</h3>
-                <p className="mt-2 text-muted leading-relaxed">{body}</p>
+            {whyHexa.map(({ icon: Icon, title, body, href }) => (
+              <li key={title}>
+                {href ? (
+                  <Link href={href} className="card card-link flex flex-col h-full p-7">
+                    <Icon className="w-6 h-6 text-hexa-magenta mb-5" aria-hidden />
+                    <h3 className="text-lg font-bold">{title}</h3>
+                    <p className="mt-2 text-muted leading-relaxed">{body}</p>
+                    <span className="mt-auto pt-5 inline-flex items-center gap-2 font-bold text-hexa-magenta">
+                      How we protect your data <ArrowRight className="w-4 h-4" aria-hidden />
+                    </span>
+                  </Link>
+                ) : (
+                  <div className="card h-full p-7">
+                    <Icon className="w-6 h-6 text-hexa-magenta mb-5" aria-hidden />
+                    <h3 className="text-lg font-bold">{title}</h3>
+                    <p className="mt-2 text-muted leading-relaxed">{body}</p>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
