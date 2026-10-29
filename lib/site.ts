@@ -121,6 +121,13 @@ export const included = [
 
 export const navigation: { label: string; href?: string; items?: NavLink[] }[] = [
   {
+    label: 'About',
+    items: [
+      { label: 'About Hexa', href: '/about', description: 'Group story, credentials and controls' },
+      { label: 'Why Nepal', href: '/why-nepal', description: 'Our primary delivery centre in Kathmandu' },
+    ],
+  },
+  {
     label: 'Products',
     items: products.map((p) => ({ label: p.name, href: p.href, description: p.navLine })),
   },
@@ -129,16 +136,9 @@ export const navigation: { label: string; href?: string; items?: NavLink[] }[] =
     items: towers.map((t) => ({ label: t.name, href: t.href, description: t.navLine })),
   },
   { label: 'Platform', href: '/hexa-intelligence' },
-  { label: 'Case Studies', href: '/case-studies' },
   { label: 'Security', href: '/security' },
+  { label: 'Case Studies', href: '/case-studies' },
   { label: 'FAQ', href: '/faq' },
-  {
-    label: 'About',
-    items: [
-      { label: 'About Hexa', href: '/about', description: 'Group story, credentials and controls' },
-      { label: 'Why Nepal', href: '/why-nepal', description: 'Our primary delivery centre in Kathmandu' },
-    ],
-  },
 ];
 
 export type CaseStudy = {
