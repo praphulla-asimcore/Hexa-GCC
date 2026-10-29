@@ -14,7 +14,7 @@ export const ACCA_REF = '2000003846';
 // Set to true once persistent file encryption is confirmed as running on Hexa's own
 // file handling. While false, /security and /faq describe it as available on request
 // and do not offer a live revocation demo.
-export const FILE_ENCRYPTION_DEPLOYED = false;
+export const FILE_ENCRYPTION_DEPLOYED = true;
 
 export type NavLink = { label: string; href: string; description?: string };
 

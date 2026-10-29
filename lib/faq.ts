@@ -40,12 +40,11 @@ export const faqCategories: FaqCategory[] = [
       {
         question: 'How quickly can a team be in place?',
         answer:
-          'Typically [CONFIRM: X to Y weeks] from signed proposal to the first team member working, depending on role and seniority.',
-        confirm: 'Time from signed proposal to the first team member working.',
+          'Typically 2 to 3 weeks from signed proposal to the first team member working, depending on role and seniority.',
       },
       {
         question: 'Is there a pilot option?',
-        answer: 'Yes. Many clients start with one or two people on a defined scope before scaling.',
+        answer: 'Yes. Many clients start with a 90-day pilot: one or two people on a defined scope, before scaling.',
       },
     ],
   },
@@ -89,8 +88,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         question: 'Which accounting systems do your teams use?',
-        answer: '[CONFIRM: list of systems]. We work in your system, not ours.',
-        confirm: 'List of accounting systems, e.g. Xero, MYOB, QuickBooks, NetSuite, Zoho Books, SAP.',
+        answer: 'Xero, MYOB, QuickBooks, NetSuite, Zoho Books and SAP. We work in your system, not ours.',
       },
       {
         question: 'Do you understand our country’s accounting and tax rules?',
@@ -130,8 +128,8 @@ export const faqCategories: FaqCategory[] = [
     items: [
       {
         question: 'How do you hire for our team?',
-        answer: 'We recruit for your specific roles, and you interview and approve the final candidates.',
-        confirm: 'Hiring process, including whether clients interview and approve final candidates.',
+        answer:
+          'We recruit for your specific roles. Every candidate first has a screening interview with us on the skills the role needs. We then shortlist and submit candidates to you, and you interview and approve the final choice.',
       },
       {
         question: 'What’s your staff retention?',
@@ -143,8 +141,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         question: 'Will our team be dedicated to us?',
-        answer: 'Yes. Team members are dedicated to your work, not shared across clients.',
-        confirm: 'That team members are dedicated, not shared, on Hexa Support as well as Delivery and Centre.',
+        answer: 'Yes, in every product. Team members are dedicated to your work, not shared across clients.',
       },
     ],
   },
@@ -183,8 +180,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         question: 'Is file encryption included?',
-        answer: '[CONFIRM: e.g. included in Hexa Delivery and Hexa Centre, optional for Hexa Support]',
-        confirm: 'Which products include persistent file encryption.',
+        answer: 'Yes. Persistent file encryption is included in every product: Hexa Support, Hexa Delivery and Hexa Centre.',
       },
     ],
   },
@@ -197,17 +193,15 @@ export const faqCategories: FaqCategory[] = [
         question: 'How is pricing structured?',
         answer:
           'Usually a monthly fee per team member, based on role and seniority. Delivery and Centre engagements can be priced on scope and service levels.',
-        confirm: 'Pricing structure for each product.',
       },
       {
         question: 'What does the price include?',
-        answer: 'Salary, benefits, statutory costs, workspace, equipment and management.',
-        confirm: 'What the fee includes.',
+        answer:
+          'Payroll and statutory compliance for your team, dedicated office space, pantries, 24-hour security, and social and recreational activities for the team.',
       },
       {
         question: 'What’s the minimum commitment and notice period?',
-        answer: '[CONFIRM: minimum term and notice period]',
-        confirm: 'Minimum term and notice period.',
+        answer: 'The minimum term is 3 months, and the notice period is 30 days.',
       },
       {
         question: 'What currency do you invoice in?',
@@ -256,8 +250,9 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         question: 'Does it access or store our data?',
-        answer: '[CONFIRM: how the platform handles client data]',
-        confirm: 'How Hexa Intelligence apps access and store client data. Security reviewers will ask, so it must be exact.',
+        answer:
+          'It runs under the same controls as the rest of our work. The apps use access you grant and can withdraw, under our ISO 27001 controls, and nothing is copied to Hexa systems unless you ask. Files they produce are protected with persistent file encryption, logged and revocable by you.',
+        link: { label: 'How we protect your data', href: '/security' },
       },
     ],
   },
