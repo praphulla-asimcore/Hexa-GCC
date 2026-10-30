@@ -227,6 +227,71 @@ export const clientLogos = [
   { name: 'Datacrats', src: '/clients/datacrats.png', width: 402, height: 126 },
 ];
 
+// Names, titles, one-liners, portraits and order exactly as in Hexa Company Profile 1.2,
+// page 9. Portraits are cropped from that page, so replace them from the same source.
+export const leadership = [
+  {
+    name: 'Dato Thiruchelvapalan',
+    role: 'Chief Executive Officer, Founder',
+    bio: 'Built Hexa from one office to seven markets.',
+    photo: '/leadership/dato-thiruchelvapalan.jpg',
+  },
+  {
+    name: 'Dato Thiruchandran',
+    role: 'Advisor, Founder',
+    bio: 'Co-founded Hexa in 2002. Twenty-three years with the group.',
+    photo: '/leadership/dato-thiruchandran.jpg',
+  },
+  {
+    name: 'Hj. Mazru Bin Mat Yusof',
+    role: 'Chief Financial Officer',
+    bio: 'Group finance, reporting and statutory compliance.',
+    photo: '/leadership/mazru-bin-mat-yusof.jpg',
+  },
+  {
+    name: 'Col (Rtd) Rambadan Singh',
+    role: 'Operations Director',
+    bio: 'Forty years running operations and large programmes.',
+    photo: '/leadership/rambadan-singh.jpg',
+  },
+  {
+    name: 'Ikhram Merican',
+    role: 'Chief Revenue Officer',
+    bio: 'Owns revenue and service delivery at group level.',
+    photo: '/leadership/ikhram-merican.jpg',
+  },
+  {
+    name: 'Faysal Aziz',
+    role: 'Director of AI Engineering',
+    bio: 'Builds the automation Hexa runs on. 12 patents.',
+    photo: '/leadership/faysal-aziz.jpg',
+  },
+  {
+    name: 'Ali Qureshi',
+    role: 'Head of Finance',
+    bio: 'Finance operations: billing, payroll funding, collections.',
+    photo: '/leadership/ali-qureshi.jpg',
+  },
+  {
+    name: 'Praphulla Subedi',
+    role: 'Head of Nepal',
+    bio: 'Runs the Kathmandu operation and its offshore teams.',
+    photo: '/leadership/praphulla-subedi.jpg',
+  },
+  {
+    name: 'Yanita Widyanti',
+    role: 'Head of Sales, Indonesia',
+    bio: 'Leads client relationships and growth in Indonesia.',
+    photo: '/leadership/yanita-widyanti.jpg',
+  },
+  {
+    name: 'Clarisse Ramirez',
+    role: 'Head of HR, Philippines',
+    bio: 'Runs employment and compliance in the Philippines.',
+    photo: '/leadership/clarisse-ramirez.jpg',
+  },
+];
+
 // Only apps running in live operations today, for clients or across Hexamatics group
 // companies (plan, section 4.4). Add or remove entries here.
 export const liveTools = [

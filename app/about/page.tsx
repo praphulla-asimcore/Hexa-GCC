@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Award, BadgeCheck, ShieldCheck } from 'lucide-react';
 import { CheckList, CtaBand, PageHero, SectionHeader } from '@/components/blocks';
-import { ACCA_REF } from '@/lib/site';
+import { ACCA_REF, leadership } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About Hexa: Part of the Hexamatics Group Since 2002',
   description:
-    'Hexa is part of the Hexamatics Group, operating since 2002. Our delivery network, credentials, security and data controls, quality and training, and continuity record.',
+    'Hexa is part of the Hexamatics Group, operating since 2002. Our delivery network, leadership, credentials, security and data controls, quality and training, and continuity record.',
   alternates: { canonical: '/about' },
 };
 
@@ -84,7 +85,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="credentials" className="section">
+      <section id="leadership" className="section scroll-mt-20">
+        <div className="container-hexa">
+          <SectionHeader eyebrow="Who we are" title="Founder-led since 2002. The people who run the business today." />
+          <ul className="grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-5">
+            {leadership.map((l) => (
+              <li key={l.name}>
+                <Image
+                  src={l.photo}
+                  alt={`Portrait of ${l.name}`}
+                  width={510}
+                  height={510}
+                  className="w-full h-auto"
+                />
+                <h3 className="mt-4 font-bold">{l.name}</h3>
+                <p className="mt-1 text-[15px] leading-snug">{l.role}</p>
+                <p className="mt-2 text-muted text-[15px] leading-relaxed">{l.bio}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section id="credentials" className="section bg-hexa-soft">
         <div className="container-hexa">
           <SectionHeader eyebrow="Credentials" title="Certified, and independently checked." />
           <ul className="grid gap-5 md:grid-cols-3">
@@ -99,7 +122,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="security" className="section bg-hexa-soft scroll-mt-20">
+      <section id="security" className="section scroll-mt-20">
         <div className="container-hexa grid gap-12 lg:grid-cols-2">
           <SectionHeader
             eyebrow="Security and data controls"
@@ -112,7 +135,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="quality" className="section scroll-mt-20">
+      <section id="quality" className="section bg-hexa-soft scroll-mt-20">
         <div className="container-hexa">
           <SectionHeader
             eyebrow="Quality and training"
@@ -130,7 +153,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="continuity" className="section bg-hexa-soft">
+      <section id="continuity" className="section">
         <div className="container-hexa max-w-3xl">
           <p className="eyebrow mb-4">Continuity record</p>
           <h2 className="text-3xl sm:text-[2.5rem] leading-[1.12] font-bold tracking-tight">
