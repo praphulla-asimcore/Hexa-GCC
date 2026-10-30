@@ -124,6 +124,7 @@ export const navigation: { label: string; href?: string; items?: NavLink[] }[] =
     label: 'About',
     items: [
       { label: 'About Hexa', href: '/about', description: 'Group story, credentials and controls' },
+      { label: 'LEADERSHIP', href: '/leadership', description: 'Meet the people who lead Hexa' },
       { label: 'Why Nepal', href: '/why-nepal', description: 'Our primary delivery centre in Kathmandu' },
     ],
   },

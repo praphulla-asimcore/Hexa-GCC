@@ -1,11 +1,10 @@
 import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { Award, BadgeCheck, ShieldCheck } from 'lucide-react';
 import { CheckList, CtaBand, PageHero, SectionHeader } from '@/components/blocks';
-import { ACCA_REF, leadership } from '@/lib/site';
+import { ACCA_REF } from '@/lib/site';
 
-export const metadata: Metadata = pageMetadata('/about', 'About Hexa: Part of the Hexamatics Group Since 2002 | Hexa', 'Hexa is part of the Hexamatics Group, operating since 2002. Our delivery network, leadership, credentials, security and data controls, quality and training, and continuity record.');
+export const metadata: Metadata = pageMetadata('/about', 'About Hexa: Part of the Hexamatics Group Since 2002 | Hexa', 'Hexa is part of the Hexamatics Group, operating since 2002. Our delivery network, credentials, security and data controls, quality and training, and continuity record.');
 
 const network = [
   { place: 'Kathmandu, Nepal', role: 'Primary delivery centre for Finance and Technology shared services.' },
@@ -75,28 +74,6 @@ export default function AboutPage() {
               <li key={n.place} className={`card p-6 ${i === 0 ? 'border-hexa-magenta/40' : ''}`}>
                 <h3 className="font-bold">{n.place}</h3>
                 <p className="mt-2 text-muted text-[15px] leading-relaxed">{n.role}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section id="leadership" className="section scroll-mt-20">
-        <div className="container-hexa">
-          <SectionHeader eyebrow="Who we are" title="Founder-led since 2002. The people who run the business today." />
-          <ul className="grid grid-cols-2 gap-x-5 gap-y-10 lg:grid-cols-5">
-            {leadership.map((l) => (
-              <li key={l.name}>
-                <Image
-                  src={l.photo}
-                  alt={`Portrait of ${l.name}`}
-                  width={510}
-                  height={510}
-                  className="w-full h-auto"
-                />
-                <h3 className="mt-4 font-bold">{l.name}</h3>
-                <p className="mt-1 text-[15px] leading-snug">{l.role}</p>
-                <p className="mt-2 text-muted text-[15px] leading-relaxed">{l.bio}</p>
               </li>
             ))}
           </ul>
