@@ -1,15 +1,11 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Award, BadgeCheck, ShieldCheck } from 'lucide-react';
 import { CheckList, CtaBand, PageHero, SectionHeader } from '@/components/blocks';
 import { ACCA_REF, leadership } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'About Hexa: Part of the Hexamatics Group Since 2002',
-  description:
-    'Hexa is part of the Hexamatics Group, operating since 2002. Our delivery network, leadership, credentials, security and data controls, quality and training, and continuity record.',
-  alternates: { canonical: '/about' },
-};
+export const metadata: Metadata = pageMetadata('/about', 'About Hexa: Part of the Hexamatics Group Since 2002 | Hexa', 'Hexa is part of the Hexamatics Group, operating since 2002. Our delivery network, leadership, credentials, security and data controls, quality and training, and continuity record.');
 
 const network = [
   { place: 'Kathmandu, Nepal', role: 'Primary delivery centre for Finance and Technology shared services.' },

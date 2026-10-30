@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CheckCircle, Loader2 } from 'lucide-react';
 import { countries } from '@/lib/countries';
+import { trackEvent } from '@/lib/analytics';
 
 const interests = ['Finance', 'Technology', 'Both'] as const;
 const timelines = ['Within a month', 'One to three months', 'Three to six months', 'Exploring options'];
@@ -31,9 +32,10 @@ export default function ContactForm() {
         body: JSON.stringify(form),
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result?.message || 'Something went wrong. Please try again.');
+      if (!response.ok || result.success !== true) throw new Error(result?.message || 'Something went wrong. Please try again.');
       setStatus('done');
       setForm(emptyForm);
+      trackEvent('lead_form_submit');
     } catch (err: any) {
       setError(err?.message || 'Something went wrong. Please try again.');
       setStatus('idle');

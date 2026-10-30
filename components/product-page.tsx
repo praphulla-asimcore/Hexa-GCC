@@ -3,6 +3,7 @@ import { ArrowRight, Landmark, Code2 } from 'lucide-react';
 import { CheckList, CtaBand, IncludedGrid, PageHero, SectionHeader } from '@/components/blocks';
 import { productContent } from '@/lib/product-content';
 import { ProductSlug, products } from '@/lib/site';
+import SeoBreadcrumbs from '@/components/seo-breadcrumbs';
 
 export default function ProductPage({ slug }: { slug: ProductSlug }) {
   const product = products.find((p) => p.slug === slug)!;
@@ -16,10 +17,23 @@ export default function ProductPage({ slug }: { slug: ProductSlug }) {
     <>
       <PageHero
         eyebrow={product.name}
-        title={product.promise}
+        title={slug === 'centre' ? 'Global capability centre as a service.' : product.promise}
         subline={product.definition}
         primary={{ label: 'Request a proposal', href: '/call#proposal' }}
       />
+
+      <SeoBreadcrumbs items={[{ name: product.name, path: product.href }]} />
+
+      {slug === 'centre' && <section className="section bg-hexa-soft"><div className="container-hexa">
+        <SectionHeader eyebrow="Managed GCC" title="Build the capability without starting with your own overseas operation."
+          intro="A global capability centre brings workstreams, people and leadership into one operating model. Hexa Centre is the managed option: Hexa builds and runs the operation, while you retain strategic direction through agreed governance." />
+        <div className="grid gap-5 md:grid-cols-3">
+          <div className="card p-7"><h3 className="text-xl font-bold">Define the charter</h3><p className="text-muted mt-3">Agree functions, location requirements, systems, decision rights and success measures. Identify the leaders and approvals that remain with your organisation.</p></div>
+          <div className="card p-7"><h3 className="text-xl font-bold">Build and transition</h3><p className="text-muted mt-3">Plan roles, process documentation, approved access and handover checkpoints. Agree readiness criteria for each workstream before moving it into steady-state delivery.</p></div>
+          <div className="card p-7"><h3 className="text-xl font-bold">Choose the ownership path</h3><p className="text-muted mt-3">A captive centre is operated through your own organisation. A managed centre is run by Hexa under the agreed charter. Build–Operate–Transfer adds a potential transfer path on terms agreed at the start.</p></div>
+        </div>
+        <p className="mt-7 text-muted">Entity structure, employment, tax and transfer terms depend on the engagement and jurisdiction. Confirm these with the relevant professional advisers during scoping.</p>
+      </div></section>}
 
       <section className="section">
         <div className="container-hexa grid gap-14 lg:grid-cols-2">

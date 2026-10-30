@@ -11,7 +11,7 @@ export type ServicePageContent = {
 
 export const serviceContent: Record<'finance' | 'technology', ServicePageContent> = {
   finance: {
-    metaTitle: 'Finance and Accounting Shared Services',
+    metaTitle: 'Finance Shared Services & Accounting Outsourcing',
     metaDescription:
       'Record-to-report, procure-to-pay, order-to-cash, payroll, tax, audit support and FP&A, run as Hexa Support, Hexa Delivery or a Finance Centre.',
     subline:

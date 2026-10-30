@@ -1,13 +1,9 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { ClientLogos, CtaBand, PageHero } from '@/components/blocks';
 import { caseStudies } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Case Studies: Finance and Technology Centres Built and Run',
-  description:
-    'Anonymised case studies of finance operations, technology delivery centres and workforce platforms built and run by Hexa and the Hexamatics Group.',
-  alternates: { canonical: '/case-studies' },
-};
+export const metadata: Metadata = pageMetadata('/case-studies', 'Case Studies: Finance and Technology Centres Built and Run | Hexa', 'Anonymised case studies of finance operations, technology delivery centres and workforce platforms built and run by Hexa and the Hexamatics Group.');
 
 const fields = [
   { key: 'problem', label: 'Problem' },

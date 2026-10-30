@@ -81,7 +81,7 @@ export const finance: Tower = {
   name: 'Finance & Accounting',
   href: '/finance',
   navLine: 'Record-to-report, payables, receivables, payroll and tax',
-  promise: 'Finance operations that close on time and stand up to review.',
+  promise: 'Finance and accounting shared services.',
   areas: [
     { name: 'Record-to-Report', description: 'Bookkeeping, reconciliations, month-end close and financial reporting.' },
     { name: 'Procure-to-Pay', description: 'Supplier invoices, expense claims, vendor records and payment runs.' },
@@ -133,7 +133,11 @@ export const navigation: { label: string; href?: string; items?: NavLink[] }[] =
   },
   {
     label: 'Services',
-    items: towers.map((t) => ({ label: t.name, href: t.href, description: t.navLine })),
+    items: [
+      ...towers.map((t) => ({ label: t.name, href: t.href, description: t.navLine })),
+      { label: 'Accounting for Australian firms', href: '/accounting-outsourcing-australia', description: 'Preparation support and review responsibilities' },
+      { label: 'Offshore accounting teams', href: '/offshore-accounting-teams', description: 'Dedicated capacity within your finance process' },
+    ],
   },
   { label: 'Platform', href: '/hexa-intelligence' },
   { label: 'Security', href: '/security' },

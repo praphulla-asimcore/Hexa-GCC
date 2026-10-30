@@ -1,9 +1,7 @@
+import { pageMetadata } from '@/lib/seo';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Terms of Service',
-  description: 'Terms of Service for the Hexa website and Finance and Technology shared services.',
-};
+export const metadata: Metadata = pageMetadata('/terms', 'Terms of Service | Hexa', 'Terms of Service for the Hexa website and Finance and Technology shared services.');
 
 export default function TermsPage() {
   return (

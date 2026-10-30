@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -5,12 +6,7 @@ import { CtaBand, PageHero } from '@/components/blocks';
 import { FaqAccordion, FaqCategoryBar } from '@/components/faq';
 import { faqCategories, faqText } from '@/lib/faq';
 
-export const metadata: Metadata = {
-  title: { absolute: 'Frequently Asked Questions | Hexa' },
-  description:
-    'Answers on how Hexa works: products, finance and technology services, teams, security, pricing and why Nepal.',
-  alternates: { canonical: '/faq' },
-};
+export const metadata: Metadata = pageMetadata('/faq', 'Frequently Asked Questions | Hexa', 'Answers on how Hexa works: products, finance and technology services, teams, security, pricing and why Nepal.');
 
 // Unconfirmed answers are reviewable on local and preview builds only.
 const isProduction = process.env.VERCEL_ENV === 'production';

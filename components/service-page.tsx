@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { CaseCard, CheckList, CtaBand, PageHero, SectionHeader } from '@/components/blocks';
 import { serviceContent } from '@/lib/service-content';
 import { caseStudies, finance, products, technology } from '@/lib/site';
+import SeoBreadcrumbs from '@/components/seo-breadcrumbs';
 
 export default function ServicePage({ slug }: { slug: 'finance' | 'technology' }) {
   const tower = slug === 'finance' ? finance : technology;
@@ -18,6 +19,25 @@ export default function ServicePage({ slug }: { slug: 'finance' | 'technology' }
         primary={{ label: 'Book a 20-minute call', href: '/call' }}
         secondary={{ label: 'See which product fits', href: '#fit' }}
       />
+
+      <SeoBreadcrumbs items={[{ name: tower.name, path: tower.href }]} />
+
+      {slug === 'finance' && <section className="section bg-hexa-soft">
+        <div className="container-hexa">
+          <SectionHeader eyebrow="Finance shared services outsourcing" title="An agreed process, from preparation to review."
+            intro="For a regional CFO, shared services means more than adding headcount. Define which entities and processes are in scope, who approves the output and how exceptions reach the right decision-maker." />
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="card p-7"><h3 className="text-xl font-bold">Scope the operation</h3><p className="text-muted mt-3">Map record-to-report, procure-to-pay and order-to-cash responsibilities across entities. Confirm systems, currencies, local obligations and the work retained by your finance team.</p></div>
+            <div className="card p-7"><h3 className="text-xl font-bold">Agree the calendar and controls</h3><p className="text-muted mt-3">Document close deadlines, reconciliation review, payment authorisation and escalation. Set service levels against an agreed baseline rather than assuming a universal close timetable.</p></div>
+            <div className="card p-7"><h3 className="text-xl font-bold">Transition and review</h3><p className="text-muted mt-3">Agree acceptance criteria for initial work cycles, then review quality, exceptions and backlog through the governance cadence. Extend scope only when responsibilities are clear.</p></div>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-6">
+            <Link href="/accounting-outsourcing-australia" className="font-bold text-hexa-magenta underline">Accounting outsourcing for Australian firms</Link>
+            <Link href="/offshore-accounting-teams" className="font-bold text-hexa-magenta underline">Dedicated offshore accounting teams</Link>
+            <Link href="/security" className="font-bold text-hexa-magenta underline">Security and data controls</Link>
+          </div>
+        </div>
+      </section>}
 
       <section className="section">
         <div className="container-hexa">

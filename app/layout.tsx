@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
+import AnalyticsEvents from '@/components/analytics-events';
 import { CONTACT_EMAIL, SITE_URL } from '@/lib/site';
 
 const description =
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     template: '%s | Hexa',
   },
   description,
+  robots: process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'development'
+    ? { index: false, follow: false }
+    : { index: true, follow: true },
   openGraph: {
     siteName: 'Hexa',
     title: 'Hexa | Finance and Technology Shared Services, Built and Run for You',
@@ -31,6 +35,7 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Hexa',
+  '@id': `${SITE_URL}/#organization`,
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   description,
@@ -49,7 +54,13 @@ export default function RootLayout({
         <script src="https://apps.abacus.ai/chatllm/appllm-lib.js" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [organizationJsonLd, {
+              '@type': 'WebSite', '@id': `${SITE_URL}/#website`,
+              url: SITE_URL, name: 'Hexa', publisher: { '@id': `${SITE_URL}/#organization` },
+            }],
+          }).replace(/</g, '\u003c') }}
         />
         <style dangerouslySetInnerHTML={{ __html: `[data-hydration-error] { display: none !important; }` }} />
       </head>
@@ -63,6 +74,7 @@ export default function RootLayout({
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
+        <AnalyticsEvents />
       </body>
     </html>
   );

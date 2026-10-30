@@ -1,14 +1,10 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { Cpu } from 'lucide-react';
 import { CheckList, CtaBand, PageHero, SectionHeader } from '@/components/blocks';
 import { liveTools } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Hexa Intelligence: In-House Apps Built for Your Operation',
-  description:
-    'Hexa Intelligence is our in-house app platform. From month 3 of an engagement, our own engineers build apps to your needs for operational efficiency and excellence: automation, checks and reporting.',
-  alternates: { canonical: '/hexa-intelligence' },
-};
+export const metadata: Metadata = pageMetadata('/hexa-intelligence', 'Hexa Intelligence: In-House Apps Built for Your Operation | Hexa', 'Hexa Intelligence is our in-house app platform. From month 3 of an engagement, our own engineers build apps to your needs for operational efficiency and excellence: automation, checks and reporting.');
 
 const layer = [
   'Repeat work is automated, so people spend their time on review and judgement.',

@@ -1,24 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/site';
-
-const routes = [
-  '/',
-  '/support',
-  '/delivery',
-  '/centre',
-  '/finance',
-  '/technology',
-  '/hexa-intelligence',
-  '/case-studies',
-  '/about',
-  '/why-nepal',
-  '/security',
-  '/faq',
-  '/call',
-  '/privacy',
-  '/terms',
-];
+import { publicRoutes } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({ url: `${SITE_URL}${route}` }));
+  return publicRoutes.map((route) => ({ url: route === "/" ? SITE_URL : `${SITE_URL}${route}` }));
 }

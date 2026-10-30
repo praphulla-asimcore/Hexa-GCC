@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Award, Repeat, ShieldCheck, Building2 } from 'lucide-react';
@@ -13,12 +14,7 @@ import {
 } from '@/components/blocks';
 import { ACCA_REF, RETENTION, caseStudies, featuredCaseIds, towers } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: { absolute: 'Hexa | Finance and Technology Operations, Built and Run for You' },
-  description:
-    'Managed shared services and dedicated capability centres for growing companies in Australia, the UK, the US and Asia. Finance and Technology, from added capacity to a full centre.',
-  alternates: { canonical: '/' },
-};
+export const metadata: Metadata = pageMetadata('/', 'Finance & Accounting Outsourcing and Technology Teams | Hexa', 'Managed shared services and dedicated capability centres for growing companies in Australia, the UK, the US and Asia. Finance and Technology, from added capacity to a full centre.');
 
 const whyHexa = [
   {

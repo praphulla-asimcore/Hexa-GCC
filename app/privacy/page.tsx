@@ -1,9 +1,7 @@
+import { pageMetadata } from '@/lib/seo';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'Privacy Policy for Hexa - How we collect, use, and protect your information.',
-};
+export const metadata: Metadata = pageMetadata('/privacy', 'Privacy Policy | Hexa', 'Privacy Policy for Hexa - How we collect, use, and protect your information.');
 
 export default function PrivacyPage() {
   return (

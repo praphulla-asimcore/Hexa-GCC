@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -18,12 +19,7 @@ import {
 import { CheckList, CtaBand, PageHero, SectionHeader } from '@/components/blocks';
 import { ACCA_REF, FILE_ENCRYPTION_DEPLOYED } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: { absolute: 'Security and Data Control | Hexa' },
-  description:
-    'Your data stays in your systems, your keys stay with you. How Hexa protects client finance and technology data, from access controls to persistent file encryption.',
-  alternates: { canonical: '/security' },
-};
+export const metadata: Metadata = pageMetadata('/security', 'Security and Data Control | Hexa', 'Your data stays in your systems, your keys stay with you. How Hexa protects client finance and technology data, from access controls to persistent file encryption.');
 
 const layers = [
   {

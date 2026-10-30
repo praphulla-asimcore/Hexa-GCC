@@ -1,14 +1,10 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { Calendar, Mail } from 'lucide-react';
 import ContactForm from '@/components/contact-form';
 import { BOOKING_URL, CONTACT_EMAIL } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Book a Call',
-  description:
-    'Book a 20-minute call with Hexa about Finance or Technology shared services, or request a proposal. We reply within one business day.',
-  alternates: { canonical: '/call' },
-};
+export const metadata: Metadata = pageMetadata('/call', 'Book a Call | Hexa', 'Book a 20-minute call with Hexa about Finance or Technology shared services, or request a proposal. We reply within one business day.');
 
 export default function CallPage() {
   return (

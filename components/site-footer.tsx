@@ -9,6 +9,8 @@ const columns = [
     title: 'Services',
     links: [
       ...towers.map((t) => ({ label: t.name, href: t.href })),
+      { label: 'Accounting for Australian firms', href: '/accounting-outsourcing-australia' },
+      { label: 'Offshore accounting teams', href: '/offshore-accounting-teams' },
       { label: 'Hexa Intelligence', href: '/hexa-intelligence' },
     ],
   },

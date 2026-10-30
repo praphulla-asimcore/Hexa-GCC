@@ -1,13 +1,9 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { CheckList, CtaBand, PageHero, SectionHeader } from '@/components/blocks';
 import { RETENTION } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'Why Nepal: Talent, Cost and Risk, in Numbers',
-  description:
-    'Why Hexa runs its primary delivery centre in Kathmandu: sourced accountancy and engineering talent figures, a fully loaded cost comparison with Manila, Bangalore, Kuala Lumpur and Sydney, and the risks, including September 2025, faced directly.',
-  alternates: { canonical: '/why-nepal' },
-};
+export const metadata: Metadata = pageMetadata('/why-nepal', 'Why Nepal: Talent, Cost and Risk, in Numbers | Hexa', 'Why Hexa runs its primary delivery centre in Kathmandu: sourced accountancy and engineering talent figures, a fully loaded cost comparison with Manila, Bangalore, Kuala Lumpur and Sydney, and the risks, including September 2025, faced directly.');
 
 // Every figure on this page carries a source in `sources`. Re-check them each year:
 // ICAN publishes its annual report after the Nepali fiscal year closes in mid-July,
