@@ -16,7 +16,8 @@ source = (root / 'lib/seo.ts').read_text().split('export const publicRoutes = ['
 routes = re.findall(r"'([^']+)'", source)
 errors = []
 actual_routes = {'/' + str(page.parent.relative_to(root / 'app')).replace('\\', '/').strip('.')
-                 for page in (root / 'app').rglob('page.tsx')}
+                 for page in (root / 'app').rglob('page.tsx') if '[' not in str(page)}
+actual_routes.update('/insights/' + slug for slug in re.findall(r"slug: '([^']+)'", (root / 'lib/insights.ts').read_text()))
 if actual_routes != set(routes):
     errors.append(f'Page route inventory mismatch: {actual_routes.symmetric_difference(set(routes))}')
 
@@ -35,7 +36,7 @@ def get(path):
 class Page(HTMLParser):
     def __init__(self, html):
         super().__init__()
-        self.titles, self.h1s, self.schemas = [], [], []
+        self.titles, self.h1s, self.schemas, self.dates = [], [], [], []
         self.meta, self.canonicals, self.links, self.ids = {}, [], [], set()
         self.capture = None
         self.buffer = ''
@@ -43,6 +44,8 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == 'time' and attrs.get('datetime'):
+            self.dates.append(attrs['datetime'])
         if attrs.get('id'):
             self.ids.add(attrs['id'])
         if tag == 'meta':
@@ -90,6 +93,14 @@ for route in routes:
         except json.JSONDecodeError:
             check(False, f'{route}: invalid JSON-LD')
     check(bool(page.schemas), f'{route}: missing JSON-LD')
+    if route.startswith('/insights/'):
+        articles = [json.loads(schema) for schema in page.schemas if json.loads(schema).get('@type') == 'Article']
+        check(len(articles) == 1, f'{route}: one Article schema required')
+        if articles:
+            check(articles[0].get('headline') == page.h1s[0], f'{route}: article headline/H1 mismatch')
+            check(articles[0].get('mainEntityOfPage') == SITE + route, f'{route}: article canonical mismatch')
+            check(page.dates == [articles[0].get('datePublished')], f'{route}: visible/schema publication date mismatch')
+            check(articles[0].get('author', {}).get('name') == 'Hexa', f'{route}: article author')
 
 for route, page in pages.items():
     for href in page.links:
@@ -111,6 +122,12 @@ check(len(locations) == len(set(locations)), 'Duplicate sitemap URLs')
 check(set(locations) == {SITE + (route if route != '/' else '') for route in routes}, 'Sitemap differs from public route inventory')
 check(not xml.findall('{*}url/{*}lastmod'), 'Unexpected lastmod: verify timestamps before publishing')
 check(f'Sitemap: {SITE}/sitemap.xml' in get('/robots.txt'), 'robots.txt missing sitemap reference')
+
+try:
+    urllib.request.urlopen(BASE + '/insights/nonexistent-guide', timeout=10)
+    check(False, 'Unknown guide must return 404')
+except urllib.error.HTTPError as error:
+    check(error.code == 404, 'Unknown guide must return 404')
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):

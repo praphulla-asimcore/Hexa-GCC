@@ -22,6 +22,7 @@ const columns = [
       { label: 'Case Studies', href: '/case-studies' },
       { label: 'Security', href: '/security' },
       { label: 'FAQ', href: '/faq' },
+      { label: 'Insights', href: '/insights' },
       { label: 'Book a call', href: '/call' },
     ],
   },

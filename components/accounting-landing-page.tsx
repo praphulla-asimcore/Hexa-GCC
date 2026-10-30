@@ -49,6 +49,7 @@ export default function AccountingLandingPage({ content }: { content: Accounting
         <ul className="mt-5 space-y-3">
           <li><Link href="/case-studies#malaysia-accounting" className="font-bold text-hexa-magenta underline">Accounting and audit support case study</Link></li>
           <li><Link href="/finance" className="font-bold text-hexa-magenta underline">Finance shared services scope</Link></li>
+          <li><Link href="/insights/dedicated-finance-team-vs-accounting-outsourcing" className="font-bold text-hexa-magenta underline">Guide: dedicated team or managed service?</Link></li>
           <li><Link href="/why-nepal" className="font-bold text-hexa-magenta underline">Nepal delivery location and considerations</Link></li>
           <li><Link href={content.path === '/offshore-accounting-teams' ? '/accounting-outsourcing-australia' : '/offshore-accounting-teams'} className="font-bold text-hexa-magenta underline">
             {content.path === '/offshore-accounting-teams' ? 'Accounting outsourcing for Australian firms' : 'Dedicated offshore accounting teams'}</Link></li>

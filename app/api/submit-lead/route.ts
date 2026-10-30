@@ -1,15 +1,18 @@
 import { NextResponse } from 'next/server';
+import { sendLeadNotification } from '@/lib/lead-notification';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   try {
-    const data = await request?.json?.() ?? {};
+    const data = await request.json().catch(() => null);
 
     const { name, company, email, country, interest, timeline } = data ?? {};
 
     // Validate required fields
-    if (!name || !company || !email || !country || !interest || !timeline) {
+    const values = [name, company, email, country, interest, timeline];
+    if (values.some(value => typeof value !== 'string' || !value.trim() || value.length > 500)
+      || typeof email !== 'string' || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { success: false, message: 'Please complete every field.' },
         { status: 400 }
@@ -17,7 +20,7 @@ export async function POST(request: Request) {
     }
 
     const lead = {
-      id: Math.random().toString(36).substr(2, 9),
+      id: crypto.randomUUID(),
       createdAt: new Date(),
     };
 
@@ -61,45 +64,26 @@ export async function POST(request: Request) {
       </div>
     `;
 
-    try {
-      const appUrl = process?.env?.NEXTAUTH_URL || '';
-      const appName = appUrl ? new URL(appUrl)?.hostname?.split('.')?.[0] || 'HexaGCC' : 'HexaGCC';
-
-      const emailResponse = await fetch('https://apps.abacus.ai/api/sendNotificationEmail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          deployment_token: process?.env?.ABACUSAI_API_KEY,
-          app_id: process?.env?.WEB_APP_ID,
-          notification_id: process?.env?.NOTIF_ID_LEAD_FORM_SUBMISSION,
-          subject: `New lead: ${name} from ${company} (${country}, ${interest})`,
-          body: htmlBody,
-          is_html: true,
-          recipient_email: 'praphulla@hexamatics.com',
-          sender_email: appUrl ? `noreply@${new URL(appUrl)?.hostname}` : 'noreply@hexagcc.com',
-          sender_alias: appName,
-        }),
-      });
-
-      const emailResult = await emailResponse?.json?.() ?? {};
-      if (!emailResult?.success && !emailResult?.notification_disabled) {
-        console.error('Email notification failed:', emailResult);
-      }
-    } catch (emailError) {
-      console.error('Error sending email notification:', emailError);
-      // Don't fail the request if email fails
+    const notification = await sendLeadNotification({
+      subject: `New lead: ${name} from ${company} (${country}, ${interest})`,
+      body: htmlBody,
+    });
+    if (notification !== 'accepted') {
+      return NextResponse.json({
+        success: false,
+        message: 'Your enquiry could not be sent. Please try again or email praphulla@hexamatics.com.',
+      }, { status: notification === 'unavailable' ? 503 : 502 });
     }
 
     return NextResponse.json({
       success: true,
-      message: 'Lead submitted successfully',
+      message: 'Enquiry accepted for notification',
       id: lead?.id,
     });
 
-  } catch (error: any) {
-    console.error('Error submitting lead:', error);
+  } catch {
     return NextResponse.json(
-      { success: false, message: error?.message || 'Failed to submit lead' },
+      { success: false, message: 'Your enquiry could not be sent. Please try again or email praphulla@hexamatics.com.' },
       { status: 500 }
     );
   }

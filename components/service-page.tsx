@@ -35,6 +35,7 @@ export default function ServicePage({ slug }: { slug: 'finance' | 'technology' }
             <Link href="/accounting-outsourcing-australia" className="font-bold text-hexa-magenta underline">Accounting outsourcing for Australian firms</Link>
             <Link href="/offshore-accounting-teams" className="font-bold text-hexa-magenta underline">Dedicated offshore accounting teams</Link>
             <Link href="/security" className="font-bold text-hexa-magenta underline">Security and data controls</Link>
+            <Link href="/insights/outsourcing-month-end-close-controls" className="font-bold text-hexa-magenta underline">Guide to month-end close handoffs</Link>
           </div>
         </div>
       </section>}

@@ -22,4 +22,7 @@ export const publicRoutes = [
   '/accounting-outsourcing-australia', '/offshore-accounting-teams',
   '/hexa-intelligence', '/case-studies', '/about', '/why-nepal',
   '/security', '/faq', '/call', '/privacy', '/terms',
+  '/insights',
+  '/insights/dedicated-finance-team-vs-accounting-outsourcing',
+  '/insights/outsourcing-month-end-close-controls',
 ];
