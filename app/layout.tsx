@@ -4,6 +4,7 @@ import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import AnalyticsEvents from '@/components/analytics-events';
 import { CONTACT_EMAIL, SITE_URL } from '@/lib/site';
+import { Analytics } from '@vercel/analytics/next';
 
 const description =
   'Hexa builds and runs Finance and Technology shared services for growing companies, from added capacity to a full capability centre. Part of the Hexamatics Group, established 2002.';
@@ -75,6 +76,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <SiteFooter />
         <AnalyticsEvents />
+        <Analytics />
       </body>
     </html>
   );
